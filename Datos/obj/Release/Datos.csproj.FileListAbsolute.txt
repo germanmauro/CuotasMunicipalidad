@@ -1,0 +1,33 @@
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Datos\bin\Release\Datos.dll
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Datos\bin\Release\Datos.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Datos\bin\Release\Entidades.dll
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Datos\bin\Release\MySql.Data.dll
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Datos\bin\Release\Entidades.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Datos\bin\Release\MySql.Data.xml
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Datos\obj\Release\Datos.csproj.CoreCompileInputs.cache
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Datos\obj\Release\Datos.csproj.CopyComplete
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Datos\obj\Release\Datos.dll
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Datos\obj\Release\Datos.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Datos\obj\Release\Datos.csprojAssemblyReference.cache
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Datos\bin\Release\Datos.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Datos\bin\Release\Datos.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Datos\bin\Release\Entidades.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Datos\bin\Release\MySql.Data.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Datos\bin\Release\Entidades.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Datos\bin\Release\MySql.Data.xml
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Datos\obj\Release\Datos.csprojAssemblyReference.cache
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Datos\obj\Release\Datos.csproj.CoreCompileInputs.cache
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Datos\obj\Release\Datos.csproj.CopyComplete
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Datos\obj\Release\Datos.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Datos\obj\Release\Datos.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Datos\bin\Release\Datos.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Datos\bin\Release\Datos.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Datos\bin\Release\Entidades.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Datos\bin\Release\MySql.Data.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Datos\bin\Release\Entidades.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Datos\bin\Release\MySql.Data.xml
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Datos\obj\Release\Datos.csprojAssemblyReference.cache
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Datos\obj\Release\Datos.csproj.CoreCompileInputs.cache
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Datos\obj\Release\Datos.csproj.CopyComplete
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Datos\obj\Release\Datos.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Datos\obj\Release\Datos.pdb

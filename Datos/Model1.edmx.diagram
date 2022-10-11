@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a73b3e4eae3049a28d6bf2bdc1bdeb6a" Name="Diagram1">
+        <EntityTypeShape EntityType="CuotasModel.banco" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuotasModel.categoria" Width="1.5" PointX="7.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuotasModel.cuota" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuotasModel.cuota_detalle" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuotasModel.gasto" Width="1.5" PointX="10" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuotasModel.inventario" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuotasModel.inventario_foto" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuotasModel.municipalidad" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuotasModel.oficina" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuotasModel.perfil" Width="1.5" PointX="7.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuotasModel.proveedor" Width="1.5" PointX="7.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuotasModel.subcategoria" Width="1.5" PointX="10" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuotasModel.user" Width="1.5" PointX="10" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="CuotasModel.FK__subcatego__categ__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="CuotasModel.FK__cuota__municipal__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="CuotasModel.FK__cuota_det__cuota__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="CuotasModel.FK__gasto__proveedor__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="CuotasModel.FK__inventari__inven__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="CuotasModel.FK__inventari__ofici__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="CuotasModel.FK_usersPerfil" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,33 @@
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\BLL\bin\Release\BLL.dll
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\BLL\bin\Release\BLL.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\BLL\bin\Release\Datos.dll
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\BLL\bin\Release\Entidades.dll
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\BLL\bin\Release\Datos.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\BLL\bin\Release\Entidades.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\BLL\obj\Release\BLL.csproj.CoreCompileInputs.cache
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\BLL\obj\Release\BLL.csproj.CopyComplete
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\BLL\obj\Release\BLL.dll
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\BLL\obj\Release\BLL.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\BLL\obj\Release\BLL.csprojAssemblyReference.cache
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\BLL\bin\Release\BLL.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\BLL\bin\Release\BLL.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\BLL\bin\Release\Datos.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\BLL\bin\Release\Entidades.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\BLL\bin\Release\Datos.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\BLL\bin\Release\Entidades.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\BLL\obj\Release\BLL.csprojAssemblyReference.cache
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\BLL\obj\Release\BLL.csproj.CoreCompileInputs.cache
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\BLL\obj\Release\BLL.csproj.CopyComplete
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\BLL\obj\Release\BLL.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\BLL\obj\Release\BLL.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\BLL\bin\Release\BLL.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\BLL\bin\Release\BLL.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\BLL\bin\Release\Datos.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\BLL\bin\Release\Entidades.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\BLL\bin\Release\Datos.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\BLL\bin\Release\Entidades.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\BLL\obj\Release\BLL.csprojAssemblyReference.cache
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\BLL\obj\Release\BLL.csproj.CoreCompileInputs.cache
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\BLL\obj\Release\BLL.csproj.CopyComplete
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\BLL\obj\Release\BLL.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\BLL\obj\Release\BLL.pdb

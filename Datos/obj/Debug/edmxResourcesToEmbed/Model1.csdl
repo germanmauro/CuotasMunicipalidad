@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CuotasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="banco">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="categoria">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="subcategorias" Relationship="Self.FK__subcatego__categ__2F10007B" FromRole="categoria" ToRole="subcategoria" />
+  </EntityType>
+  <EntityType Name="cuota">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="municipalidad_id" Type="Int32" Nullable="false" />
+    <Property Name="monto" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="dia_vencimiento" Type="Int16" />
+    <Property Name="porcentaje_aumento_vencimiento" Type="Decimal" Precision="8" Scale="2" />
+    <NavigationProperty Name="municipalidad" Relationship="Self.FK__cuota__municipal__3E52440B" FromRole="cuota" ToRole="municipalidad" />
+    <NavigationProperty Name="cuota_detalle" Relationship="Self.FK__cuota_det__cuota__412EB0B6" FromRole="cuota" ToRole="cuota_detalle" />
+  </EntityType>
+  <EntityType Name="cuota_detalle">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cuota_id" Type="Int32" Nullable="false" />
+    <Property Name="monto" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="monto_abonado" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="vencimiento" Type="DateTime" Precision="0" />
+    <Property Name="fecha_pago" Type="DateTime" Precision="3" />
+    <Property Name="estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="cuota" Relationship="Self.FK__cuota_det__cuota__412EB0B6" FromRole="cuota_detalle" ToRole="cuota" />
+  </EntityType>
+  <EntityType Name="gasto">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="proveedor_id" Type="Int32" Nullable="false" />
+    <Property Name="importe" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="numero_factura" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="fecha" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="proveedor" Relationship="Self.FK__gasto__proveedor__49C3F6B7" FromRole="gasto" ToRole="proveedor" />
+  </EntityType>
+  <EntityType Name="inventario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="oficina_id" Type="Int32" Nullable="false" />
+    <Property Name="baja" Type="Boolean" />
+    <Property Name="motivo_baja" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="fecha" Type="DateTime" Precision="3" />
+    <Property Name="fecha_baja" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="inventario_foto" Relationship="Self.FK__inventari__inven__5441852A" FromRole="inventario" ToRole="inventario_foto" />
+    <NavigationProperty Name="oficina" Relationship="Self.FK__inventari__ofici__5070F446" FromRole="inventario" ToRole="oficina" />
+  </EntityType>
+  <EntityType Name="inventario_foto">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="inventario_id" Type="Int32" Nullable="false" />
+    <Property Name="foto" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="inventario" Relationship="Self.FK__inventari__inven__5441852A" FromRole="inventario_foto" ToRole="inventario" />
+  </EntityType>
+  <EntityType Name="municipalidad">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cuit" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="direccion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="mail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="condicion_iva" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="cuotas" Relationship="Self.FK__cuota__municipal__3E52440B" FromRole="municipalidad" ToRole="cuota" />
+  </EntityType>
+  <EntityType Name="oficina">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="inventarios" Relationship="Self.FK__inventari__ofici__5070F446" FromRole="oficina" ToRole="inventario" />
+  </EntityType>
+  <EntityType Name="perfil">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="users" Relationship="Self.FK_usersPerfil" FromRole="perfil" ToRole="users" />
+  </EntityType>
+  <EntityType Name="proveedor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cuit" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="direccion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="mail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="observaciones" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="gastoes" Relationship="Self.FK__gasto__proveedor__49C3F6B7" FromRole="proveedor" ToRole="gasto" />
+  </EntityType>
+  <EntityType Name="subcategoria">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="categoria_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="categoria" Relationship="Self.FK__subcatego__categ__2F10007B" FromRole="subcategoria" ToRole="categoria" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="usuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="baja" Type="Boolean" />
+    <Property Name="perfil_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="perfil" Relationship="Self.FK_usersPerfil" FromRole="users" ToRole="perfil" />
+  </EntityType>
+  <Association Name="FK__subcatego__categ__2F10007B">
+    <End Role="categoria" Type="Self.categoria" Multiplicity="1" />
+    <End Role="subcategoria" Type="Self.subcategoria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="categoria">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="subcategoria">
+        <PropertyRef Name="categoria_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__cuota__municipal__3E52440B">
+    <End Role="municipalidad" Type="Self.municipalidad" Multiplicity="1" />
+    <End Role="cuota" Type="Self.cuota" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="municipalidad">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="cuota">
+        <PropertyRef Name="municipalidad_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__cuota_det__cuota__412EB0B6">
+    <End Role="cuota" Type="Self.cuota" Multiplicity="1" />
+    <End Role="cuota_detalle" Type="Self.cuota_detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cuota">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="cuota_detalle">
+        <PropertyRef Name="cuota_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__gasto__proveedor__49C3F6B7">
+    <End Role="proveedor" Type="Self.proveedor" Multiplicity="1" />
+    <End Role="gasto" Type="Self.gasto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proveedor">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="gasto">
+        <PropertyRef Name="proveedor_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__inventari__inven__5441852A">
+    <End Role="inventario" Type="Self.inventario" Multiplicity="1" />
+    <End Role="inventario_foto" Type="Self.inventario_foto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inventario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="inventario_foto">
+        <PropertyRef Name="inventario_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__inventari__ofici__5070F446">
+    <End Role="oficina" Type="Self.oficina" Multiplicity="1" />
+    <End Role="inventario" Type="Self.inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="oficina">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="inventario">
+        <PropertyRef Name="oficina_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_usersPerfil">
+    <End Role="perfil" Type="Self.perfil" Multiplicity="1" />
+    <End Role="users" Type="Self.user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="perfil">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="perfil_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CuotasEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="bancoes" EntityType="Self.banco" />
+    <EntitySet Name="categorias" EntityType="Self.categoria" />
+    <EntitySet Name="cuotas" EntityType="Self.cuota" />
+    <EntitySet Name="cuota_detalle" EntityType="Self.cuota_detalle" />
+    <EntitySet Name="gastoes" EntityType="Self.gasto" />
+    <EntitySet Name="inventarios" EntityType="Self.inventario" />
+    <EntitySet Name="inventario_foto" EntityType="Self.inventario_foto" />
+    <EntitySet Name="municipalidads" EntityType="Self.municipalidad" />
+    <EntitySet Name="oficinas" EntityType="Self.oficina" />
+    <EntitySet Name="perfils" EntityType="Self.perfil" />
+    <EntitySet Name="proveedors" EntityType="Self.proveedor" />
+    <EntitySet Name="subcategorias" EntityType="Self.subcategoria" />
+    <EntitySet Name="users" EntityType="Self.user" />
+    <AssociationSet Name="FK__subcatego__categ__2F10007B" Association="Self.FK__subcatego__categ__2F10007B">
+      <End Role="categoria" EntitySet="categorias" />
+      <End Role="subcategoria" EntitySet="subcategorias" />
+    </AssociationSet>
+    <AssociationSet Name="FK__cuota__municipal__3E52440B" Association="Self.FK__cuota__municipal__3E52440B">
+      <End Role="municipalidad" EntitySet="municipalidads" />
+      <End Role="cuota" EntitySet="cuotas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__cuota_det__cuota__412EB0B6" Association="Self.FK__cuota_det__cuota__412EB0B6">
+      <End Role="cuota" EntitySet="cuotas" />
+      <End Role="cuota_detalle" EntitySet="cuota_detalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK__gasto__proveedor__49C3F6B7" Association="Self.FK__gasto__proveedor__49C3F6B7">
+      <End Role="proveedor" EntitySet="proveedors" />
+      <End Role="gasto" EntitySet="gastoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__inventari__inven__5441852A" Association="Self.FK__inventari__inven__5441852A">
+      <End Role="inventario" EntitySet="inventarios" />
+      <End Role="inventario_foto" EntitySet="inventario_foto" />
+    </AssociationSet>
+    <AssociationSet Name="FK__inventari__ofici__5070F446" Association="Self.FK__inventari__ofici__5070F446">
+      <End Role="oficina" EntitySet="oficinas" />
+      <End Role="inventario" EntitySet="inventarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_usersPerfil" Association="Self.FK_usersPerfil">
+      <End Role="perfil" EntitySet="perfils" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

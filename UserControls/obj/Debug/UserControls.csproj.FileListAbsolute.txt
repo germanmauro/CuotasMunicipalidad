@@ -1,0 +1,31 @@
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\UserControls\bin\Debug\UserControls.dll
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\UserControls\bin\Debug\UserControls.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\UserControls\obj\Debug\UserControls.csprojResolveAssemblyReference.cache
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\UserControls\obj\Debug\UserControls.TextBox.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\UserControls\obj\Debug\UserControls.csproj.GenerateResource.cache
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\UserControls\obj\Debug\UserControls.csproj.CoreCompileInputs.cache
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\UserControls\obj\Debug\UserControls.dll
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\UserControls\obj\Debug\UserControls.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\UserControls\bin\Debug\UserControls.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\UserControls\bin\Debug\UserControls.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\UserControls\obj\Debug\UserControls.csprojAssemblyReference.cache
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\UserControls\obj\Debug\UserControls.TextBox.resources
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\UserControls\obj\Debug\UserControls.csproj.GenerateResource.cache
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\UserControls\obj\Debug\UserControls.csproj.CoreCompileInputs.cache
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\UserControls\obj\Debug\UserControls.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\UserControls\obj\Debug\UserControls.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\UserControls\bin\Debug\UserControls.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\UserControls\bin\Debug\UserControls.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\UserControls\obj\Debug\UserControls.TextBox.resources
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\UserControls\obj\Debug\UserControls.csproj.GenerateResource.cache
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\UserControls\obj\Debug\UserControls.csproj.CoreCompileInputs.cache
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\UserControls\obj\Debug\UserControls.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\UserControls\obj\Debug\UserControls.pdb
+C:\Sistemas M&G\Software\Sistema Cuotas\UserControls\bin\Debug\UserControls.dll
+C:\Sistemas M&G\Software\Sistema Cuotas\UserControls\bin\Debug\UserControls.pdb
+C:\Sistemas M&G\Software\Sistema Cuotas\UserControls\obj\Debug\UserControls.TextBox.resources
+C:\Sistemas M&G\Software\Sistema Cuotas\UserControls\obj\Debug\UserControls.csproj.GenerateResource.cache
+C:\Sistemas M&G\Software\Sistema Cuotas\UserControls\obj\Debug\UserControls.csproj.CoreCompileInputs.cache
+C:\Sistemas M&G\Software\Sistema Cuotas\UserControls\obj\Debug\UserControls.dll
+C:\Sistemas M&G\Software\Sistema Cuotas\UserControls\obj\Debug\UserControls.pdb
+C:\Sistemas M&G\Software\Sistema Cuotas\UserControls\obj\Debug\UserControls.csproj.AssemblyReference.cache

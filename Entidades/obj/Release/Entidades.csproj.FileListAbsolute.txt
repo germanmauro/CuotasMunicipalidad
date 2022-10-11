@@ -1,0 +1,16 @@
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Entidades\bin\Release\Entidades.dll
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Entidades\bin\Release\Entidades.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Entidades\obj\Release\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Entidades\obj\Release\Entidades.dll
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Entidades\obj\Release\Entidades.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Entidades\obj\Release\Entidades.csprojAssemblyReference.cache
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Entidades\bin\Release\Entidades.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Entidades\bin\Release\Entidades.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Entidades\obj\Release\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Entidades\obj\Release\Entidades.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Entidades\obj\Release\Entidades.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Entidades\bin\Release\Entidades.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Entidades\bin\Release\Entidades.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Entidades\obj\Release\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Entidades\obj\Release\Entidades.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Entidades\obj\Release\Entidades.pdb

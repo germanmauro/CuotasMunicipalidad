@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CuotasModelStoreContainer" CdmEntityContainer="CuotasEntities">
+    <EntitySetMapping Name="bancoes">
+      <EntityTypeMapping TypeName="CuotasModel.banco">
+        <MappingFragment StoreEntitySet="banco">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="categorias">
+      <EntityTypeMapping TypeName="CuotasModel.categoria">
+        <MappingFragment StoreEntitySet="categoria">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cuotas">
+      <EntityTypeMapping TypeName="CuotasModel.cuota">
+        <MappingFragment StoreEntitySet="cuota">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="municipalidad_id" ColumnName="municipalidad_id" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="dia_vencimiento" ColumnName="dia_vencimiento" />
+          <ScalarProperty Name="porcentaje_aumento_vencimiento" ColumnName="porcentaje_aumento_vencimiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cuota_detalle">
+      <EntityTypeMapping TypeName="CuotasModel.cuota_detalle">
+        <MappingFragment StoreEntitySet="cuota_detalle">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="cuota_id" ColumnName="cuota_id" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="monto_abonado" ColumnName="monto_abonado" />
+          <ScalarProperty Name="vencimiento" ColumnName="vencimiento" />
+          <ScalarProperty Name="fecha_pago" ColumnName="fecha_pago" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gastoes">
+      <EntityTypeMapping TypeName="CuotasModel.gasto">
+        <MappingFragment StoreEntitySet="gasto">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="proveedor_id" ColumnName="proveedor_id" />
+          <ScalarProperty Name="importe" ColumnName="importe" />
+          <ScalarProperty Name="numero_factura" ColumnName="numero_factura" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inventarios">
+      <EntityTypeMapping TypeName="CuotasModel.inventario">
+        <MappingFragment StoreEntitySet="inventario">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="oficina_id" ColumnName="oficina_id" />
+          <ScalarProperty Name="baja" ColumnName="baja" />
+          <ScalarProperty Name="motivo_baja" ColumnName="motivo_baja" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="fecha_baja" ColumnName="fecha_baja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inventario_foto">
+      <EntityTypeMapping TypeName="CuotasModel.inventario_foto">
+        <MappingFragment StoreEntitySet="inventario_foto">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="inventario_id" ColumnName="inventario_id" />
+          <ScalarProperty Name="foto" ColumnName="foto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="municipalidads">
+      <EntityTypeMapping TypeName="CuotasModel.municipalidad">
+        <MappingFragment StoreEntitySet="municipalidad">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="cuit" ColumnName="cuit" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="condicion_iva" ColumnName="condicion_iva" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oficinas">
+      <EntityTypeMapping TypeName="CuotasModel.oficina">
+        <MappingFragment StoreEntitySet="oficina">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="perfils">
+      <EntityTypeMapping TypeName="CuotasModel.perfil">
+        <MappingFragment StoreEntitySet="perfil">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="proveedors">
+      <EntityTypeMapping TypeName="CuotasModel.proveedor">
+        <MappingFragment StoreEntitySet="proveedor">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="cuit" ColumnName="cuit" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subcategorias">
+      <EntityTypeMapping TypeName="CuotasModel.subcategoria">
+        <MappingFragment StoreEntitySet="subcategoria">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="categoria_id" ColumnName="categoria_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="CuotasModel.user">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="baja" ColumnName="baja" />
+          <ScalarProperty Name="perfil_id" ColumnName="perfil_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

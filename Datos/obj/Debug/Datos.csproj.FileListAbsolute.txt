@@ -1,0 +1,55 @@
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\Datos\bin\Debug\Datos.dll
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\Datos\bin\Debug\Datos.pdb
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\Datos\bin\Debug\Entidades.dll
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\Datos\bin\Debug\Entidades.pdb
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\Datos\obj\Debug\Datos.dll
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\Datos\obj\Debug\Datos.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Datos\bin\Debug\Datos.dll
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Datos\bin\Debug\Datos.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Datos\bin\Debug\Entidades.dll
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Datos\bin\Debug\Entidades.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Datos\obj\Debug\Datos.csproj.CopyComplete
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Datos\obj\Debug\Datos.dll
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Datos\obj\Debug\Datos.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Datos\bin\Debug\MySql.Data.dll
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Datos\bin\Debug\MySql.Data.xml
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Datos\bin\Debug\Datos.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Datos\bin\Debug\Datos.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Datos\bin\Debug\Entidades.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Datos\bin\Debug\MySql.Data.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Datos\bin\Debug\Entidades.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Datos\bin\Debug\MySql.Data.xml
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Datos\obj\Debug\Datos.csprojAssemblyReference.cache
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Datos\obj\Debug\Datos.csproj.CopyComplete
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Datos\obj\Debug\Datos.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Datos\obj\Debug\Datos.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Datos\bin\Debug\Datos.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Datos\bin\Debug\Datos.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Datos\bin\Debug\Entidades.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Datos\bin\Debug\MySql.Data.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Datos\bin\Debug\Entidades.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Datos\bin\Debug\MySql.Data.xml
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Datos\obj\Debug\Datos.csprojAssemblyReference.cache
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Datos\obj\Debug\Datos.csproj.CopyComplete
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Datos\obj\Debug\Datos.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Datos\obj\Debug\Datos.pdb
+C:\Sistemas M&G\Software\Sistema Cuotas\Datos\bin\Debug\Datos.dll.config
+C:\Sistemas M&G\Software\Sistema Cuotas\Datos\bin\Debug\Datos.dll
+C:\Sistemas M&G\Software\Sistema Cuotas\Datos\bin\Debug\Datos.pdb
+C:\Sistemas M&G\Software\Sistema Cuotas\Datos\bin\Debug\Entidades.dll
+C:\Sistemas M&G\Software\Sistema Cuotas\Datos\bin\Debug\EntityFramework.dll
+C:\Sistemas M&G\Software\Sistema Cuotas\Datos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Sistemas M&G\Software\Sistema Cuotas\Datos\bin\Debug\Entidades.pdb
+C:\Sistemas M&G\Software\Sistema Cuotas\Datos\bin\Debug\EntityFramework.xml
+C:\Sistemas M&G\Software\Sistema Cuotas\Datos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Sistemas M&G\Software\Sistema Cuotas\Datos\bin\Debug\MySql.Data.xml
+C:\Sistemas M&G\Software\Sistema Cuotas\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Sistemas M&G\Software\Sistema Cuotas\Datos\obj\Debug\Datos.csproj.CopyComplete
+C:\Sistemas M&G\Software\Sistema Cuotas\Datos\obj\Debug\Datos.dll
+C:\Sistemas M&G\Software\Sistema Cuotas\Datos\obj\Debug\Datos.pdb
+C:\Sistemas M&G\Software\Sistema Cuotas\Datos\obj\Debug\Datos.csproj.AssemblyReference.cache

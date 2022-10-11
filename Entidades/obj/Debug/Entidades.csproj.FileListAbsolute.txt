@@ -1,0 +1,27 @@
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\Entidades\bin\Debug\Entidades.dll
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\Entidades\obj\Debug\Entidades.dll
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\Entidades\obj\Debug\Entidades.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Entidades\bin\Debug\Entidades.dll
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Entidades\bin\Debug\Entidades.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Entidades\obj\Debug\Entidades.dll
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\Entidades\obj\Debug\Entidades.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Entidades\bin\Debug\Entidades.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Entidades\bin\Debug\Entidades.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Entidades\obj\Debug\Entidades.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\Entidades\obj\Debug\Entidades.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Entidades\bin\Debug\Entidades.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Entidades\bin\Debug\Entidades.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Entidades\obj\Debug\Entidades.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Entidades\obj\Debug\Entidades.pdb
+C:\Sistemas M&G\Software\Sistema Cuotas\Entidades\bin\Debug\Entidades.dll
+C:\Sistemas M&G\Software\Sistema Cuotas\Entidades\bin\Debug\Entidades.pdb
+C:\Sistemas M&G\Software\Sistema Cuotas\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Sistemas M&G\Software\Sistema Cuotas\Entidades\obj\Debug\Entidades.dll
+C:\Sistemas M&G\Software\Sistema Cuotas\Entidades\obj\Debug\Entidades.pdb
+C:\Sistemas M&G\Software\Sistema Cuotas\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache

@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CuotasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="banco">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" />
+    <Property Name="direccion" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="categoria">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cuota">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="municipalidad_id" Type="int" Nullable="false" />
+    <Property Name="monto" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="dia_vencimiento" Type="smallint" />
+    <Property Name="porcentaje_aumento_vencimiento" Type="decimal" Precision="8" Scale="2" />
+  </EntityType>
+  <EntityType Name="cuota_detalle">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cuota_id" Type="int" Nullable="false" />
+    <Property Name="monto" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="monto_abonado" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="vencimiento" Type="date" />
+    <Property Name="fecha_pago" Type="datetime" />
+    <Property Name="estado" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="gasto">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="proveedor_id" Type="int" Nullable="false" />
+    <Property Name="importe" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="numero_factura" Type="varchar" MaxLength="20" />
+    <Property Name="fecha" Type="date" />
+  </EntityType>
+  <EntityType Name="inventario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" />
+    <Property Name="oficina_id" Type="int" Nullable="false" />
+    <Property Name="baja" Type="bit" />
+    <Property Name="motivo_baja" Type="varchar" MaxLength="200" />
+    <Property Name="fecha" Type="datetime" />
+    <Property Name="fecha_baja" Type="datetime" />
+  </EntityType>
+  <EntityType Name="inventario_foto">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="inventario_id" Type="int" Nullable="false" />
+    <Property Name="foto" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="municipalidad">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" />
+    <Property Name="cuit" Type="varchar" MaxLength="20" />
+    <Property Name="direccion" Type="varchar" MaxLength="200" />
+    <Property Name="mail" Type="varchar" MaxLength="100" />
+    <Property Name="telefono" Type="varchar" MaxLength="20" />
+    <Property Name="condicion_iva" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="oficina">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="perfil">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="proveedor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" />
+    <Property Name="cuit" Type="varchar" MaxLength="20" />
+    <Property Name="direccion" Type="varchar" MaxLength="200" />
+    <Property Name="mail" Type="varchar" MaxLength="100" />
+    <Property Name="telefono" Type="varchar" MaxLength="20" />
+    <Property Name="observaciones" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="subcategoria">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" />
+    <Property Name="categoria_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" />
+    <Property Name="apellido" Type="varchar" MaxLength="50" />
+    <Property Name="usuario" Type="varchar" MaxLength="20" />
+    <Property Name="password" Type="varchar" MaxLength="20" />
+    <Property Name="baja" Type="bit" />
+    <Property Name="perfil_id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__cuota__municipal__3E52440B">
+    <End Role="municipalidad" Type="Self.municipalidad" Multiplicity="1" />
+    <End Role="cuota" Type="Self.cuota" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="municipalidad">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="cuota">
+        <PropertyRef Name="municipalidad_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__cuota_det__cuota__412EB0B6">
+    <End Role="cuota" Type="Self.cuota" Multiplicity="1" />
+    <End Role="cuota_detalle" Type="Self.cuota_detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cuota">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="cuota_detalle">
+        <PropertyRef Name="cuota_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__gasto__proveedor__49C3F6B7">
+    <End Role="proveedor" Type="Self.proveedor" Multiplicity="1" />
+    <End Role="gasto" Type="Self.gasto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proveedor">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="gasto">
+        <PropertyRef Name="proveedor_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__inventari__inven__5441852A">
+    <End Role="inventario" Type="Self.inventario" Multiplicity="1" />
+    <End Role="inventario_foto" Type="Self.inventario_foto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inventario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="inventario_foto">
+        <PropertyRef Name="inventario_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__inventari__ofici__5070F446">
+    <End Role="oficina" Type="Self.oficina" Multiplicity="1" />
+    <End Role="inventario" Type="Self.inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="oficina">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="inventario">
+        <PropertyRef Name="oficina_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__subcatego__categ__2F10007B">
+    <End Role="categoria" Type="Self.categoria" Multiplicity="1" />
+    <End Role="subcategoria" Type="Self.subcategoria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="categoria">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="subcategoria">
+        <PropertyRef Name="categoria_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_usersPerfil">
+    <End Role="perfil" Type="Self.perfil" Multiplicity="1" />
+    <End Role="users" Type="Self.users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="perfil">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="perfil_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CuotasModelStoreContainer">
+    <EntitySet Name="banco" EntityType="Self.banco" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="categoria" EntityType="Self.categoria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cuota" EntityType="Self.cuota" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cuota_detalle" EntityType="Self.cuota_detalle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="gasto" EntityType="Self.gasto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="inventario" EntityType="Self.inventario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="inventario_foto" EntityType="Self.inventario_foto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="municipalidad" EntityType="Self.municipalidad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oficina" EntityType="Self.oficina" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="perfil" EntityType="Self.perfil" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="proveedor" EntityType="Self.proveedor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="subcategoria" EntityType="Self.subcategoria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__cuota__municipal__3E52440B" Association="Self.FK__cuota__municipal__3E52440B">
+      <End Role="municipalidad" EntitySet="municipalidad" />
+      <End Role="cuota" EntitySet="cuota" />
+    </AssociationSet>
+    <AssociationSet Name="FK__cuota_det__cuota__412EB0B6" Association="Self.FK__cuota_det__cuota__412EB0B6">
+      <End Role="cuota" EntitySet="cuota" />
+      <End Role="cuota_detalle" EntitySet="cuota_detalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK__gasto__proveedor__49C3F6B7" Association="Self.FK__gasto__proveedor__49C3F6B7">
+      <End Role="proveedor" EntitySet="proveedor" />
+      <End Role="gasto" EntitySet="gasto" />
+    </AssociationSet>
+    <AssociationSet Name="FK__inventari__inven__5441852A" Association="Self.FK__inventari__inven__5441852A">
+      <End Role="inventario" EntitySet="inventario" />
+      <End Role="inventario_foto" EntitySet="inventario_foto" />
+    </AssociationSet>
+    <AssociationSet Name="FK__inventari__ofici__5070F446" Association="Self.FK__inventari__ofici__5070F446">
+      <End Role="oficina" EntitySet="oficina" />
+      <End Role="inventario" EntitySet="inventario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__subcatego__categ__2F10007B" Association="Self.FK__subcatego__categ__2F10007B">
+      <End Role="categoria" EntitySet="categoria" />
+      <End Role="subcategoria" EntitySet="subcategoria" />
+    </AssociationSet>
+    <AssociationSet Name="FK_usersPerfil" Association="Self.FK_usersPerfil">
+      <End Role="perfil" EntitySet="perfil" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

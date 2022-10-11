@@ -1,0 +1,174 @@
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\bin\Debug\MecanEasy.exe.config
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\bin\Debug\MecanEasy.exe
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\bin\Debug\MecanEasy.pdb
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\bin\Debug\BLL.dll
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\bin\Debug\Entidades.dll
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\bin\Debug\UserControls.dll
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\bin\Debug\Datos.dll
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\bin\Debug\BLL.pdb
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\bin\Debug\Entidades.pdb
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\bin\Debug\UserControls.pdb
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\bin\Debug\Datos.pdb
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.CargaPedido.resources
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.Categoria.resources
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.Cliente.resources
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.Color.resources
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.Combustible.resources
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.DatosNegocio.resources
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.Inicio.resources
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.Marca.resources
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.Modelo.resources
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.Pedido_a_proveedores.resources
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.Producto.resources
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.Productos1.resources
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.Proveedor.resources
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.ProveedorProducto.resources
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.Reparacion.resources
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.Reparacion2.resources
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.ReparacionEnProceso.resources
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.ReparacionesTodas.resources
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.ReparacionFinalizada.resources
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.ReporteCliente.resources
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.ReporteVehiculo.resources
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.Seguro.resources
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.SubCategorias.resources
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.TipoReparacion.resources
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.TipoVehiculo.resources
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.Transmision.resources
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.Validar.resources
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.Vehículo.resources
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.Reporte.resources
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.VerRecibos.resources
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\MecanEasy.csproj.GenerateResource.Cache
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\RdlCompile.cache
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\RdlCompile.compiled
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\MecanEasy.exe
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\MecanEasy.pdb
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\MecanEasy.csprojResolveAssemblyReference.cache
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\bin\Debug\Recibo.rdlc
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.Properties.Resources.resources
+C:\Users\Ger\Documents\Visual Studio 2015\Projects\StockMyG\StockMyG\obj\Debug\StockMyG.Turno.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\Recibo.rdlc
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\MecanEasy.exe.config
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\MecanEasy.exe
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\MecanEasy.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\BLL.dll
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\Entidades.dll
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\UserControls.dll
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\Datos.dll
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\BLL.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\Entidades.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\UserControls.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\Datos.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\MecanEasy.csprojResolveAssemblyReference.cache
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.CargaPedido.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Categoria.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Cliente.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Color.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Combustible.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.DatosNegocio.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Inicio.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Marca.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Modelo.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Pedido_a_proveedores.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Producto.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Productos1.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Properties.Resources.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Proveedor.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.ProveedorProducto.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Reparacion.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Reparacion2.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.ReparacionEnProceso.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.ReparacionesTodas.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.ReparacionFinalizada.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.ReporteCliente.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.ReporteVehiculo.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Seguro.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.SubCategorias.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.TipoReparacion.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.TipoVehiculo.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Transmision.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Turno.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Validar.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Vehículo.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Reporte.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.VerRecibos.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\MecanEasy.csproj.GenerateResource.cache
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\MecanEasy.csproj.CoreCompileInputs.cache
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\MecanEasy.csproj.CopyComplete
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\MecanEasy.exe
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\MecanEasy.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\MecanEasy.csprojAssemblyReference.cache
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.CargaPedido.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Categoria.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Cliente.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Color.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Combustible.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.DatosNegocio.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Inicio.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Marca.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Modelo.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Pedido_a_proveedores.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Producto.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Productos1.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Properties.Resources.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Proveedor.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.ProveedorProducto.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Reparacion.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Reparacion2.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.ReparacionEnProceso.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.ReparacionesTodas.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.ReparacionFinalizada.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.ReporteCliente.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.ReporteVehiculo.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Seguro.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.SubCategorias.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.TipoReparacion.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.TipoVehiculo.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Transmision.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Turno.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Validar.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Vehículo.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.Reporte.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\StockMyG.VerRecibos.resources
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\MecanEasy.csproj.GenerateResource.cache
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\RdlCompile.cache
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\RdlCompile.compiled
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\MecanEasy.csproj.CoreCompileInputs.cache
+C:\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\Recibo.rdlc
+C:\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\ReporteCliente.rdlc
+C:\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\MecanEasy.exe.config
+C:\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\MecanEasy.exe
+C:\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\MecanEasy.pdb
+C:\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\BLL.dll
+C:\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\Entidades.dll
+C:\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\UserControls.dll
+C:\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\Datos.dll
+C:\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\BLL.pdb
+C:\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\Entidades.pdb
+C:\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\UserControls.pdb
+C:\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\Datos.pdb
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\MecanEasy.csproj.CopyComplete
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\MecanEasy.exe
+C:\Sistemas M&G\MecanEasy\StockMyG\obj\Debug\MecanEasy.pdb
+C:\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\Pedido.rdlc
+C:\Sistemas M&G\MecanEasy\StockMyG\bin\Debug\ReporteVehiculo.rdlc

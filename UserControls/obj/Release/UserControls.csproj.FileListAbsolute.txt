@@ -1,0 +1,23 @@
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\UserControls\bin\Release\UserControls.dll
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\UserControls\bin\Release\UserControls.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\UserControls\obj\Release\UserControls.TextBox.resources
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\UserControls\obj\Release\UserControls.csproj.GenerateResource.cache
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\UserControls\obj\Release\UserControls.csproj.CoreCompileInputs.cache
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\UserControls\obj\Release\UserControls.dll
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\UserControls\obj\Release\UserControls.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\MecanEasy\UserControls\obj\Release\UserControls.csprojAssemblyReference.cache
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\UserControls\bin\Release\UserControls.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\UserControls\bin\Release\UserControls.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\UserControls\obj\Release\UserControls.csprojAssemblyReference.cache
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\UserControls\obj\Release\UserControls.TextBox.resources
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\UserControls\obj\Release\UserControls.csproj.GenerateResource.cache
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\UserControls\obj\Release\UserControls.csproj.CoreCompileInputs.cache
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\UserControls\obj\Release\UserControls.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Plataforma de Trazabilidad\UserControls\obj\Release\UserControls.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\UserControls\bin\Release\UserControls.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\UserControls\bin\Release\UserControls.pdb
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\UserControls\obj\Release\UserControls.TextBox.resources
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\UserControls\obj\Release\UserControls.csproj.GenerateResource.cache
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\UserControls\obj\Release\UserControls.csproj.CoreCompileInputs.cache
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\UserControls\obj\Release\UserControls.dll
+C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\UserControls\obj\Release\UserControls.pdb

@@ -32,50 +32,118 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupInformacion = new System.Windows.Forms.GroupBox();
+            this.txtImporte = new UserControls.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtNroFactura = new UserControls.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbFormaPago = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.cmbProveedor = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtNombre = new UserControls.TextBox();
+            this.txtDescripcion = new UserControls.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.Grid = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Oficina = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new UserControls.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new UserControls.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeroFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FormaPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupInformacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.SuspendLayout();
             // 
             // groupInformacion
             // 
-            this.groupInformacion.Controls.Add(this.textBox2);
+            this.groupInformacion.Controls.Add(this.dateTimePicker1);
+            this.groupInformacion.Controls.Add(this.txtImporte);
             this.groupInformacion.Controls.Add(this.label4);
-            this.groupInformacion.Controls.Add(this.textBox1);
+            this.groupInformacion.Controls.Add(this.txtNroFactura);
             this.groupInformacion.Controls.Add(this.label3);
-            this.groupInformacion.Controls.Add(this.comboBox1);
+            this.groupInformacion.Controls.Add(this.cmbFormaPago);
+            this.groupInformacion.Controls.Add(this.label5);
             this.groupInformacion.Controls.Add(this.label2);
             this.groupInformacion.Controls.Add(this.cmbProveedor);
             this.groupInformacion.Controls.Add(this.label6);
-            this.groupInformacion.Controls.Add(this.txtNombre);
+            this.groupInformacion.Controls.Add(this.txtDescripcion);
             this.groupInformacion.Controls.Add(this.label1);
             this.groupInformacion.Controls.Add(this.btnGuardar);
             this.groupInformacion.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupInformacion.Location = new System.Drawing.Point(546, 190);
+            this.groupInformacion.Location = new System.Drawing.Point(591, 190);
             this.groupInformacion.Name = "groupInformacion";
             this.groupInformacion.Size = new System.Drawing.Size(292, 295);
             this.groupInformacion.TabIndex = 27;
             this.groupInformacion.TabStop = false;
             this.groupInformacion.Text = "Información";
-            this.groupInformacion.Enter += new System.EventHandler(this.groupInformacion_Enter);
+            // 
+            // txtImporte
+            // 
+            this.txtImporte.Location = new System.Drawing.Point(113, 126);
+            this.txtImporte.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.txtImporte.Max = 25;
+            this.txtImporte.Min = 0;
+            this.txtImporte.Name = "txtImporte";
+            this.txtImporte.Nombre = "Nombre";
+            this.txtImporte.Obligatorio = true;
+            this.txtImporte.Size = new System.Drawing.Size(161, 19);
+            this.txtImporte.TabIndex = 10;
+            this.txtImporte.Tipo = UserControls.Tipo.Decimal;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(7, 126);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Importe";
+            // 
+            // txtNroFactura
+            // 
+            this.txtNroFactura.Location = new System.Drawing.Point(113, 94);
+            this.txtNroFactura.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtNroFactura.Max = 20;
+            this.txtNroFactura.Min = 0;
+            this.txtNroFactura.Name = "txtNroFactura";
+            this.txtNroFactura.Nombre = "Nombre";
+            this.txtNroFactura.Obligatorio = true;
+            this.txtNroFactura.Size = new System.Drawing.Size(161, 19);
+            this.txtNroFactura.TabIndex = 8;
+            this.txtNroFactura.Tipo = UserControls.Tipo.Texto;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 94);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(72, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Nro Factura";
+            // 
+            // cmbFormaPago
+            // 
+            this.cmbFormaPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFormaPago.FormattingEnabled = true;
+            this.cmbFormaPago.Location = new System.Drawing.Point(113, 158);
+            this.cmbFormaPago.Name = "cmbFormaPago";
+            this.cmbFormaPago.Size = new System.Drawing.Size(159, 21);
+            this.cmbFormaPago.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 158);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Forma de Pago";
             // 
             // cmbProveedor
             // 
@@ -91,21 +159,21 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(6, 63);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 13);
+            this.label6.Size = new System.Drawing.Size(66, 13);
             this.label6.TabIndex = 4;
-            this.label6.Text = "Oficina";
+            this.label6.Text = "Proveedor";
             // 
-            // txtNombre
+            // txtDescripcion
             // 
-            this.txtNombre.Location = new System.Drawing.Point(113, 30);
-            this.txtNombre.Max = 25;
-            this.txtNombre.Min = 0;
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Nombre = "Nombre";
-            this.txtNombre.Obligatorio = true;
-            this.txtNombre.Size = new System.Drawing.Size(161, 19);
-            this.txtNombre.TabIndex = 1;
-            this.txtNombre.Tipo = UserControls.Tipo.Texto;
+            this.txtDescripcion.Location = new System.Drawing.Point(113, 30);
+            this.txtDescripcion.Max = 25;
+            this.txtDescripcion.Min = 0;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Nombre = "Nombre";
+            this.txtDescripcion.Obligatorio = true;
+            this.txtDescripcion.Size = new System.Drawing.Size(161, 19);
+            this.txtDescripcion.TabIndex = 1;
+            this.txtDescripcion.Tipo = UserControls.Tipo.Texto;
             // 
             // label1
             // 
@@ -147,9 +215,12 @@
             this.Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
-            this.Nombre,
-            this.Oficina,
-            this.Fecha});
+            this.Fecha,
+            this.Proveedor,
+            this.Descripcion,
+            this.NumeroFactura,
+            this.Importe,
+            this.FormaPago});
             this.Grid.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
@@ -173,50 +244,15 @@
             this.Grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.Grid.RowHeadersVisible = false;
             this.Grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid.Size = new System.Drawing.Size(538, 329);
+            this.Grid.Size = new System.Drawing.Size(579, 474);
             this.Grid.TabIndex = 26;
-            this.Grid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellContentClick);
             this.Grid.SelectionChanged += new System.EventHandler(this.Grid_SelectionChanged);
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "Id";
-            this.id.HeaderText = "Codigo";
-            this.id.MinimumWidth = 2;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            this.id.Width = 2;
-            // 
-            // Nombre
-            // 
-            this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Oficina
-            // 
-            this.Oficina.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Oficina.DataPropertyName = "Oficina";
-            this.Oficina.HeaderText = "Oficina";
-            this.Oficina.Name = "Oficina";
-            this.Oficina.ReadOnly = true;
-            // 
-            // Fecha
-            // 
-            this.Fecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Fecha.DataPropertyName = "Fecha";
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            this.Fecha.ReadOnly = true;
             // 
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.Gainsboro;
             this.btnEliminar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(624, 105);
+            this.btnEliminar.Location = new System.Drawing.Point(664, 105);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(146, 27);
             this.btnEliminar.TabIndex = 23;
@@ -228,7 +264,7 @@
             // 
             this.btnModificar.BackColor = System.Drawing.Color.Gainsboro;
             this.btnModificar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(624, 59);
+            this.btnModificar.Location = new System.Drawing.Point(664, 59);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(146, 27);
             this.btnModificar.TabIndex = 24;
@@ -240,7 +276,7 @@
             // 
             this.btnNuevo.BackColor = System.Drawing.Color.Gainsboro;
             this.btnNuevo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Location = new System.Drawing.Point(624, 13);
+            this.btnNuevo.Location = new System.Drawing.Point(664, 13);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(146, 27);
             this.btnNuevo.TabIndex = 25;
@@ -248,67 +284,80 @@
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // comboBox1
+            // id
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(113, 158);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(159, 21);
-            this.comboBox1.TabIndex = 7;
+            this.id.DataPropertyName = "Id";
+            this.id.HeaderText = "Codigo";
+            this.id.MinimumWidth = 2;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            this.id.Width = 2;
             // 
-            // label2
+            // Fecha
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 158);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Forma de Pago";
+            this.Fecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Fecha.DataPropertyName = "Fecha";
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
             // 
-            // textBox1
+            // Proveedor
             // 
-            this.textBox1.Location = new System.Drawing.Point(113, 94);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox1.Max = 20;
-            this.textBox1.Min = 0;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Nombre = "Nombre";
-            this.textBox1.Obligatorio = true;
-            this.textBox1.Size = new System.Drawing.Size(161, 19);
-            this.textBox1.TabIndex = 8;
-            this.textBox1.Tipo = UserControls.Tipo.Texto;
+            this.Proveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Proveedor.DataPropertyName = "Proveedor";
+            this.Proveedor.HeaderText = "Proveedor";
+            this.Proveedor.Name = "Proveedor";
+            this.Proveedor.ReadOnly = true;
             // 
-            // label3
+            // Descripcion
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 94);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Nro Factura";
+            this.Descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Descripcion.DataPropertyName = "Descripcion";
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
             // 
-            // textBox2
+            // NumeroFactura
             // 
-            this.textBox2.Location = new System.Drawing.Point(113, 126);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.textBox2.Max = 25;
-            this.textBox2.Min = 0;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Nombre = "Nombre";
-            this.textBox2.Obligatorio = true;
-            this.textBox2.Size = new System.Drawing.Size(161, 19);
-            this.textBox2.TabIndex = 10;
-            this.textBox2.Tipo = UserControls.Tipo.Decimal;
+            this.NumeroFactura.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NumeroFactura.DataPropertyName = "NumeroFactura";
+            this.NumeroFactura.HeaderText = "Nro Factura";
+            this.NumeroFactura.Name = "NumeroFactura";
+            this.NumeroFactura.ReadOnly = true;
             // 
-            // label4
+            // Importe
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 126);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Importe";
+            this.Importe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Importe.DataPropertyName = "Importe";
+            this.Importe.HeaderText = "Importe";
+            this.Importe.Name = "Importe";
+            this.Importe.ReadOnly = true;
+            // 
+            // FormaPago
+            // 
+            this.FormaPago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FormaPago.DataPropertyName = "FormaPago";
+            this.FormaPago.HeaderText = "Forma de Pago";
+            this.FormaPago.Name = "FormaPago";
+            this.FormaPago.ReadOnly = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(7, 193);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 13);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Fecha";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(113, 193);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(161, 21);
+            this.dateTimePicker1.TabIndex = 12;
             // 
             // Gastos
             // 
@@ -316,7 +365,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(850, 523);
+            this.ClientSize = new System.Drawing.Size(891, 495);
             this.Controls.Add(this.groupInformacion);
             this.Controls.Add(this.Grid);
             this.Controls.Add(this.btnEliminar);
@@ -341,7 +390,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupInformacion;
-        private UserControls.TextBox txtNombre;
+        private UserControls.TextBox txtDescripcion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.DataGridView Grid;
@@ -350,15 +399,20 @@
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.ComboBox cmbProveedor;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Oficina;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
-        private UserControls.TextBox textBox2;
+        private UserControls.TextBox txtImporte;
         private System.Windows.Forms.Label label4;
-        private UserControls.TextBox textBox1;
+        private UserControls.TextBox txtNroFactura;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbFormaPago;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Proveedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroFactura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FormaPago;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label5;
     }
 }

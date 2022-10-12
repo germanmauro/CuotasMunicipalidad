@@ -29,10 +29,14 @@ namespace StockMyG
         {
             if (Validador.VeficarForm(this))
             {
-                Datos.inventario item = new Datos.inventario
+                Datos.gasto item = new Datos.gasto
                 {
-                    nombre = txtNombre.Controls[0].Text,
-                    oficina_id = ((Datos.oficina)cmbProveedor.SelectedItem).id
+                    descripcion = txtDescripcion.Controls[0].Text,
+                    proveedor_id = ((Datos.proveedor)cmbProveedor.SelectedItem).id,
+                    fecha = dateTimePicker1.Value,
+                    importe = decimal.Parse(txtImporte.Controls[0].Text),
+                    forma_pago = cmbFormaPago.SelectedItem.ToString(),
+                    numero_factura = txtNroFactura.Controls[0].Text
                 };
 
                 switch (estado)
@@ -42,14 +46,14 @@ namespace StockMyG
                     case Formulario.EstadoForm.Seleccionado:
                         break;
                     case Formulario.EstadoForm.Nuevo:
-                        BLL.InventarioService.Guardar(item);
+                        BLL.GastoService.Guardar(item);
                         ActualizarGrilla();
                         break;
                     case Formulario.EstadoForm.Modificado:
                         if (MessageBox.Show("¿Desea realizar la modificación?", "Confirmación", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
                             item.id = int.Parse(Grid.SelectedRows[0].Cells["id"].Value.ToString());
-                            BLL.InventarioService.Modificar(item);
+                            BLL.GastoService.Modificar(item);
                             ActualizarGrilla();
                         }
                         break;
@@ -94,20 +98,10 @@ namespace StockMyG
             ActualizarVista();
         }
 
-        private void btnFotos_Click(object sender, EventArgs e)
-        {
-            Fotos form = new Fotos
-            {
-                Inventario = InventarioService.Obtener(int.Parse(Grid.SelectedRows[0].Cells["id"].Value.ToString()))
-            };
-            //form.Parent = this;
-            form.Show();
-        }
-
         #region Metodos
         private void ActualizarGrilla()
         {
-            Grid.DataSource = BLL.InventarioService.Listar();
+            Grid.DataSource = BLL.GastoService.Listar();
             estado = Formulario.EstadoForm.SinDatos;
             ActualizarVista();
         }
@@ -146,22 +140,31 @@ namespace StockMyG
 
         private void CargarDatos()
         {
-            this.txtNombre.Controls[0].Text = Grid.SelectedRows[0].Cells["Nombre"].Value.ToString();
-  
-            this.cmbProveedor.SelectedText = Grid.SelectedRows[0].Cells["Oficina"].Value.ToString();
+            this.txtDescripcion.Controls[0].Text = Grid.SelectedRows[0].Cells["Descripcion"].Value.ToString();
+            this.txtImporte.Controls[0].Text = Grid.SelectedRows[0].Cells["Importe"].Value.ToString();
+            this.txtNroFactura.Controls[0].Text = Grid.SelectedRows[0].Cells["NumeroFactura"].Value.ToString();
+            this.dateTimePicker1.Value =  Convert.ToDateTime(Grid.SelectedRows[0].Cells["Fecha"].Value.ToString());
+            this.cmbProveedor.SelectedText = Grid.SelectedRows[0].Cells["Proveedor"].Value.ToString();
+            this.cmbFormaPago.SelectedText = Grid.SelectedRows[0].Cells["FormaPago"].Value.ToString();
         }
 
         private void CargaCombo()
         {
-            this.cmbProveedor.DataSource = BLL.OficinaService.ListarCombo();
+            this.cmbProveedor.DataSource = BLL.ProveedorService.ListarCombo();
             this.cmbProveedor.DisplayMember = "nombre";
             this.cmbProveedor.ValueMember = "id";
+
+            this.cmbFormaPago.DataSource = Tipos.FormaPago();
+           
         }
 
         private void BorrarDatos()
         {
-            this.txtNombre.Controls[0].Text = "";
-            //this.cmbOficina.SelectedIndex = 0;
+            this.txtDescripcion.Controls[0].Text = "";
+            this.txtNroFactura.Controls[0].Text = "";
+            this.txtImporte.Controls[0].Text = "";
+            this.dateTimePicker1.Value = DateTime.Today;
+
         }
 
         #endregion
@@ -200,14 +203,5 @@ namespace StockMyG
             }
         }
 
-        private void Grid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void groupInformacion_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 }

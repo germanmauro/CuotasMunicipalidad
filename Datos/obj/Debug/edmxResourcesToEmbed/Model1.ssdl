@@ -46,6 +46,8 @@
     <Property Name="importe" Type="decimal" Precision="8" Scale="2" />
     <Property Name="numero_factura" Type="varchar" MaxLength="20" />
     <Property Name="fecha" Type="date" />
+    <Property Name="descripcion" Type="varchar" MaxLength="200" />
+    <Property Name="forma_pago" Type="varchar" MaxLength="30" />
   </EntityType>
   <EntityType Name="inventario">
     <Key>

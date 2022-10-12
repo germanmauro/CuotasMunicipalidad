@@ -107,14 +107,6 @@ namespace BLL
             }
         }
 
-
-        //Fotos
-
-        //Guardar Fotos
-
-        //Eliminar Fotos
-
-        //Comprobar Fotos Existentes <= 3
         public static bool cantidadFotos(int id)
         {
             try

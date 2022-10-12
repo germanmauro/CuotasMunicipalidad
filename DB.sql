@@ -86,7 +86,9 @@ CREATE TABLE gasto (
 	proveedor_id int not null FOREIGN KEY REFERENCES proveedor(id),
 	importe decimal(8,2),
 	numero_factura varchar(20),
-	fecha date
+	fecha date,
+	descripcion varchar(200),
+	forma_pago varchar(30)
 );
 
 CREATE TABLE cuota (

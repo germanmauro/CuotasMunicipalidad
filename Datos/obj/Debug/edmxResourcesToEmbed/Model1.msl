@@ -45,6 +45,8 @@
     <EntitySetMapping Name="gastoes">
       <EntityTypeMapping TypeName="CuotasModel.gasto">
         <MappingFragment StoreEntitySet="gasto">
+          <ScalarProperty Name="forma_pago" ColumnName="forma_pago" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="proveedor_id" ColumnName="proveedor_id" />
           <ScalarProperty Name="importe" ColumnName="importe" />

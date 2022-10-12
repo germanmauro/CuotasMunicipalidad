@@ -251,5 +251,14 @@ namespace StockMyG
             };
             cli.Show();
         }
+
+        private void gastosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Gastos cli = new Gastos
+            {
+                MdiParent = this
+            };
+            cli.Show();
+        }
     }
 }

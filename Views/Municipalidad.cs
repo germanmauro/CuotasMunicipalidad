@@ -111,6 +111,7 @@ namespace StockMyG
             {
                 case Formulario.EstadoForm.SinDatos:
                     btnEliminar.Enabled = false;
+                    btnCuotas.Enabled = false;
                     btnModificar.Enabled = false;
                     groupInformacion.Enabled = false;
                     Grid.ClearSelection();
@@ -119,12 +120,14 @@ namespace StockMyG
                 case Formulario.EstadoForm.Seleccionado:
                     groupInformacion.Enabled = false;
                     btnEliminar.Enabled = true;
+                    btnCuotas.Enabled = true;
                     btnModificar.Enabled = true;
                     break;
                 case Formulario.EstadoForm.Nuevo:
                     groupInformacion.Enabled = true;
                     Grid.ClearSelection();
                     btnEliminar.Enabled = false;
+                    btnCuotas.Enabled = false;
                     btnModificar.Enabled = false;
                     BorrarDatos();
                     break;
@@ -192,11 +195,21 @@ namespace StockMyG
                         btnGuardar_Click(null, null);
                     }
                     break;
-              
+                case Keys.F6:
+                    if (btnGuardar.Enabled)
+                    {
+                        btnCuotas_Click(null, null);
+                    }
+                    break;
+
                 default:
                     break;
             }
         }
 
+        private void btnCuotas_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

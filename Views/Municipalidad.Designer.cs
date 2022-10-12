@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupInformacion = new System.Windows.Forms.GroupBox();
             this.cmbCondicion = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -53,6 +53,7 @@
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Condicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCuotas = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -76,7 +77,7 @@
             this.groupInformacion.Controls.Add(this.label1);
             this.groupInformacion.Controls.Add(this.btnGuardar);
             this.groupInformacion.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupInformacion.Location = new System.Drawing.Point(546, 164);
+            this.groupInformacion.Location = new System.Drawing.Point(546, 192);
             this.groupInformacion.Name = "groupInformacion";
             this.groupInformacion.Size = new System.Drawing.Size(292, 255);
             this.groupInformacion.TabIndex = 27;
@@ -87,7 +88,7 @@
             // 
             this.cmbCondicion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCondicion.FormattingEnabled = true;
-            this.cmbCondicion.Location = new System.Drawing.Point(115, 157);
+            this.cmbCondicion.Location = new System.Drawing.Point(115, 158);
             this.cmbCondicion.Name = "cmbCondicion";
             this.cmbCondicion.Size = new System.Drawing.Size(159, 21);
             this.cmbCondicion.TabIndex = 6;
@@ -95,7 +96,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 159);
+            this.label6.Location = new System.Drawing.Point(5, 161);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(88, 13);
             this.label6.TabIndex = 4;
@@ -226,14 +227,14 @@
             this.Grid.AllowUserToResizeRows = false;
             this.Grid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -244,29 +245,29 @@
             this.Email,
             this.Condicion});
             this.Grid.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Grid.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Grid.DefaultCellStyle = dataGridViewCellStyle2;
             this.Grid.Location = new System.Drawing.Point(2, 11);
             this.Grid.MultiSelect = false;
             this.Grid.Name = "Grid";
             this.Grid.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.Grid.RowHeadersVisible = false;
             this.Grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid.Size = new System.Drawing.Size(538, 408);
+            this.Grid.Size = new System.Drawing.Size(538, 436);
             this.Grid.TabIndex = 26;
             this.Grid.SelectionChanged += new System.EventHandler(this.Grid_SelectionChanged);
             // 
@@ -328,41 +329,50 @@
             this.Condicion.Name = "Condicion";
             this.Condicion.ReadOnly = true;
             // 
+            // btnCuotas
+            // 
+            this.btnCuotas.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnCuotas.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCuotas.Location = new System.Drawing.Point(628, 150);
+            this.btnCuotas.Name = "btnCuotas";
+            this.btnCuotas.Size = new System.Drawing.Size(146, 27);
+            this.btnCuotas.TabIndex = 32;
+            this.btnCuotas.Text = "CUOTAS [F6]";
+            this.btnCuotas.UseVisualStyleBackColor = false;
+            this.btnCuotas.Click += new System.EventHandler(this.btnCuotas_Click);
+            // 
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.Gainsboro;
             this.btnEliminar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(624, 105);
+            this.btnEliminar.Location = new System.Drawing.Point(628, 103);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(146, 27);
-            this.btnEliminar.TabIndex = 23;
+            this.btnEliminar.TabIndex = 29;
             this.btnEliminar.Text = "ELIMINAR [F4]";
             this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
             this.btnModificar.BackColor = System.Drawing.Color.Gainsboro;
             this.btnModificar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(624, 59);
+            this.btnModificar.Location = new System.Drawing.Point(628, 57);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(146, 27);
-            this.btnModificar.TabIndex = 24;
+            this.btnModificar.TabIndex = 30;
             this.btnModificar.Text = "MODIFICAR [F3]";
             this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnNuevo
             // 
             this.btnNuevo.BackColor = System.Drawing.Color.Gainsboro;
             this.btnNuevo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Location = new System.Drawing.Point(624, 13);
+            this.btnNuevo.Location = new System.Drawing.Point(628, 11);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(146, 27);
-            this.btnNuevo.TabIndex = 25;
+            this.btnNuevo.TabIndex = 31;
             this.btnNuevo.Text = "NUEVO [F2]";
             this.btnNuevo.UseVisualStyleBackColor = false;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // Municipalidad
             // 
@@ -370,12 +380,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(850, 436);
-            this.Controls.Add(this.groupInformacion);
-            this.Controls.Add(this.Grid);
+            this.ClientSize = new System.Drawing.Size(850, 480);
+            this.Controls.Add(this.btnCuotas);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnNuevo);
+            this.Controls.Add(this.groupInformacion);
+            this.Controls.Add(this.Grid);
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -401,9 +412,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.DataGridView Grid;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Button btnNuevo;
         private UserControls.TextBox txtTelefono;
         private System.Windows.Forms.Label label5;
         private UserControls.TextBox txtEmail;
@@ -419,5 +427,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Condicion;
+        private System.Windows.Forms.Button btnCuotas;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnNuevo;
     }
 }

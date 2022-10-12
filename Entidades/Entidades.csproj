@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="EntityInventario.cs" />
     <Compile Include="EntityMunicipalidad.cs" />
+    <Compile Include="EntityGasto.cs" />
     <Compile Include="EntityProveedor.cs" />
     <Compile Include="EntityDireccion.cs" />
     <Compile Include="EntityBase.cs" />

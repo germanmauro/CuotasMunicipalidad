@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GastoService.cs" />
     <Compile Include="InventarioFotoService.cs" />
     <Compile Include="InventarioService.cs" />
     <Compile Include="MunicipalidadService.cs" />

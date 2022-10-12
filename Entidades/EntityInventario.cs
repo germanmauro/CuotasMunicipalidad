@@ -12,10 +12,6 @@ namespace Entidades
         public string Nombre { get; set; }
         public string Oficina { get; set; }
         public DateTime? Fecha { get; set; }
-        //public string Telefono { get; set; }
-        //public string CUIT { get; set; }
-        //public string Email { get; set; }
-        //public string Condicion { get; set; }
 
         public EntityInventario()
         {

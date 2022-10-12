@@ -19,6 +19,8 @@ namespace Datos
         public Nullable<decimal> importe { get; set; }
         public string numero_factura { get; set; }
         public Nullable<System.DateTime> fecha { get; set; }
+        public string descripcion { get; set; }
+        public string forma_pago { get; set; }
     
         public virtual proveedor proveedor { get; set; }
     }

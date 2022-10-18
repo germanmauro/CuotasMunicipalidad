@@ -27,9 +27,6 @@ namespace Datos
     
         public virtual DbSet<banco> bancos { get; set; }
         public virtual DbSet<categoria> categorias { get; set; }
-        public virtual DbSet<cuota> cuotas { get; set; }
-        public virtual DbSet<cuota_detalle> cuota_detalle { get; set; }
-        public virtual DbSet<gasto> gastos { get; set; }
         public virtual DbSet<inventario> inventarios { get; set; }
         public virtual DbSet<inventario_foto> inventario_foto { get; set; }
         public virtual DbSet<municipalidad> municipalidades { get; set; }
@@ -38,5 +35,8 @@ namespace Datos
         public virtual DbSet<proveedor> proveedores { get; set; }
         public virtual DbSet<subcategoria> subcategorias { get; set; }
         public virtual DbSet<user> users { get; set; }
+        public virtual DbSet<compra> compras { get; set; }
+        public virtual DbSet<cuota> cuotas { get; set; }
+        public virtual DbSet<ingreso> ingresos { get; set; }
     }
 }

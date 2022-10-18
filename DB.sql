@@ -32,17 +32,6 @@ CREATE TABLE proveedor (
 	observaciones varchar(300)
 );
 
-CREATE TABLE categoria (
-	id int IDENTITY(1,1) PRIMARY KEY,
-	nombre varchar(50)
-);
-
-CREATE TABLE subcategoria (
-	id int IDENTITY(1,1) PRIMARY KEY,
-	nombre varchar(50),
-	categoria_id int not null FOREIGN KEY REFERENCES categoria(id)
-);
-
 CREATE TABLE municipalidad (
 	id int IDENTITY(1,1) PRIMARY KEY,
 	nombre varchar(50),
@@ -50,7 +39,10 @@ CREATE TABLE municipalidad (
 	direccion varchar(200),
 	mail varchar(100),
 	telefono varchar(20),
-	condicion_iva varchar(30)
+	condicion_iva varchar(30),
+	monto decimal(8,2),
+	dia_vencimiento smallint,
+	porcentaje_aumento_vencimiento decimal(8,2)
 );
 
 CREATE TABLE banco (
@@ -81,7 +73,7 @@ CREATE TABLE inventario_foto(
 );
 
 
-CREATE TABLE gasto (
+CREATE TABLE compra (
 	id int IDENTITY(1,1) PRIMARY KEY,
 	proveedor_id int not null FOREIGN KEY REFERENCES proveedor(id),
 	importe decimal(8,2),
@@ -91,22 +83,26 @@ CREATE TABLE gasto (
 	forma_pago varchar(30)
 );
 
-CREATE TABLE cuota (
+CREATE TABLE ingreso (
 	id int IDENTITY(1,1) PRIMARY KEY,
 	municipalidad_id int not null FOREIGN KEY REFERENCES municipalidad(id),
-	monto decimal(8,2),
-	dia_vencimiento smallint,
-	porcentaje_aumento_vencimiento decimal(8,2)
+	banco_id int not null FOREIGN KEY REFERENCES banco(id),
+	importe decimal(8,2),
+	fecha date,
+	descripcion varchar(200),
+	forma_pago varchar(30)
 );
 
-CREATE TABLE cuota_detalle (
+CREATE TABLE cuota(
 	id int IDENTITY(1,1) PRIMARY KEY,
-	cuota_id int not null FOREIGN KEY REFERENCES cuota(id),
+	municipalidad_id int not null FOREIGN KEY REFERENCES municipalidad(id),
+	banco_id int null FOREIGN KEY REFERENCES banco(id),
+	intereses decimal(8,2) default '0.0',
 	monto decimal(8,2),
 	monto_abonado decimal(8,2) default '0.00',
 	vencimiento date,
 	fecha_pago datetime,
-	estado varchar(20) default 'A Pagar'
+	estado varchar(20) default 'A Pagar',
 );
 
 /*

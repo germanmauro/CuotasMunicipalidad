@@ -18,6 +18,7 @@ namespace Datos
         public municipalidad()
         {
             this.cuotas = new HashSet<cuota>();
+            this.ingresoes = new HashSet<ingreso>();
         }
     
         public int id { get; set; }
@@ -27,8 +28,13 @@ namespace Datos
         public string mail { get; set; }
         public string telefono { get; set; }
         public string condicion_iva { get; set; }
+        public Nullable<decimal> monto { get; set; }
+        public Nullable<short> dia_vencimiento { get; set; }
+        public Nullable<decimal> porcentaje_aumento_vencimiento { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<cuota> cuotas { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ingreso> ingresoes { get; set; }
     }
 }

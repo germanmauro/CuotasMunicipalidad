@@ -57,16 +57,16 @@
     <Compile Include="categoria.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="compra.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Conexion.cs" />
     <Compile Include="cuota.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="cuota_detalle.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="DatosDB.cs" />
     <Compile Include="Extensiones\users.cs" />
-    <Compile Include="gasto.cs">
+    <Compile Include="ingreso.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="inventario.cs">

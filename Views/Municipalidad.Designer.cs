@@ -46,6 +46,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.Grid = new System.Windows.Forms.DataGridView();
+            this.btnCuotas = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.txtMonto = new UserControls.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtVencimiento = new UserControls.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtPorcentajeAumento = new UserControls.TextBox();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CUIT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,16 +63,21 @@
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Condicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnCuotas = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.Button();
+            this.MontoCuota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaAumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PorcentajeAumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupInformacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.SuspendLayout();
             // 
             // groupInformacion
             // 
+            this.groupInformacion.Controls.Add(this.txtPorcentajeAumento);
+            this.groupInformacion.Controls.Add(this.txtVencimiento);
+            this.groupInformacion.Controls.Add(this.txtMonto);
+            this.groupInformacion.Controls.Add(this.label9);
+            this.groupInformacion.Controls.Add(this.label8);
+            this.groupInformacion.Controls.Add(this.label7);
             this.groupInformacion.Controls.Add(this.cmbCondicion);
             this.groupInformacion.Controls.Add(this.label6);
             this.groupInformacion.Controls.Add(this.txtTelefono);
@@ -77,9 +92,9 @@
             this.groupInformacion.Controls.Add(this.label1);
             this.groupInformacion.Controls.Add(this.btnGuardar);
             this.groupInformacion.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupInformacion.Location = new System.Drawing.Point(546, 192);
+            this.groupInformacion.Location = new System.Drawing.Point(559, 192);
             this.groupInformacion.Name = "groupInformacion";
-            this.groupInformacion.Size = new System.Drawing.Size(292, 255);
+            this.groupInformacion.Size = new System.Drawing.Size(302, 353);
             this.groupInformacion.TabIndex = 27;
             this.groupInformacion.TabStop = false;
             this.groupInformacion.Text = "Información";
@@ -88,7 +103,7 @@
             // 
             this.cmbCondicion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCondicion.FormattingEnabled = true;
-            this.cmbCondicion.Location = new System.Drawing.Point(115, 158);
+            this.cmbCondicion.Location = new System.Drawing.Point(130, 158);
             this.cmbCondicion.Name = "cmbCondicion";
             this.cmbCondicion.Size = new System.Drawing.Size(159, 21);
             this.cmbCondicion.TabIndex = 6;
@@ -104,7 +119,8 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(115, 132);
+            this.txtTelefono.Location = new System.Drawing.Point(130, 132);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtTelefono.Max = 30;
             this.txtTelefono.Min = 0;
             this.txtTelefono.Name = "txtTelefono";
@@ -125,7 +141,8 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(115, 107);
+            this.txtEmail.Location = new System.Drawing.Point(130, 107);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtEmail.Max = 100;
             this.txtEmail.Min = 0;
             this.txtEmail.Name = "txtEmail";
@@ -146,7 +163,8 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(115, 82);
+            this.txtDireccion.Location = new System.Drawing.Point(130, 82);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtDireccion.Max = 200;
             this.txtDireccion.Min = 0;
             this.txtDireccion.Name = "txtDireccion";
@@ -167,7 +185,8 @@
             // 
             // txtCUIT
             // 
-            this.txtCUIT.Location = new System.Drawing.Point(115, 57);
+            this.txtCUIT.Location = new System.Drawing.Point(130, 57);
+            this.txtCUIT.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtCUIT.Max = 20;
             this.txtCUIT.Min = 0;
             this.txtCUIT.Name = "txtCUIT";
@@ -188,7 +207,8 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(115, 30);
+            this.txtNombre.Location = new System.Drawing.Point(130, 30);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtNombre.Max = 25;
             this.txtNombre.Min = 0;
             this.txtNombre.Name = "txtNombre";
@@ -211,7 +231,7 @@
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.Gainsboro;
             this.btnGuardar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(82, 204);
+            this.btnGuardar.Location = new System.Drawing.Point(82, 310);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(131, 27);
             this.btnGuardar.TabIndex = 0;
@@ -243,7 +263,10 @@
             this.Direccion,
             this.Telefono,
             this.Email,
-            this.Condicion});
+            this.Condicion,
+            this.MontoCuota,
+            this.DiaAumento,
+            this.PorcentajeAumento});
             this.Grid.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -267,9 +290,120 @@
             this.Grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.Grid.RowHeadersVisible = false;
             this.Grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid.Size = new System.Drawing.Size(538, 436);
+            this.Grid.Size = new System.Drawing.Size(552, 534);
             this.Grid.TabIndex = 26;
             this.Grid.SelectionChanged += new System.EventHandler(this.Grid_SelectionChanged);
+            // 
+            // btnCuotas
+            // 
+            this.btnCuotas.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnCuotas.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCuotas.Location = new System.Drawing.Point(631, 150);
+            this.btnCuotas.Name = "btnCuotas";
+            this.btnCuotas.Size = new System.Drawing.Size(146, 27);
+            this.btnCuotas.TabIndex = 32;
+            this.btnCuotas.Text = "CUOTAS [F6]";
+            this.btnCuotas.UseVisualStyleBackColor = false;
+            this.btnCuotas.Click += new System.EventHandler(this.btnCuotas_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnEliminar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(631, 103);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(146, 27);
+            this.btnEliminar.TabIndex = 29;
+            this.btnEliminar.Text = "ELIMINAR [F4]";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnModificar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Location = new System.Drawing.Point(631, 57);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(146, 27);
+            this.btnModificar.TabIndex = 30;
+            this.btnModificar.Text = "MODIFICAR [F3]";
+            this.btnModificar.UseVisualStyleBackColor = false;
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnNuevo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.Location = new System.Drawing.Point(631, 11);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(146, 27);
+            this.btnNuevo.TabIndex = 31;
+            this.btnNuevo.Text = "NUEVO [F2]";
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            // 
+            // txtMonto
+            // 
+            this.txtMonto.Location = new System.Drawing.Point(130, 188);
+            this.txtMonto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtMonto.Max = 1000000;
+            this.txtMonto.Min = 1;
+            this.txtMonto.Name = "txtMonto";
+            this.txtMonto.Nombre = "Monto Cuota";
+            this.txtMonto.Obligatorio = true;
+            this.txtMonto.Size = new System.Drawing.Size(159, 19);
+            this.txtMonto.TabIndex = 8;
+            this.txtMonto.Tipo = UserControls.Tipo.Decimal;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 188);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(79, 13);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Monto Cuota";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 218);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(117, 13);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Día de Vencimiento";
+            // 
+            // txtVencimiento
+            // 
+            this.txtVencimiento.Location = new System.Drawing.Point(130, 218);
+            this.txtVencimiento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.txtVencimiento.Max = 30;
+            this.txtVencimiento.Min = 1;
+            this.txtVencimiento.Name = "txtVencimiento";
+            this.txtVencimiento.Nombre = "Día Vencimiento";
+            this.txtVencimiento.Obligatorio = true;
+            this.txtVencimiento.Size = new System.Drawing.Size(159, 19);
+            this.txtVencimiento.TabIndex = 8;
+            this.txtVencimiento.Tipo = UserControls.Tipo.Numero;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 247);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(123, 13);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Porcentaje Aumento";
+            // 
+            // txtPorcentajeAumento
+            // 
+            this.txtPorcentajeAumento.Location = new System.Drawing.Point(130, 247);
+            this.txtPorcentajeAumento.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
+            this.txtPorcentajeAumento.Max = 300;
+            this.txtPorcentajeAumento.Min = 0;
+            this.txtPorcentajeAumento.Name = "txtPorcentajeAumento";
+            this.txtPorcentajeAumento.Nombre = "Porcentaje de aumento";
+            this.txtPorcentajeAumento.Obligatorio = true;
+            this.txtPorcentajeAumento.Size = new System.Drawing.Size(159, 19);
+            this.txtPorcentajeAumento.TabIndex = 8;
+            this.txtPorcentajeAumento.Tipo = UserControls.Tipo.Decimal;
             // 
             // id
             // 
@@ -329,50 +463,29 @@
             this.Condicion.Name = "Condicion";
             this.Condicion.ReadOnly = true;
             // 
-            // btnCuotas
+            // MontoCuota
             // 
-            this.btnCuotas.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnCuotas.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCuotas.Location = new System.Drawing.Point(628, 150);
-            this.btnCuotas.Name = "btnCuotas";
-            this.btnCuotas.Size = new System.Drawing.Size(146, 27);
-            this.btnCuotas.TabIndex = 32;
-            this.btnCuotas.Text = "CUOTAS [F6]";
-            this.btnCuotas.UseVisualStyleBackColor = false;
-            this.btnCuotas.Click += new System.EventHandler(this.btnCuotas_Click);
+            this.MontoCuota.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MontoCuota.DataPropertyName = "MontoCuota";
+            this.MontoCuota.HeaderText = "Monto Cuota";
+            this.MontoCuota.Name = "MontoCuota";
+            this.MontoCuota.ReadOnly = true;
             // 
-            // btnEliminar
+            // DiaAumento
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnEliminar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(628, 103);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(146, 27);
-            this.btnEliminar.TabIndex = 29;
-            this.btnEliminar.Text = "ELIMINAR [F4]";
-            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.DiaAumento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DiaAumento.DataPropertyName = "DiaAumento";
+            this.DiaAumento.HeaderText = "Día Aumento";
+            this.DiaAumento.Name = "DiaAumento";
+            this.DiaAumento.ReadOnly = true;
             // 
-            // btnModificar
+            // PorcentajeAumento
             // 
-            this.btnModificar.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnModificar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(628, 57);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(146, 27);
-            this.btnModificar.TabIndex = 30;
-            this.btnModificar.Text = "MODIFICAR [F3]";
-            this.btnModificar.UseVisualStyleBackColor = false;
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnNuevo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Location = new System.Drawing.Point(628, 11);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(146, 27);
-            this.btnNuevo.TabIndex = 31;
-            this.btnNuevo.Text = "NUEVO [F2]";
-            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.PorcentajeAumento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PorcentajeAumento.DataPropertyName = "PorcentajeAumento";
+            this.PorcentajeAumento.HeaderText = "% Aumento";
+            this.PorcentajeAumento.Name = "PorcentajeAumento";
+            this.PorcentajeAumento.ReadOnly = true;
             // 
             // Municipalidad
             // 
@@ -380,7 +493,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(850, 480);
+            this.ClientSize = new System.Drawing.Size(864, 557);
             this.Controls.Add(this.btnCuotas);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
@@ -420,6 +533,16 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbCondicion;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnCuotas;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnNuevo;
+        private UserControls.TextBox txtPorcentajeAumento;
+        private UserControls.TextBox txtVencimiento;
+        private UserControls.TextBox txtMonto;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn CUIT;
@@ -427,9 +550,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Condicion;
-        private System.Windows.Forms.Button btnCuotas;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MontoCuota;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiaAumento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PorcentajeAumento;
     }
 }

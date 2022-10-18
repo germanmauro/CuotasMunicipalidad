@@ -9,17 +9,17 @@ using Entidades;
 
 namespace BLL
 {
-    public class GastoService
+    public class CompraService
     {
 
         const int CANTIDAD_FOTOS = 3;
-        public static void Guardar(gasto ent)
+        public static void Guardar(compra ent)
         {
             try
             {
                 using (CuotasEntities db = new CuotasEntities())
                 {
-                    db.gastos.Add(ent);
+                    db.compras.Add(ent);
                     db.SaveChanges();
                     Utilidades.MensajesOK("Registro generado con exito");
                 }
@@ -31,13 +31,13 @@ namespace BLL
 
         }
 
-        public static void Modificar(gasto ent)
+        public static void Modificar(compra ent)
         {
             try
             {
                 using (CuotasEntities db = new CuotasEntities())
                 {
-                    gasto ent_update = db.gastos.Find(ent.id);
+                    compra ent_update = db.compras.Find(ent.id);
                     ent_update.descripcion = ent.descripcion;
                     ent_update.proveedor_id = ent.proveedor_id;
                     ent_update.importe = ent.importe;
@@ -54,14 +54,14 @@ namespace BLL
             }
         }
 
-        public static void Eliminar(gasto ent)
+        public static void Eliminar(compra ent)
         {
             try
             {
                 using (CuotasEntities db = new CuotasEntities())
                 {
-                    gasto ent_update = db.gastos.Find(ent.id);
-                    db.gastos.Remove(ent_update);
+                    compra ent_update = db.compras.Find(ent.id);
+                    db.compras.Remove(ent_update);
                     db.SaveChanges();
                     Utilidades.MensajesOK("Registro eliminado con exito");
                 }
@@ -72,13 +72,13 @@ namespace BLL
             }
         }
 
-        public static gasto Obtener(int id)
+        public static compra Obtener(int id)
         {
             try
             {
                 using (CuotasEntities db = new CuotasEntities())
                 {
-                    return db.gastos.Find(id);
+                    return db.compras.Find(id);
                 }
             }
             catch (Exception)
@@ -95,7 +95,7 @@ namespace BLL
                 using (CuotasEntities db = new CuotasEntities())
                 {
                     List<EntityGasto> lista = new List<EntityGasto>();
-                    foreach (var item in db.gastos)
+                    foreach (var item in db.compras)
                     {
                         lista.Add(new EntityGasto{ Id = item.id,Descripcion= item.descripcion, FormaPago = item.forma_pago,Proveedor = item.proveedor.nombre, Importe = item.importe,Fecha = item.fecha, NumeroFactura = item.numero_factura});
                     };

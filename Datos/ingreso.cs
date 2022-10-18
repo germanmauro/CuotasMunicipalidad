@@ -12,16 +12,17 @@ namespace Datos
     using System;
     using System.Collections.Generic;
     
-    public partial class cuota_detalle
+    public partial class ingreso
     {
         public int id { get; set; }
-        public int cuota_id { get; set; }
-        public Nullable<decimal> monto { get; set; }
-        public Nullable<decimal> monto_abonado { get; set; }
-        public Nullable<System.DateTime> vencimiento { get; set; }
-        public Nullable<System.DateTime> fecha_pago { get; set; }
-        public string estado { get; set; }
+        public int municipalidad_id { get; set; }
+        public int banco_id { get; set; }
+        public Nullable<decimal> importe { get; set; }
+        public Nullable<System.DateTime> fecha { get; set; }
+        public string descripcion { get; set; }
+        public string forma_pago { get; set; }
     
-        public virtual cuota cuota { get; set; }
+        public virtual banco banco { get; set; }
+        public virtual municipalidad municipalidad { get; set; }
     }
 }

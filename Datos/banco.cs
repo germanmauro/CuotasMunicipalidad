@@ -14,8 +14,23 @@ namespace Datos
     
     public partial class banco
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public banco()
+        {
+            this.compras = new HashSet<compra>();
+            this.cuotas = new HashSet<cuota>();
+            this.ingresoes = new HashSet<ingreso>();
+        }
+    
         public int id { get; set; }
         public string nombre { get; set; }
         public string direccion { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<compra> compras { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<cuota> cuotas { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ingreso> ingresoes { get; set; }
     }
 }

@@ -100,17 +100,17 @@
     <Compile Include="Fotos.Designer.cs">
       <DependentUpon>Fotos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gastos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Gastos.Designer.cs">
-      <DependentUpon>Gastos.cs</DependentUpon>
-    </Compile>
     <Compile Include="MiUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MiUsuario.Designer.cs">
       <DependentUpon>MiUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gastos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gastos.Designer.cs">
+      <DependentUpon>Gastos.cs</DependentUpon>
     </Compile>
     <Compile Include="Inventario.cs">
       <SubType>Form</SubType>
@@ -259,11 +259,11 @@
     <EmbeddedResource Include="Fotos.resx">
       <DependentUpon>Fotos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gastos.resx">
-      <DependentUpon>Gastos.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MiUsuario.resx">
       <DependentUpon>MiUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gastos.resx">
+      <DependentUpon>Gastos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventario.resx">
       <DependentUpon>Inventario.cs</DependentUpon>
@@ -426,6 +426,7 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="ToDo.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Inventario\" />

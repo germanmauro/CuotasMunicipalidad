@@ -20,36 +20,41 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="compra">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="proveedor_id" Type="int" Nullable="false" />
+          <Property Name="banco_id" Type="int" Nullable="false" />
+          <Property Name="importe" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="numero_factura" Type="varchar" MaxLength="20" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="descripcion" Type="varchar" MaxLength="200" />
+          <Property Name="forma_pago" Type="varchar" MaxLength="30" />
+        </EntityType>
         <EntityType Name="cuota">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="municipalidad_id" Type="int" Nullable="false" />
-          <Property Name="monto" Type="decimal" Precision="8" Scale="2" />
-          <Property Name="dia_vencimiento" Type="smallint" />
-          <Property Name="porcentaje_aumento_vencimiento" Type="decimal" Precision="8" Scale="2" />
-        </EntityType>
-        <EntityType Name="cuota_detalle">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="cuota_id" Type="int" Nullable="false" />
+          <Property Name="banco_id" Type="int" />
+          <Property Name="intereses" Type="decimal" Precision="8" Scale="2" />
           <Property Name="monto" Type="decimal" Precision="8" Scale="2" />
           <Property Name="monto_abonado" Type="decimal" Precision="8" Scale="2" />
           <Property Name="vencimiento" Type="date" />
           <Property Name="fecha_pago" Type="datetime" />
           <Property Name="estado" Type="varchar" MaxLength="20" />
         </EntityType>
-        <EntityType Name="gasto">
+        <EntityType Name="ingreso">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="proveedor_id" Type="int" Nullable="false" />
+          <Property Name="municipalidad_id" Type="int" Nullable="false" />
+          <Property Name="banco_id" Type="int" Nullable="false" />
           <Property Name="importe" Type="decimal" Precision="8" Scale="2" />
-          <Property Name="numero_factura" Type="varchar" MaxLength="20" />
           <Property Name="fecha" Type="date" />
           <Property Name="descripcion" Type="varchar" MaxLength="200" />
           <Property Name="forma_pago" Type="varchar" MaxLength="30" />
@@ -85,6 +90,9 @@
           <Property Name="mail" Type="varchar" MaxLength="100" />
           <Property Name="telefono" Type="varchar" MaxLength="20" />
           <Property Name="condicion_iva" Type="varchar" MaxLength="30" />
+          <Property Name="monto" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="dia_vencimiento" Type="smallint" />
+          <Property Name="porcentaje_aumento_vencimiento" Type="decimal" Precision="8" Scale="2" />
         </EntityType>
         <EntityType Name="oficina">
           <Key>
@@ -132,7 +140,43 @@
           <Property Name="baja" Type="bit" />
           <Property Name="perfil_id" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK__cuota__municipal__3E52440B">
+        <Association Name="FK__compra__banco_id__6E01572D">
+          <End Role="banco" Type="Self.banco" Multiplicity="1" />
+          <End Role="compra" Type="Self.compra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="banco">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="compra">
+              <PropertyRef Name="banco_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__compra__proveedo__6D0D32F4">
+          <End Role="proveedor" Type="Self.proveedor" Multiplicity="1" />
+          <End Role="compra" Type="Self.compra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proveedor">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="compra">
+              <PropertyRef Name="proveedor_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__cuota__banco_id__6754599E">
+          <End Role="banco" Type="Self.banco" Multiplicity="0..1" />
+          <End Role="cuota" Type="Self.cuota" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="banco">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cuota">
+              <PropertyRef Name="banco_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__cuota__municipal__66603565">
           <End Role="municipalidad" Type="Self.municipalidad" Multiplicity="1" />
           <End Role="cuota" Type="Self.cuota" Multiplicity="*" />
           <ReferentialConstraint>
@@ -144,27 +188,27 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__cuota_det__cuota__412EB0B6">
-          <End Role="cuota" Type="Self.cuota" Multiplicity="1" />
-          <End Role="cuota_detalle" Type="Self.cuota_detalle" Multiplicity="*" />
+        <Association Name="FK__ingreso__banco_i__6383C8BA">
+          <End Role="banco" Type="Self.banco" Multiplicity="1" />
+          <End Role="ingreso" Type="Self.ingreso" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="cuota">
+            <Principal Role="banco">
               <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="cuota_detalle">
-              <PropertyRef Name="cuota_id" />
+            <Dependent Role="ingreso">
+              <PropertyRef Name="banco_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__gasto__proveedor__49C3F6B7">
-          <End Role="proveedor" Type="Self.proveedor" Multiplicity="1" />
-          <End Role="gasto" Type="Self.gasto" Multiplicity="*" />
+        <Association Name="FK__ingreso__municip__628FA481">
+          <End Role="municipalidad" Type="Self.municipalidad" Multiplicity="1" />
+          <End Role="ingreso" Type="Self.ingreso" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="proveedor">
+            <Principal Role="municipalidad">
               <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="gasto">
-              <PropertyRef Name="proveedor_id" />
+            <Dependent Role="ingreso">
+              <PropertyRef Name="municipalidad_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -219,9 +263,9 @@
         <EntityContainer Name="CuotasModelStoreContainer">
           <EntitySet Name="banco" EntityType="Self.banco" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="categoria" EntityType="Self.categoria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="compra" EntityType="Self.compra" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="cuota" EntityType="Self.cuota" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="cuota_detalle" EntityType="Self.cuota_detalle" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="gasto" EntityType="Self.gasto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ingreso" EntityType="Self.ingreso" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="inventario" EntityType="Self.inventario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="inventario_foto" EntityType="Self.inventario_foto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="municipalidad" EntityType="Self.municipalidad" Schema="dbo" store:Type="Tables" />
@@ -230,17 +274,29 @@
           <EntitySet Name="proveedor" EntityType="Self.proveedor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="subcategoria" EntityType="Self.subcategoria" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__cuota__municipal__3E52440B" Association="Self.FK__cuota__municipal__3E52440B">
+          <AssociationSet Name="FK__compra__banco_id__6E01572D" Association="Self.FK__compra__banco_id__6E01572D">
+            <End Role="banco" EntitySet="banco" />
+            <End Role="compra" EntitySet="compra" />
+          </AssociationSet>
+          <AssociationSet Name="FK__compra__proveedo__6D0D32F4" Association="Self.FK__compra__proveedo__6D0D32F4">
+            <End Role="proveedor" EntitySet="proveedor" />
+            <End Role="compra" EntitySet="compra" />
+          </AssociationSet>
+          <AssociationSet Name="FK__cuota__banco_id__6754599E" Association="Self.FK__cuota__banco_id__6754599E">
+            <End Role="banco" EntitySet="banco" />
+            <End Role="cuota" EntitySet="cuota" />
+          </AssociationSet>
+          <AssociationSet Name="FK__cuota__municipal__66603565" Association="Self.FK__cuota__municipal__66603565">
             <End Role="municipalidad" EntitySet="municipalidad" />
             <End Role="cuota" EntitySet="cuota" />
           </AssociationSet>
-          <AssociationSet Name="FK__cuota_det__cuota__412EB0B6" Association="Self.FK__cuota_det__cuota__412EB0B6">
-            <End Role="cuota" EntitySet="cuota" />
-            <End Role="cuota_detalle" EntitySet="cuota_detalle" />
+          <AssociationSet Name="FK__ingreso__banco_i__6383C8BA" Association="Self.FK__ingreso__banco_i__6383C8BA">
+            <End Role="banco" EntitySet="banco" />
+            <End Role="ingreso" EntitySet="ingreso" />
           </AssociationSet>
-          <AssociationSet Name="FK__gasto__proveedor__49C3F6B7" Association="Self.FK__gasto__proveedor__49C3F6B7">
-            <End Role="proveedor" EntitySet="proveedor" />
-            <End Role="gasto" EntitySet="gasto" />
+          <AssociationSet Name="FK__ingreso__municip__628FA481" Association="Self.FK__ingreso__municip__628FA481">
+            <End Role="municipalidad" EntitySet="municipalidad" />
+            <End Role="ingreso" EntitySet="ingreso" />
           </AssociationSet>
           <AssociationSet Name="FK__inventari__inven__5441852A" Association="Self.FK__inventari__inven__5441852A">
             <End Role="inventario" EntitySet="inventario" />
@@ -270,6 +326,9 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="compras" Relationship="CuotasModel.FK__compra__banco_id__6E01572D" FromRole="banco" ToRole="compra" />
+          <NavigationProperty Name="cuotas" Relationship="CuotasModel.FK__cuota__banco_id__6754599E" FromRole="banco" ToRole="cuota" />
+          <NavigationProperty Name="ingresoes" Relationship="CuotasModel.FK__ingreso__banco_i__6383C8BA" FromRole="banco" ToRole="ingreso" />
         </EntityType>
         <EntityType Name="categoria">
           <Key>
@@ -278,44 +337,6 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="subcategorias" Relationship="Self.FK__subcatego__categ__2F10007B" FromRole="categoria" ToRole="subcategoria" />
-        </EntityType>
-        <EntityType Name="cuota">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="municipalidad_id" Type="Int32" Nullable="false" />
-          <Property Name="monto" Type="Decimal" Precision="8" Scale="2" />
-          <Property Name="dia_vencimiento" Type="Int16" />
-          <Property Name="porcentaje_aumento_vencimiento" Type="Decimal" Precision="8" Scale="2" />
-          <NavigationProperty Name="municipalidad" Relationship="Self.FK__cuota__municipal__3E52440B" FromRole="cuota" ToRole="municipalidad" />
-          <NavigationProperty Name="cuota_detalle" Relationship="Self.FK__cuota_det__cuota__412EB0B6" FromRole="cuota" ToRole="cuota_detalle" />
-        </EntityType>
-        <EntityType Name="cuota_detalle">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="cuota_id" Type="Int32" Nullable="false" />
-          <Property Name="monto" Type="Decimal" Precision="8" Scale="2" />
-          <Property Name="monto_abonado" Type="Decimal" Precision="8" Scale="2" />
-          <Property Name="vencimiento" Type="DateTime" Precision="0" />
-          <Property Name="fecha_pago" Type="DateTime" Precision="3" />
-          <Property Name="estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="cuota" Relationship="Self.FK__cuota_det__cuota__412EB0B6" FromRole="cuota_detalle" ToRole="cuota" />
-        </EntityType>
-        <EntityType Name="gasto">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="proveedor_id" Type="Int32" Nullable="false" />
-          <Property Name="importe" Type="Decimal" Precision="8" Scale="2" />
-          <Property Name="numero_factura" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="fecha" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="proveedor" Relationship="Self.FK__gasto__proveedor__49C3F6B7" FromRole="gasto" ToRole="proveedor" />
-          <Property Name="descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="forma_pago" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="inventario">
           <Key>
@@ -351,7 +372,11 @@
           <Property Name="mail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="condicion_iva" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="cuotas" Relationship="Self.FK__cuota__municipal__3E52440B" FromRole="municipalidad" ToRole="cuota" />
+          <Property Name="monto" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="dia_vencimiento" Type="Int16" />
+          <Property Name="porcentaje_aumento_vencimiento" Type="Decimal" Precision="8" Scale="2" />
+          <NavigationProperty Name="cuotas" Relationship="CuotasModel.FK__cuota__municipal__66603565" FromRole="municipalidad" ToRole="cuota" />
+          <NavigationProperty Name="ingresoes" Relationship="CuotasModel.FK__ingreso__municip__628FA481" FromRole="municipalidad" ToRole="ingreso" />
         </EntityType>
         <EntityType Name="oficina">
           <Key>
@@ -380,7 +405,7 @@
           <Property Name="mail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="observaciones" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="gastoes" Relationship="Self.FK__gasto__proveedor__49C3F6B7" FromRole="proveedor" ToRole="gasto" />
+          <NavigationProperty Name="compras" Relationship="CuotasModel.FK__compra__proveedo__6D0D32F4" FromRole="proveedor" ToRole="compra" />
         </EntityType>
         <EntityType Name="subcategoria">
           <Key>
@@ -413,42 +438,6 @@
             </Principal>
             <Dependent Role="subcategoria">
               <PropertyRef Name="categoria_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__cuota__municipal__3E52440B">
-          <End Role="municipalidad" Type="Self.municipalidad" Multiplicity="1" />
-          <End Role="cuota" Type="Self.cuota" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="municipalidad">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="cuota">
-              <PropertyRef Name="municipalidad_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__cuota_det__cuota__412EB0B6">
-          <End Role="cuota" Type="Self.cuota" Multiplicity="1" />
-          <End Role="cuota_detalle" Type="Self.cuota_detalle" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="cuota">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="cuota_detalle">
-              <PropertyRef Name="cuota_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__gasto__proveedor__49C3F6B7">
-          <End Role="proveedor" Type="Self.proveedor" Multiplicity="1" />
-          <End Role="gasto" Type="Self.gasto" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="proveedor">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="gasto">
-              <PropertyRef Name="proveedor_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -491,9 +480,6 @@
         <EntityContainer Name="CuotasEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="bancoes" EntityType="Self.banco" />
           <EntitySet Name="categorias" EntityType="Self.categoria" />
-          <EntitySet Name="cuotas" EntityType="Self.cuota" />
-          <EntitySet Name="cuota_detalle" EntityType="Self.cuota_detalle" />
-          <EntitySet Name="gastoes" EntityType="Self.gasto" />
           <EntitySet Name="inventarios" EntityType="Self.inventario" />
           <EntitySet Name="inventario_foto" EntityType="Self.inventario_foto" />
           <EntitySet Name="municipalidads" EntityType="Self.municipalidad" />
@@ -505,18 +491,6 @@
           <AssociationSet Name="FK__subcatego__categ__2F10007B" Association="Self.FK__subcatego__categ__2F10007B">
             <End Role="categoria" EntitySet="categorias" />
             <End Role="subcategoria" EntitySet="subcategorias" />
-          </AssociationSet>
-          <AssociationSet Name="FK__cuota__municipal__3E52440B" Association="Self.FK__cuota__municipal__3E52440B">
-            <End Role="municipalidad" EntitySet="municipalidads" />
-            <End Role="cuota" EntitySet="cuotas" />
-          </AssociationSet>
-          <AssociationSet Name="FK__cuota_det__cuota__412EB0B6" Association="Self.FK__cuota_det__cuota__412EB0B6">
-            <End Role="cuota" EntitySet="cuotas" />
-            <End Role="cuota_detalle" EntitySet="cuota_detalle" />
-          </AssociationSet>
-          <AssociationSet Name="FK__gasto__proveedor__49C3F6B7" Association="Self.FK__gasto__proveedor__49C3F6B7">
-            <End Role="proveedor" EntitySet="proveedors" />
-            <End Role="gasto" EntitySet="gastoes" />
           </AssociationSet>
           <AssociationSet Name="FK__inventari__inven__5441852A" Association="Self.FK__inventari__inven__5441852A">
             <End Role="inventario" EntitySet="inventarios" />
@@ -530,7 +504,151 @@
             <End Role="perfil" EntitySet="perfils" />
             <End Role="users" EntitySet="users" />
           </AssociationSet>
+          <EntitySet Name="compras" EntityType="CuotasModel.compra" />
+          <EntitySet Name="cuotas" EntityType="CuotasModel.cuota" />
+          <EntitySet Name="ingresoes" EntityType="CuotasModel.ingreso" />
+          <AssociationSet Name="FK__compra__banco_id__6E01572D" Association="CuotasModel.FK__compra__banco_id__6E01572D">
+            <End Role="banco" EntitySet="bancoes" />
+            <End Role="compra" EntitySet="compras" />
+          </AssociationSet>
+          <AssociationSet Name="FK__cuota__banco_id__6754599E" Association="CuotasModel.FK__cuota__banco_id__6754599E">
+            <End Role="banco" EntitySet="bancoes" />
+            <End Role="cuota" EntitySet="cuotas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ingreso__banco_i__6383C8BA" Association="CuotasModel.FK__ingreso__banco_i__6383C8BA">
+            <End Role="banco" EntitySet="bancoes" />
+            <End Role="ingreso" EntitySet="ingresoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__compra__proveedo__6D0D32F4" Association="CuotasModel.FK__compra__proveedo__6D0D32F4">
+            <End Role="proveedor" EntitySet="proveedors" />
+            <End Role="compra" EntitySet="compras" />
+          </AssociationSet>
+          <AssociationSet Name="FK__cuota__municipal__66603565" Association="CuotasModel.FK__cuota__municipal__66603565">
+            <End Role="municipalidad" EntitySet="municipalidads" />
+            <End Role="cuota" EntitySet="cuotas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ingreso__municip__628FA481" Association="CuotasModel.FK__ingreso__municip__628FA481">
+            <End Role="municipalidad" EntitySet="municipalidads" />
+            <End Role="ingreso" EntitySet="ingresoes" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="compra">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="proveedor_id" Type="Int32" Nullable="false" />
+          <Property Name="banco_id" Type="Int32" Nullable="false" />
+          <Property Name="importe" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="numero_factura" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="forma_pago" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="banco" Relationship="CuotasModel.FK__compra__banco_id__6E01572D" FromRole="compra" ToRole="banco" />
+          <NavigationProperty Name="proveedor" Relationship="CuotasModel.FK__compra__proveedo__6D0D32F4" FromRole="compra" ToRole="proveedor" />
+        </EntityType>
+        <EntityType Name="cuota">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="municipalidad_id" Type="Int32" Nullable="false" />
+          <Property Name="banco_id" Type="Int32" />
+          <Property Name="intereses" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="monto" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="monto_abonado" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="vencimiento" Type="DateTime" Precision="0" />
+          <Property Name="fecha_pago" Type="DateTime" Precision="3" />
+          <Property Name="estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="banco" Relationship="CuotasModel.FK__cuota__banco_id__6754599E" FromRole="cuota" ToRole="banco" />
+          <NavigationProperty Name="municipalidad" Relationship="CuotasModel.FK__cuota__municipal__66603565" FromRole="cuota" ToRole="municipalidad" />
+        </EntityType>
+        <EntityType Name="ingreso">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="municipalidad_id" Type="Int32" Nullable="false" />
+          <Property Name="banco_id" Type="Int32" Nullable="false" />
+          <Property Name="importe" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="forma_pago" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="banco" Relationship="CuotasModel.FK__ingreso__banco_i__6383C8BA" FromRole="ingreso" ToRole="banco" />
+          <NavigationProperty Name="municipalidad" Relationship="CuotasModel.FK__ingreso__municip__628FA481" FromRole="ingreso" ToRole="municipalidad" />
+        </EntityType>
+        <Association Name="FK__compra__banco_id__6E01572D">
+          <End Type="CuotasModel.banco" Role="banco" Multiplicity="1" />
+          <End Type="CuotasModel.compra" Role="compra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="banco">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="compra">
+              <PropertyRef Name="banco_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__cuota__banco_id__6754599E">
+          <End Type="CuotasModel.banco" Role="banco" Multiplicity="0..1" />
+          <End Type="CuotasModel.cuota" Role="cuota" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="banco">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cuota">
+              <PropertyRef Name="banco_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ingreso__banco_i__6383C8BA">
+          <End Type="CuotasModel.banco" Role="banco" Multiplicity="1" />
+          <End Type="CuotasModel.ingreso" Role="ingreso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="banco">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ingreso">
+              <PropertyRef Name="banco_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__compra__proveedo__6D0D32F4">
+          <End Type="CuotasModel.proveedor" Role="proveedor" Multiplicity="1" />
+          <End Type="CuotasModel.compra" Role="compra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proveedor">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="compra">
+              <PropertyRef Name="proveedor_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__cuota__municipal__66603565">
+          <End Type="CuotasModel.municipalidad" Role="municipalidad" Multiplicity="1" />
+          <End Type="CuotasModel.cuota" Role="cuota" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="municipalidad">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cuota">
+              <PropertyRef Name="municipalidad_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ingreso__municip__628FA481">
+          <End Type="CuotasModel.municipalidad" Role="municipalidad" Multiplicity="1" />
+          <End Type="CuotasModel.ingreso" Role="ingreso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="municipalidad">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ingreso">
+              <PropertyRef Name="municipalidad_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -551,43 +669,6 @@
               <MappingFragment StoreEntitySet="categoria">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="cuotas">
-            <EntityTypeMapping TypeName="CuotasModel.cuota">
-              <MappingFragment StoreEntitySet="cuota">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="municipalidad_id" ColumnName="municipalidad_id" />
-                <ScalarProperty Name="monto" ColumnName="monto" />
-                <ScalarProperty Name="dia_vencimiento" ColumnName="dia_vencimiento" />
-                <ScalarProperty Name="porcentaje_aumento_vencimiento" ColumnName="porcentaje_aumento_vencimiento" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="cuota_detalle">
-            <EntityTypeMapping TypeName="CuotasModel.cuota_detalle">
-              <MappingFragment StoreEntitySet="cuota_detalle">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="cuota_id" ColumnName="cuota_id" />
-                <ScalarProperty Name="monto" ColumnName="monto" />
-                <ScalarProperty Name="monto_abonado" ColumnName="monto_abonado" />
-                <ScalarProperty Name="vencimiento" ColumnName="vencimiento" />
-                <ScalarProperty Name="fecha_pago" ColumnName="fecha_pago" />
-                <ScalarProperty Name="estado" ColumnName="estado" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="gastoes">
-            <EntityTypeMapping TypeName="CuotasModel.gasto">
-              <MappingFragment StoreEntitySet="gasto">
-                <ScalarProperty Name="forma_pago" ColumnName="forma_pago" />
-                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="proveedor_id" ColumnName="proveedor_id" />
-                <ScalarProperty Name="importe" ColumnName="importe" />
-                <ScalarProperty Name="numero_factura" ColumnName="numero_factura" />
-                <ScalarProperty Name="fecha" ColumnName="fecha" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -616,6 +697,9 @@
           <EntitySetMapping Name="municipalidads">
             <EntityTypeMapping TypeName="CuotasModel.municipalidad">
               <MappingFragment StoreEntitySet="municipalidad">
+                <ScalarProperty Name="porcentaje_aumento_vencimiento" ColumnName="porcentaje_aumento_vencimiento" />
+                <ScalarProperty Name="dia_vencimiento" ColumnName="dia_vencimiento" />
+                <ScalarProperty Name="monto" ColumnName="monto" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="cuit" ColumnName="cuit" />
@@ -674,6 +758,48 @@
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="baja" ColumnName="baja" />
                 <ScalarProperty Name="perfil_id" ColumnName="perfil_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="compras">
+            <EntityTypeMapping TypeName="CuotasModel.compra">
+              <MappingFragment StoreEntitySet="compra">
+                <ScalarProperty Name="forma_pago" ColumnName="forma_pago" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="numero_factura" ColumnName="numero_factura" />
+                <ScalarProperty Name="importe" ColumnName="importe" />
+                <ScalarProperty Name="banco_id" ColumnName="banco_id" />
+                <ScalarProperty Name="proveedor_id" ColumnName="proveedor_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cuotas">
+            <EntityTypeMapping TypeName="CuotasModel.cuota">
+              <MappingFragment StoreEntitySet="cuota">
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="fecha_pago" ColumnName="fecha_pago" />
+                <ScalarProperty Name="vencimiento" ColumnName="vencimiento" />
+                <ScalarProperty Name="monto_abonado" ColumnName="monto_abonado" />
+                <ScalarProperty Name="monto" ColumnName="monto" />
+                <ScalarProperty Name="intereses" ColumnName="intereses" />
+                <ScalarProperty Name="banco_id" ColumnName="banco_id" />
+                <ScalarProperty Name="municipalidad_id" ColumnName="municipalidad_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ingresoes">
+            <EntityTypeMapping TypeName="CuotasModel.ingreso">
+              <MappingFragment StoreEntitySet="ingreso">
+                <ScalarProperty Name="forma_pago" ColumnName="forma_pago" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="importe" ColumnName="importe" />
+                <ScalarProperty Name="banco_id" ColumnName="banco_id" />
+                <ScalarProperty Name="municipalidad_id" ColumnName="municipalidad_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

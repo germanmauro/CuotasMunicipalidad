@@ -41,7 +41,11 @@ namespace BLL
                     ent_update.cuit = ent.cuit;
                     ent_update.telefono = ent.telefono;
                     ent_update.mail= ent.mail;
-                    ent_update.condicion_iva= ent.condicion_iva;
+                    ent_update.condicion_iva = ent.condicion_iva;
+                    ent_update.monto = ent.monto;
+                    ent_update.dia_vencimiento = ent.dia_vencimiento;
+                    ent_update.porcentaje_aumento_vencimiento = ent.porcentaje_aumento_vencimiento;
+
                     db.SaveChanges();
                     Utilidades.MensajesOK("Registro modificado con exito");
                 }
@@ -80,7 +84,8 @@ namespace BLL
                     foreach (var item in db.municipalidades)
                     {
                         lista.Add(new EntityMunicipalidad { Id = item.id, Nombre = item.nombre, Direccion = item.direccion,
-                        CUIT = item.cuit, Email = item.mail, Telefono = item.telefono, Condicion = item.condicion_iva});
+                        CUIT = item.cuit, Email = item.mail, Telefono = item.telefono, Condicion = item.condicion_iva,
+                        DiaVencimiento = item.dia_vencimiento, MontoCuota = item.monto, PorcentajeAumento = item.porcentaje_aumento_vencimiento});
                     };
                     return lista;
                 }

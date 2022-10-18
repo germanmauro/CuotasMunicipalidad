@@ -35,7 +35,10 @@ namespace StockMyG
                     cuit = txtCUIT.Controls[0].Text,
                     telefono = txtTelefono.Controls[0].Text,
                     mail = txtEmail.Controls[0].Text,
-                    condicion_iva = cmbCondicion.SelectedItem.ToString()
+                    condicion_iva = cmbCondicion.SelectedItem.ToString(),
+                    monto = Convert.ToDecimal(txtMonto.Controls[0].Text),
+                    dia_vencimiento = short.Parse(txtVencimiento.Controls[0].Text),
+                    porcentaje_aumento_vencimiento = Convert.ToDecimal(txtVencimiento.Controls[0].Text)
                 };
 
                 switch (estado)
@@ -147,6 +150,9 @@ namespace StockMyG
             this.txtDireccion.Controls[0].Text = Grid.SelectedRows[0].Cells["Direccion"].Value.ToString();
             this.txtTelefono.Controls[0].Text = Grid.SelectedRows[0].Cells["Telefono"].Value.ToString();
             this.txtEmail.Controls[0].Text = Grid.SelectedRows[0].Cells["Email"].Value.ToString();
+            this.txtMonto.Controls[0].Text = Grid.SelectedRows[0].Cells["MontoCuota"].Value.ToString();
+            this.txtVencimiento.Controls[0].Text = Grid.SelectedRows[0].Cells["DiaVencimiento"].Value.ToString();
+            this.txtPorcentajeAumento.Controls[0].Text = Grid.SelectedRows[0].Cells["PorcentajeAumento"].Value.ToString();
             this.cmbCondicion.SelectedItem = Grid.SelectedRows[0].Cells["Condicion"].Value.ToString();
         }
 
@@ -162,6 +168,9 @@ namespace StockMyG
             this.txtTelefono.Controls[0].Text = "";
             this.txtDireccion.Controls[0].Text = "";
             this.txtEmail.Controls[0].Text = "";
+            this.txtVencimiento.Controls[0].Text = "";
+            this.txtMonto.Controls[0].Text = "";
+            this.txtPorcentajeAumento.Controls[0].Text = "";
             this.cmbCondicion.SelectedText = "";
         }
 

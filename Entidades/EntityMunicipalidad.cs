@@ -15,6 +15,9 @@ namespace Entidades
         public string CUIT { get; set; }
         public string Email { get; set; }
         public string Condicion { get; set; }
+        public decimal? MontoCuota { get; set; }
+        public short? DiaVencimiento { get; set; }
+        public decimal? PorcentajeAumento { get; set; }
 
         public EntityMunicipalidad()
         {

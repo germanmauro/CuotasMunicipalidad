@@ -17,7 +17,7 @@ namespace Datos
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public proveedor()
         {
-            this.gastoes = new HashSet<gasto>();
+            this.compras = new HashSet<compra>();
         }
     
         public int id { get; set; }
@@ -29,6 +29,6 @@ namespace Datos
         public string observaciones { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<gasto> gastoes { get; set; }
+        public virtual ICollection<compra> compras { get; set; }
     }
 }

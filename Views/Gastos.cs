@@ -29,7 +29,7 @@ namespace StockMyG
         {
             if (Validador.VeficarForm(this))
             {
-                Datos.gasto item = new Datos.gasto
+                Datos.compra item = new Datos.compra
                 {
                     descripcion = txtDescripcion.Controls[0].Text,
                     proveedor_id = ((Datos.proveedor)cmbProveedor.SelectedItem).id,
@@ -46,14 +46,14 @@ namespace StockMyG
                     case Formulario.EstadoForm.Seleccionado:
                         break;
                     case Formulario.EstadoForm.Nuevo:
-                        BLL.GastoService.Guardar(item);
+                        BLL.CompraService.Guardar(item);
                         ActualizarGrilla();
                         break;
                     case Formulario.EstadoForm.Modificado:
                         if (MessageBox.Show("¿Desea realizar la modificación?", "Confirmación", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
                             item.id = int.Parse(Grid.SelectedRows[0].Cells["id"].Value.ToString());
-                            BLL.GastoService.Modificar(item);
+                            BLL.CompraService.Modificar(item);
                             ActualizarGrilla();
                         }
                         break;
@@ -101,7 +101,7 @@ namespace StockMyG
         #region Metodos
         private void ActualizarGrilla()
         {
-            Grid.DataSource = BLL.GastoService.Listar();
+            Grid.DataSource = BLL.CompraService.Listar();
             estado = Formulario.EstadoForm.SinDatos;
             ActualizarVista();
         }

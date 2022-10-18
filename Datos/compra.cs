@@ -12,16 +12,18 @@ namespace Datos
     using System;
     using System.Collections.Generic;
     
-    public partial class gasto
+    public partial class compra
     {
         public int id { get; set; }
         public int proveedor_id { get; set; }
+        public int banco_id { get; set; }
         public Nullable<decimal> importe { get; set; }
         public string numero_factura { get; set; }
         public Nullable<System.DateTime> fecha { get; set; }
         public string descripcion { get; set; }
         public string forma_pago { get; set; }
     
+        public virtual banco banco { get; set; }
         public virtual proveedor proveedor { get; set; }
     }
 }

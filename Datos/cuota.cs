@@ -14,20 +14,17 @@ namespace Datos
     
     public partial class cuota
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public cuota()
-        {
-            this.cuota_detalle = new HashSet<cuota_detalle>();
-        }
-    
         public int id { get; set; }
         public int municipalidad_id { get; set; }
+        public Nullable<int> banco_id { get; set; }
+        public Nullable<decimal> intereses { get; set; }
         public Nullable<decimal> monto { get; set; }
-        public Nullable<short> dia_vencimiento { get; set; }
-        public Nullable<decimal> porcentaje_aumento_vencimiento { get; set; }
+        public Nullable<decimal> monto_abonado { get; set; }
+        public Nullable<System.DateTime> vencimiento { get; set; }
+        public Nullable<System.DateTime> fecha_pago { get; set; }
+        public string estado { get; set; }
     
+        public virtual banco banco { get; set; }
         public virtual municipalidad municipalidad { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<cuota_detalle> cuota_detalle { get; set; }
     }
 }

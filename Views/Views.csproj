@@ -94,6 +94,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CuotasPagadas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CuotasPagadas.Designer.cs">
+      <DependentUpon>CuotasPagadas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CuotasPagar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CuotasPagar.Designer.cs">
+      <DependentUpon>CuotasPagar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cuotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cuotas.Designer.cs">
+      <DependentUpon>Cuotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ingresos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ingresos.Designer.cs">
+      <DependentUpon>Ingresos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fotos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,11 +130,11 @@
     <Compile Include="MiUsuario.Designer.cs">
       <DependentUpon>MiUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gastos.cs">
+    <Compile Include="Compras.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gastos.Designer.cs">
-      <DependentUpon>Gastos.cs</DependentUpon>
+    <Compile Include="Compras.Designer.cs">
+      <DependentUpon>Compras.cs</DependentUpon>
     </Compile>
     <Compile Include="Inventario.cs">
       <SubType>Form</SubType>
@@ -256,14 +280,26 @@
     <Compile Include="VerRecibos.Designer.cs">
       <DependentUpon>VerRecibos.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CuotasPagadas.resx">
+      <DependentUpon>CuotasPagadas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CuotasPagar.resx">
+      <DependentUpon>CuotasPagar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cuotas.resx">
+      <DependentUpon>Cuotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ingresos.resx">
+      <DependentUpon>Ingresos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fotos.resx">
       <DependentUpon>Fotos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MiUsuario.resx">
       <DependentUpon>MiUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gastos.resx">
-      <DependentUpon>Gastos.cs</DependentUpon>
+    <EmbeddedResource Include="Compras.resx">
+      <DependentUpon>Compras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventario.resx">
       <DependentUpon>Inventario.cs</DependentUpon>
@@ -328,6 +364,10 @@
       <DependentUpon>ProveedorProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Recibo.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Volante.rdlc">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>

@@ -9,16 +9,16 @@ using Entidades;
 
 namespace BLL
 {
-    public class CompraService
+    public class IngresoService
     {
 
-        public static void Guardar(compra ent)
+        public static void Guardar(ingreso ent)
         {
             try
             {
                 using (CuotasEntities db = new CuotasEntities())
                 {
-                    db.compras.Add(ent);
+                    db.ingresos.Add(ent);
                     db.SaveChanges();
                     Utilidades.MensajesOK("Registro generado con exito");
                 }
@@ -30,17 +30,16 @@ namespace BLL
 
         }
 
-        public static void Modificar(compra ent)
+        public static void Modificar(ingreso ent)
         {
             try
             {
                 using (CuotasEntities db = new CuotasEntities())
                 {
-                    compra ent_update = db.compras.Find(ent.id);
+                    ingreso ent_update = db.ingresos.Find(ent.id);
                     ent_update.descripcion = ent.descripcion;
-                    ent_update.proveedor_id = ent.proveedor_id;
+                    ent_update.municipalidad_id = ent.municipalidad_id;
                     ent_update.importe = ent.importe;
-                    ent_update.numero_factura = ent.numero_factura;
                     ent_update.forma_pago = ent.forma_pago;
                     ent_update.fecha = ent.fecha;
                     ent_update.banco_id = ent.banco_id;
@@ -54,14 +53,14 @@ namespace BLL
             }
         }
 
-        public static void Eliminar(compra ent)
+        public static void Eliminar(ingreso ent)
         {
             try
             {
                 using (CuotasEntities db = new CuotasEntities())
                 {
-                    compra ent_update = db.compras.Find(ent.id);
-                    db.compras.Remove(ent_update);
+                    ingreso ent_update = db.ingresos.Find(ent.id);
+                    db.ingresos.Remove(ent_update);
                     db.SaveChanges();
                     Utilidades.MensajesOK("Registro eliminado con exito");
                 }
@@ -72,13 +71,13 @@ namespace BLL
             }
         }
 
-        public static compra Obtener(int id)
+        public static ingreso Obtener(int id)
         {
             try
             {
                 using (CuotasEntities db = new CuotasEntities())
                 {
-                    return db.compras.Find(id);
+                    return db.ingresos.Find(id);
                 }
             }
             catch (Exception)
@@ -88,16 +87,16 @@ namespace BLL
             }
         }
 
-        public static List<EntityCompra> Listar()
+        public static List<EntityIngreso> Listar()
         {
             try
             {
                 using (CuotasEntities db = new CuotasEntities())
                 {
-                    List<EntityCompra> lista = new List<EntityCompra>();
-                    foreach (var item in db.compras)
+                    List<EntityIngreso> lista = new List<EntityIngreso>();
+                    foreach (var item in db.ingresos)
                     {
-                        lista.Add(new EntityCompra{ Id = item.id,Descripcion= item.descripcion, FormaPago = item.forma_pago,Proveedor = item.proveedor.nombre, Importe = item.importe,Fecha = item.fecha, NumeroFactura = item.numero_factura, Banco = item.banco.nombre});
+                        lista.Add(new EntityIngreso{ Id = item.id,Descripcion= item.descripcion, FormaPago = item.forma_pago,Municipalidad = item.municipalidad.nombre, Importe = item.importe,Fecha = item.fecha, Banco = item.banco.nombre});
                     };
                     return lista;
                 }

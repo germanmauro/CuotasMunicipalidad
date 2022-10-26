@@ -33,11 +33,13 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fecha" Type="date" Nullable="false" />
     <Property Name="municipalidad_id" Type="int" Nullable="false" />
+    <Property Name="forma_pago" Type="varchar" MaxLength="30" />
     <Property Name="banco_id" Type="int" />
     <Property Name="intereses" Type="decimal" Precision="8" Scale="2" />
-    <Property Name="monto" Type="decimal" Precision="8" Scale="2" />
-    <Property Name="monto_abonado" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="importe" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="importe_abonado" Type="decimal" Precision="8" Scale="2" />
     <Property Name="vencimiento" Type="date" />
     <Property Name="fecha_pago" Type="datetime" />
     <Property Name="estado" Type="varchar" MaxLength="20" />
@@ -159,7 +161,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__cuota__banco_id__6754599E">
+  <Association Name="FK__cuota__banco_id__14270015">
     <End Role="banco" Type="Self.banco" Multiplicity="0..1" />
     <End Role="cuota" Type="Self.cuota" Multiplicity="*" />
     <ReferentialConstraint>
@@ -171,7 +173,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__cuota__municipal__66603565">
+  <Association Name="FK__cuota__municipal__1332DBDC">
     <End Role="municipalidad" Type="Self.municipalidad" Multiplicity="1" />
     <End Role="cuota" Type="Self.cuota" Multiplicity="*" />
     <ReferentialConstraint>
@@ -277,11 +279,11 @@
       <End Role="proveedor" EntitySet="proveedor" />
       <End Role="compra" EntitySet="compra" />
     </AssociationSet>
-    <AssociationSet Name="FK__cuota__banco_id__6754599E" Association="Self.FK__cuota__banco_id__6754599E">
+    <AssociationSet Name="FK__cuota__banco_id__14270015" Association="Self.FK__cuota__banco_id__14270015">
       <End Role="banco" EntitySet="banco" />
       <End Role="cuota" EntitySet="cuota" />
     </AssociationSet>
-    <AssociationSet Name="FK__cuota__municipal__66603565" Association="Self.FK__cuota__municipal__66603565">
+    <AssociationSet Name="FK__cuota__municipal__1332DBDC" Association="Self.FK__cuota__municipal__1332DBDC">
       <End Role="municipalidad" EntitySet="municipalidad" />
       <End Role="cuota" EntitySet="cuota" />
     </AssociationSet>

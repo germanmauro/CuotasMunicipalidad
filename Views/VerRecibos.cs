@@ -74,7 +74,7 @@ namespace StockMyG
             int recibo = int.Parse(Grid.SelectedRows[0].Cells["Recibo"].Value.ToString());
             Reporte form = new Reporte();
             form.Show();
-            form.CargarRecibo(recibo);
+            //form.CargarRecibo(recibo);
         }
     }
 }

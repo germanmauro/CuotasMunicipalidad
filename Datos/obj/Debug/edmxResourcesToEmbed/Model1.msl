@@ -124,12 +124,14 @@
     <EntitySetMapping Name="cuotas">
       <EntityTypeMapping TypeName="CuotasModel.cuota">
         <MappingFragment StoreEntitySet="cuota">
+          <ScalarProperty Name="forma_pago" ColumnName="forma_pago" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
           <ScalarProperty Name="estado" ColumnName="estado" />
           <ScalarProperty Name="fecha_pago" ColumnName="fecha_pago" />
           <ScalarProperty Name="vencimiento" ColumnName="vencimiento" />
-          <ScalarProperty Name="monto_abonado" ColumnName="monto_abonado" />
-          <ScalarProperty Name="monto" ColumnName="monto" />
           <ScalarProperty Name="intereses" ColumnName="intereses" />
+          <ScalarProperty Name="importe" ColumnName="importe" />
+          <ScalarProperty Name="importe_abonado" ColumnName="importe_abonado" />
           <ScalarProperty Name="banco_id" ColumnName="banco_id" />
           <ScalarProperty Name="municipalidad_id" ColumnName="municipalidad_id" />
           <ScalarProperty Name="id" ColumnName="id" />

@@ -15,7 +15,7 @@
               <Width>4.00812cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.90293cm</Width>
+              <Width>3.31926cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -303,7 +303,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet</DataSetName>
         <Height>1.2cm</Height>
-        <Width>16.25674cm</Width>
+        <Width>15.67307cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -323,7 +323,7 @@
   <Width>6.40029in</Width>
   <Page>
     <PageHeader>
-      <Height>7.21431cm</Height>
+      <Height>7.10848cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -358,7 +358,19 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>RECIBO N° </Value>
+                  <Value>VOLANTE DE PAGO</Value>
+                  <Style>
+                    <FontSize>12pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>N° </Value>
                   <Style>
                     <FontSize>12pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -419,68 +431,13 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>1.18745cm</Top>
+          <Top>1.21391cm</Top>
           <Left>10.68598cm</Left>
-          <Height>4.17187cm</Height>
+          <Height>4.43645cm</Height>
           <Width>4.98709cm</Width>
           <Style>
             <Border>
               <Style>Solid</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Image Name="Image1">
-          <Source>Embedded</Source>
-          <Value>logo_sistema</Value>
-          <Sizing>FitProportional</Sizing>
-          <Top>0.57891cm</Top>
-          <Left>0.65986cm</Left>
-          <Height>2.05562cm</Height>
-          <Width>9.36752cm</Width>
-          <ZIndex>1</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </Image>
-        <Textbox Name="Textbox5">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>MUNICIPALIDAD / COMUNA: </Value>
-                  <Style>
-                    <FontSize>12pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-                <TextRun>
-                  <Value>=First(Fields!Municipalidad.Value, "DataSet")</Value>
-                  <Style>
-                    <FontSize>12pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox5</rd:DefaultName>
-          <Top>6.12497cm</Top>
-          <Left>0.62176cm</Left>
-          <Height>0.6cm</Height>
-          <Width>15.01321cm</Width>
-          <ZIndex>2</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
             </Border>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
@@ -566,10 +523,65 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox8</rd:DefaultName>
-          <Top>3.00289cm</Top>
-          <Left>0.62176cm</Left>
+          <Top>2.88078cm</Top>
+          <Left>0.65986cm</Left>
           <Height>2.76958cm</Height>
           <Width>9.40562cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Image Name="Image1">
+          <Source>Embedded</Source>
+          <Value>logo_sistema</Value>
+          <Sizing>FitProportional</Sizing>
+          <Top>0.57891cm</Top>
+          <Left>0.65986cm</Left>
+          <Height>2.05562cm</Height>
+          <Width>9.40562cm</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
+        <Textbox Name="Textbox5">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>MUNICIPALIDAD / COMUNA: </Value>
+                  <Style>
+                    <FontSize>12pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>=First(Fields!Municipalidad.Value, "DataSet")</Value>
+                  <Style>
+                    <FontSize>12pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox5</rd:DefaultName>
+          <Top>6.13516cm</Top>
+          <Left>0.65986cm</Left>
+          <Height>0.6cm</Height>
+          <Width>15.01321cm</Width>
           <ZIndex>3</ZIndex>
           <Style>
             <Border>
@@ -601,14 +613,14 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>RECIBIMOS $ </Value>
+                  <Value>MONTO TOTAL A ABONONAR $ </Value>
                   <Style>
                     <FontSize>12pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
                 <TextRun>
-                  <Value>=First(Fields!Total.Value, "DataSet") + " " + First(Fields!TotalLetras.Value, "DataSet")</Value>
+                  <Value>=First(Fields!Total.Value, "DataSet")</Value>
                   <Style>
                     <FontSize>12pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -620,9 +632,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>0.49953cm</Top>
-          <Left>0.32786cm</Left>
+          <Left>6.3339cm</Left>
           <Height>0.99688cm</Height>
-          <Width>15.06771cm</Width>
+          <Width>9.06167cm</Width>
           <Style>
             <Border>
               <Style>None</Style>

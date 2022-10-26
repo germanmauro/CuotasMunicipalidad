@@ -1,4 +1,5 @@
 ﻿using BLL;
+using Datos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,9 +12,10 @@ using System.Windows.Forms;
 
 namespace StockMyG
 {
-    public partial class Gastos : Form
+    public partial class Cuotas : Form
     {
-        public Gastos()
+        public municipalidad EntMunicipalidad { get; set; }
+        public Cuotas()
         {
             InitializeComponent();
         }
@@ -21,22 +23,20 @@ namespace StockMyG
 
         private void Proveedor_Load(object sender, EventArgs e)
         {
+            lblTitulo.Text = $"Cuotas de: {EntMunicipalidad.nombre}";
             ActualizarGrilla();
-            CargaCombo();
+            dateTimePicker1.CustomFormat = "MMM yyyy";
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (Validador.VeficarForm(this))
             {
-                Datos.compra item = new Datos.compra
+                Datos.cuota item = new Datos.cuota
                 {
-                    descripcion = txtDescripcion.Controls[0].Text,
-                    proveedor_id = ((Datos.proveedor)cmbProveedor.SelectedItem).id,
                     fecha = dateTimePicker1.Value,
                     importe = decimal.Parse(txtImporte.Controls[0].Text),
-                    forma_pago = cmbFormaPago.SelectedItem.ToString(),
-                    numero_factura = txtNroFactura.Controls[0].Text
+                    municipalidad = EntMunicipalidad,
                 };
 
                 switch (estado)
@@ -46,14 +46,17 @@ namespace StockMyG
                     case Formulario.EstadoForm.Seleccionado:
                         break;
                     case Formulario.EstadoForm.Nuevo:
-                        BLL.CompraService.Guardar(item);
-                        ActualizarGrilla();
+                        if(!BLL.CuotaService.VerificarCuotasCreada(item))
+                        {
+                            BLL.CuotaService.Guardar(item);
+                            ActualizarGrilla();
+                        }
                         break;
                     case Formulario.EstadoForm.Modificado:
                         if (MessageBox.Show("¿Desea realizar la modificación?", "Confirmación", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
                             item.id = int.Parse(Grid.SelectedRows[0].Cells["id"].Value.ToString());
-                            BLL.CompraService.Modificar(item);
+                            BLL.CuotaService.Modificar(item);
                             ActualizarGrilla();
                         }
                         break;
@@ -67,11 +70,11 @@ namespace StockMyG
         {
             if (MessageBox.Show("¿Desea realizar la eliminación?", "Confirmación", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                Datos.inventario ent = new Datos.inventario
+                Datos.cuota ent = new Datos.cuota
                 {
                     id = int.Parse(Grid.SelectedRows[0].Cells["id"].Value.ToString())
                 };
-                BLL.InventarioService.Eliminar(ent);
+                BLL.CuotaService.Eliminar(ent);
 
                 ActualizarGrilla();
             }
@@ -101,7 +104,7 @@ namespace StockMyG
         #region Metodos
         private void ActualizarGrilla()
         {
-            Grid.DataSource = BLL.CompraService.Listar();
+            Grid.DataSource = BLL.CuotaService.Listar(EntMunicipalidad.id);
             estado = Formulario.EstadoForm.SinDatos;
             ActualizarVista();
         }
@@ -140,29 +143,14 @@ namespace StockMyG
 
         private void CargarDatos()
         {
-            this.txtDescripcion.Controls[0].Text = Grid.SelectedRows[0].Cells["Descripcion"].Value.ToString();
             this.txtImporte.Controls[0].Text = Grid.SelectedRows[0].Cells["Importe"].Value.ToString();
-            this.txtNroFactura.Controls[0].Text = Grid.SelectedRows[0].Cells["NumeroFactura"].Value.ToString();
             this.dateTimePicker1.Value =  Convert.ToDateTime(Grid.SelectedRows[0].Cells["Fecha"].Value.ToString());
-            this.cmbProveedor.SelectedText = Grid.SelectedRows[0].Cells["Proveedor"].Value.ToString();
-            this.cmbFormaPago.SelectedText = Grid.SelectedRows[0].Cells["FormaPago"].Value.ToString();
         }
 
-        private void CargaCombo()
-        {
-            this.cmbProveedor.DataSource = BLL.ProveedorService.ListarCombo();
-            this.cmbProveedor.DisplayMember = "nombre";
-            this.cmbProveedor.ValueMember = "id";
-
-            this.cmbFormaPago.DataSource = Tipos.FormaPago();
-           
-        }
 
         private void BorrarDatos()
         {
-            this.txtDescripcion.Controls[0].Text = "";
-            this.txtNroFactura.Controls[0].Text = "";
-            this.txtImporte.Controls[0].Text = "";
+            this.txtImporte.Controls[0].Text = EntMunicipalidad.monto.ToString();
             this.dateTimePicker1.Value = DateTime.Today;
 
         }
@@ -203,5 +191,12 @@ namespace StockMyG
             }
         }
 
+        private void btnVolante_Click(object sender, EventArgs e)
+        {
+            int cuota = int.Parse(Grid.SelectedRows[0].Cells["id"].Value.ToString());
+            Reporte form = new Reporte();
+            form.Show();
+            form.CargarVolante(cuota);
+        }
     }
 }

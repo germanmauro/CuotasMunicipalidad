@@ -1,3 +1,7 @@
-﻿Cargar gastos e ingresos.
+﻿Generar Cuotas.
 
-Generar Cuotas.
+Ver pago de cuotas y confirmación
+
+Crear Reportes.
+
+Validar si ya hay una cuota para ese mes.

@@ -69,7 +69,7 @@ namespace StockMyG
         {
                 Reporte form = new Reporte();
                 form.Show();
-                form.CargarPedido(int.Parse(this.Grid.SelectedRows[0].Cells["Codigo"].Value.ToString()));
+                //form.CargarPedido(int.Parse(this.Grid.SelectedRows[0].Cells["Codigo"].Value.ToString()));
                 this.Close();
         }
         

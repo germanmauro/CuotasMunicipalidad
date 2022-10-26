@@ -27,7 +27,6 @@ C:\Sistemas M&G\Software\Sistema Cuotas\Views\bin\Debug\SqlServerTypes\x86\SqlSe
 C:\Sistemas M&G\Software\Sistema Cuotas\Views\bin\Debug\Pedido.rdlc
 C:\Sistemas M&G\Software\Sistema Cuotas\Views\bin\Debug\ReporteCliente.rdlc
 C:\Sistemas M&G\Software\Sistema Cuotas\Views\bin\Debug\ReporteProducto.rdlc
-C:\Sistemas M&G\Software\Sistema Cuotas\Views\bin\Debug\Recibo.rdlc
 C:\Sistemas M&G\Software\Sistema Cuotas\Views\bin\Debug\Views.exe.config
 C:\Sistemas M&G\Software\Sistema Cuotas\Views\bin\Debug\Views.exe
 C:\Sistemas M&G\Software\Sistema Cuotas\Views\bin\Debug\Views.pdb
@@ -53,10 +52,16 @@ C:\Sistemas M&G\Software\Sistema Cuotas\Views\bin\Debug\EntityFramework.SqlServe
 C:\Sistemas M&G\Software\Sistema Cuotas\Views\bin\Debug\EntityFramework.SqlServer.xml
 C:\Sistemas M&G\Software\Sistema Cuotas\Views\obj\Debug\StockMyG.Banco.resources
 C:\Sistemas M&G\Software\Sistema Cuotas\Views\obj\Debug\StockMyG.Oficina.resources
-C:\Sistemas M&G\Software\Sistema Cuotas\Views\obj\Debug\StockMyG.Gastos.resources
 C:\Sistemas M&G\Software\Sistema Cuotas\Views\obj\Debug\StockMyG.MiUsuario.resources
 C:\Sistemas M&G\Software\Sistema Cuotas\Views\obj\Debug\StockMyG.Municipalidad.resources
 C:\Sistemas M&G\Software\Sistema Cuotas\Views\obj\Debug\StockMyG.Inventario.resources
 C:\Sistemas M&G\Software\Sistema Cuotas\Views\obj\Debug\Views.csproj.AssemblyReference.cache
 C:\Sistemas M&G\Software\Sistema Cuotas\Views\obj\Debug\StockMyG.Fotos.resources
 C:\Sistemas M&G\Software\Sistema Cuotas\Views\obj\Debug\Views.csproj.SuggestedBindingRedirects.cache
+C:\Sistemas M&G\Software\Sistema Cuotas\Views\obj\Debug\StockMyG.Compras.resources
+C:\Sistemas M&G\Software\Sistema Cuotas\Views\obj\Debug\StockMyG.Ingresos.resources
+C:\Sistemas M&G\Software\Sistema Cuotas\Views\obj\Debug\StockMyG.Cuotas.resources
+C:\Sistemas M&G\Software\Sistema Cuotas\Views\obj\Debug\StockMyG.CuotasPagar.resources
+C:\Sistemas M&G\Software\Sistema Cuotas\Views\obj\Debug\StockMyG.CuotasPagadas.resources
+C:\Sistemas M&G\Software\Sistema Cuotas\Views\bin\Debug\Volante.rdlc
+C:\Sistemas M&G\Software\Sistema Cuotas\Views\bin\Debug\Recibo.rdlc

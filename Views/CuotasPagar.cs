@@ -1,4 +1,5 @@
 ﻿using BLL;
+using Datos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,9 +12,9 @@ using System.Windows.Forms;
 
 namespace StockMyG
 {
-    public partial class Inventario : Form
+    public partial class CuotasPagar : Form
     {
-        public Inventario()
+        public CuotasPagar()
         {
             InitializeComponent();
         }
@@ -21,6 +22,7 @@ namespace StockMyG
 
         private void Proveedor_Load(object sender, EventArgs e)
         {
+            Grid.Columns["Fecha"].DisplayIndex = 0;
             ActualizarGrilla();
             CargaCombo();
         }
@@ -29,27 +31,22 @@ namespace StockMyG
         {
             if (Validador.VeficarForm(this))
             {
-                Datos.inventario item = new Datos.inventario
+                Datos.cuota item = new Datos.cuota
                 {
-                    nombre = txtNombre.Controls[0].Text,
-                    oficina_id = ((Datos.oficina)cmbOficina.SelectedItem).id
+                    fecha_pago = DateTime.Today,
+                    importe_abonado = decimal.Parse(txtImporte.Controls[0].Text),
+                    banco_id = ((Datos.banco)cmbBanco.SelectedItem).id,
+                    forma_pago = cmbFormaPago.SelectedItem.ToString(),
                 };
 
                 switch (estado)
                 {
-                    case Formulario.EstadoForm.SinDatos:
-                        break;
-                    case Formulario.EstadoForm.Seleccionado:
-                        break;
-                    case Formulario.EstadoForm.Nuevo:
-                        BLL.InventarioService.Guardar(item);
-                        ActualizarGrilla();
-                        break;
                     case Formulario.EstadoForm.Modificado:
-                        if (MessageBox.Show("¿Desea realizar la modificación?", "Confirmación", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        if (MessageBox.Show("¿Desea registrar el pago de la cuota?", "Confirmación", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
                             item.id = int.Parse(Grid.SelectedRows[0].Cells["id"].Value.ToString());
-                            BLL.InventarioService.Modificar(item);
+                            item.intereses = Decimal.Parse(Grid.SelectedRows[0].Cells["Intereses"].Value.ToString());
+                            BLL.CuotaService.Pagar(item);
                             ActualizarGrilla();
                         }
                         break;
@@ -61,13 +58,13 @@ namespace StockMyG
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Desea realizar la eliminación?", "Confirmación", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("¿Desea eliminar el pago?", "Confirmación", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                Datos.inventario ent = new Datos.inventario
+                Datos.cuota ent = new Datos.cuota
                 {
                     id = int.Parse(Grid.SelectedRows[0].Cells["id"].Value.ToString())
                 };
-                BLL.InventarioService.Eliminar(ent);
+                BLL.CuotaService.Eliminar(ent);
 
                 ActualizarGrilla();
             }
@@ -82,32 +79,16 @@ namespace StockMyG
             }
         }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            estado = Formulario.EstadoForm.Nuevo;
-            ActualizarVista();
-        }
-
         private void btnModificar_Click(object sender, EventArgs e)
         {
             estado = Formulario.EstadoForm.Modificado;
             ActualizarVista();
         }
 
-        private void btnFotos_Click(object sender, EventArgs e)
-        {
-            Fotos form = new Fotos
-            {
-                Inventario = InventarioService.Obtener(int.Parse(Grid.SelectedRows[0].Cells["id"].Value.ToString()))
-            };
-            //form.Parent = this;
-            form.Show();
-        }
-
         #region Metodos
         private void ActualizarGrilla()
         {
-            Grid.DataSource = BLL.InventarioService.Listar();
+            Grid.DataSource = BLL.CuotaService.ListarAPagar();
             estado = Formulario.EstadoForm.SinDatos;
             ActualizarVista();
         }
@@ -117,25 +98,22 @@ namespace StockMyG
             switch (estado)
             {
                 case Formulario.EstadoForm.SinDatos:
-                    btnEliminar.Enabled = false;
-                    btnFotos.Enabled = false;
                     btnModificar.Enabled = false;
+                    btnVolante.Enabled = false;
                     groupInformacion.Enabled = false;
                     Grid.ClearSelection();
                     BorrarDatos();
                     break;
                 case Formulario.EstadoForm.Seleccionado:
                     groupInformacion.Enabled = false;
-                    btnEliminar.Enabled = true;
-                    btnFotos.Enabled = true;
                     btnModificar.Enabled = true;
+                    btnVolante.Enabled = true;
                     break;
                 case Formulario.EstadoForm.Nuevo:
                     groupInformacion.Enabled = true;
                     Grid.ClearSelection();
-                    btnEliminar.Enabled = false;
-                    btnFotos.Enabled = false;
                     btnModificar.Enabled = false;
+                    btnVolante.Enabled = false;
                     BorrarDatos();
                     break;
                 case Formulario.EstadoForm.Modificado:
@@ -149,22 +127,12 @@ namespace StockMyG
 
         private void CargarDatos()
         {
-            this.txtNombre.Controls[0].Text = Grid.SelectedRows[0].Cells["Nombre"].Value.ToString();
-  
-            this.cmbOficina.SelectedIndex = this.cmbOficina.FindStringExact(Grid.SelectedRows[0].Cells["Oficina"].Value.ToString());
-        }
-
-        private void CargaCombo()
-        {
-            this.cmbOficina.DataSource = BLL.OficinaService.ListarCombo();
-            this.cmbOficina.DisplayMember = "nombre";
-            this.cmbOficina.ValueMember = "id";
+            this.txtImporte.Controls[0].Text = (Convert.ToDecimal(Grid.SelectedRows[0].Cells["Importe"].Value) + Convert.ToDecimal(Grid.SelectedRows[0].Cells["Intereses"].Value)).ToString();
         }
 
         private void BorrarDatos()
         {
-            this.txtNombre.Controls[0].Text = "";
-            //this.cmbOficina.SelectedIndex = 0;
+            this.txtImporte.Controls[0].Text = "0";
         }
 
         #endregion
@@ -173,12 +141,6 @@ namespace StockMyG
         {
             switch (e.KeyCode)
             {
-                case Keys.F2:
-                    if (btnNuevo.Enabled)
-                    {
-                        btnNuevo_Click(null, null);
-                    }
-                    break;
                 case Keys.F3:
                     if (btnModificar.Enabled)
                     {
@@ -186,9 +148,9 @@ namespace StockMyG
                     }
                     break;
                 case Keys.F4:
-                    if (btnEliminar.Enabled)
+                    if (btnVolante.Enabled)
                     {
-                        btnEliminar_Click(null, null);
+                        btnVolante_Click(null, null);
                     }
                     break;
                 case Keys.F5:
@@ -197,21 +159,28 @@ namespace StockMyG
                         btnGuardar_Click(null, null);
                     }
                     break;
-                case Keys.F6:
-                    if (btnFotos.Enabled)
-                    {
-                        btnFotos_Click(null, null);
-                    }
-                    break;
 
                 default:
                     break;
             }
         }
 
-        private void Grid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void CargaCombo()
         {
+            this.cmbBanco.DataSource = BLL.BancoService.ListarCombo();
+            this.cmbBanco.DisplayMember = "nombre";
+            this.cmbBanco.ValueMember = "id";
 
+            this.cmbFormaPago.DataSource = Tipos.FormaPago();
+
+        }
+
+        private void btnVolante_Click(object sender, EventArgs e)
+        {
+            int cuota = int.Parse(Grid.SelectedRows[0].Cells["id"].Value.ToString());
+            Reporte form = new Reporte();
+            form.Show();
+            form.CargarVolante(cuota);
         }
     }
 }

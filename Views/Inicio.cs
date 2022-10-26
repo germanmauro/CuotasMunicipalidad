@@ -252,9 +252,27 @@ namespace StockMyG
             cli.Show();
         }
 
-        private void gastosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Gastos cli = new Gastos
+            Compras cli = new Compras
+            {
+                MdiParent = this
+            };
+            cli.Show();
+        }
+
+        private void pagoDeCuotasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CuotasPagar cli = new CuotasPagar
+            {
+                MdiParent = this
+            };
+            cli.Show();
+        }
+
+        private void cuotasPagadasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CuotasPagadas cli = new CuotasPagadas
             {
                 MdiParent = this
             };

@@ -76,6 +76,7 @@ CREATE TABLE inventario_foto(
 CREATE TABLE compra (
 	id int IDENTITY(1,1) PRIMARY KEY,
 	proveedor_id int not null FOREIGN KEY REFERENCES proveedor(id),
+	banco_id int not null FOREIGN KEY REFERENCES banco(id),
 	importe decimal(8,2),
 	numero_factura varchar(20),
 	fecha date,
@@ -95,11 +96,13 @@ CREATE TABLE ingreso (
 
 CREATE TABLE cuota(
 	id int IDENTITY(1,1) PRIMARY KEY,
+	fecha date not null,
 	municipalidad_id int not null FOREIGN KEY REFERENCES municipalidad(id),
+	forma_pago varchar(30),
 	banco_id int null FOREIGN KEY REFERENCES banco(id),
 	intereses decimal(8,2) default '0.0',
-	monto decimal(8,2),
-	monto_abonado decimal(8,2) default '0.00',
+	importe decimal(8,2),
+	importe_abonado decimal(8,2) default '0.00',
 	vencimiento date,
 	fecha_pago datetime,
 	estado varchar(20) default 'A Pagar',

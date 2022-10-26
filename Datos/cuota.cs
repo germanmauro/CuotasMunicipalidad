@@ -18,11 +18,13 @@ namespace Datos
         public int municipalidad_id { get; set; }
         public Nullable<int> banco_id { get; set; }
         public Nullable<decimal> intereses { get; set; }
-        public Nullable<decimal> monto { get; set; }
-        public Nullable<decimal> monto_abonado { get; set; }
+        public Nullable<decimal> importe { get; set; }
+        public Nullable<decimal> importe_abonado { get; set; }
         public Nullable<System.DateTime> vencimiento { get; set; }
         public Nullable<System.DateTime> fecha_pago { get; set; }
         public string estado { get; set; }
+        public System.DateTime fecha { get; set; }
+        public string forma_pago { get; set; }
     
         public virtual banco banco { get; set; }
         public virtual municipalidad municipalidad { get; set; }

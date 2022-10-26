@@ -87,5 +87,22 @@ namespace BLL
             }
         }
 
+        public static List<banco> ListarCombo()
+        {
+            try
+            {
+                using (CuotasEntities db = new CuotasEntities())
+                {
+                    return db.bancos.ToList();
+                }
+            }
+            catch (Exception)
+            {
+                Utilidades.MensajesAdvertencia("Error al listar");
+                return null;
+            }
+
+        }
+
     }
 }

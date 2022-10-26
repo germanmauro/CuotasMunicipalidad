@@ -24,17 +24,35 @@ namespace StockMyG
             
         }
 
-        public void CargarRecibo(int recibo)
+        public void CargarVolante(int cuota)
         {
             ReportDataSource datasource = new ReportDataSource
             {
                 Name = "DataSet",
-                //Value = BLL.ReciboBLL.ReporteRecibo(recibo)
+                Value = BLL.CuotaService.ReporteVolante(cuota)
             };
 
             reportViewer1.Reset();
-            reportViewer1.LocalReport.ReportEmbeddedResource = "MecanEasy.Recibo.rdlc";
-            reportViewer1.LocalReport.ReportPath = "Recibo.rdlc";
+            reportViewer1.LocalReport.ReportEmbeddedResource = "MecanEasy.Volante.rdlc";
+            reportViewer1.LocalReport.ReportPath = "Volante.rdlc";
+            reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.LocalReport.DataSources.Add(datasource);
+
+            reportViewer1.Refresh();
+            reportViewer1.RefreshReport();
+            reportViewer1.ZoomMode = ZoomMode.FullPage;
+        }
+        public void CargarRecibo(int cuota)
+        {
+            ReportDataSource datasource = new ReportDataSource
+            {
+                Name = "DataSet",
+                Value = BLL.CuotaService.ReporteRecibo(cuota)
+            };
+
+            reportViewer1.Reset();
+            reportViewer1.LocalReport.ReportEmbeddedResource = "MecanEasy.Volante.rdlc";
+            reportViewer1.LocalReport.ReportPath = "Volante.rdlc";
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(datasource);
 
@@ -62,23 +80,6 @@ namespace StockMyG
             reportViewer1.ZoomMode = ZoomMode.FullPage;
         }
 
-        public void CargarPedido(int ped)
-        {
-            ReportDataSource datasource = new ReportDataSource
-            {
-                Name = "DataSet",
-                //Value = BLL.PedidoBLL.ReportePedido(ped)
-            };
-
-            reportViewer1.Reset();
-            reportViewer1.LocalReport.ReportEmbeddedResource = "MecanEasy.Pedido.rdlc";
-            reportViewer1.LocalReport.ReportPath = "Pedido.rdlc";
-
-            reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.DataSources.Add(datasource);
-
-            reportViewer1.RefreshReport();
-            reportViewer1.ZoomMode = ZoomMode.FullPage;
-        }
+ 
     }
 }

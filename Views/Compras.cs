@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace StockMyG
 {
-    public partial class Municipalidad : Form
+    public partial class Compras : Form
     {
-        public Municipalidad()
+        public Compras()
         {
             InitializeComponent();
         }
@@ -29,17 +29,15 @@ namespace StockMyG
         {
             if (Validador.VeficarForm(this))
             {
-                Datos.municipalidad item = new Datos.municipalidad
+                Datos.compra item = new Datos.compra
                 {
-                    nombre = txtNombre.Controls[0].Text,
-                    direccion = txtDireccion.Controls[0].Text,
-                    cuit = txtCUIT.Controls[0].Text,
-                    telefono = txtTelefono.Controls[0].Text,
-                    mail = txtEmail.Controls[0].Text,
-                    condicion_iva = cmbCondicion.SelectedItem.ToString(),
-                    monto = Convert.ToDecimal(txtMonto.Controls[0].Text),
-                    dia_vencimiento = short.Parse(txtVencimiento.Controls[0].Text),
-                    porcentaje_aumento_vencimiento = Convert.ToDecimal(txtVencimiento.Controls[0].Text)
+                    descripcion = txtDescripcion.Controls[0].Text,
+                    proveedor_id = ((Datos.proveedor)cmbProveedor.SelectedItem).id,
+                    banco_id = ((Datos.banco)cmbBanco.SelectedItem).id,
+                    fecha = dateTimePicker1.Value,
+                    importe = decimal.Parse(txtImporte.Controls[0].Text),
+                    forma_pago = cmbFormaPago.SelectedItem.ToString(),
+                    numero_factura = txtNroFactura.Controls[0].Text
                 };
 
                 switch (estado)
@@ -49,14 +47,14 @@ namespace StockMyG
                     case Formulario.EstadoForm.Seleccionado:
                         break;
                     case Formulario.EstadoForm.Nuevo:
-                        BLL.MunicipalidadService.Guardar(item);
+                        BLL.CompraService.Guardar(item);
                         ActualizarGrilla();
                         break;
                     case Formulario.EstadoForm.Modificado:
                         if (MessageBox.Show("¿Desea realizar la modificación?", "Confirmación", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
                             item.id = int.Parse(Grid.SelectedRows[0].Cells["id"].Value.ToString());
-                            BLL.MunicipalidadService.Modificar(item);
+                            BLL.CompraService.Modificar(item);
                             ActualizarGrilla();
                         }
                         break;
@@ -70,11 +68,11 @@ namespace StockMyG
         {
             if (MessageBox.Show("¿Desea realizar la eliminación?", "Confirmación", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                Datos.proveedor ent = new Datos.proveedor
+                Datos.inventario ent = new Datos.inventario
                 {
                     id = int.Parse(Grid.SelectedRows[0].Cells["id"].Value.ToString())
                 };
-                BLL.ProveedorService.Eliminar(ent);
+                BLL.InventarioService.Eliminar(ent);
 
                 ActualizarGrilla();
             }
@@ -104,7 +102,7 @@ namespace StockMyG
         #region Metodos
         private void ActualizarGrilla()
         {
-            Grid.DataSource = BLL.MunicipalidadService.Listar();
+            Grid.DataSource = BLL.CompraService.Listar();
             estado = Formulario.EstadoForm.SinDatos;
             ActualizarVista();
         }
@@ -115,8 +113,6 @@ namespace StockMyG
             {
                 case Formulario.EstadoForm.SinDatos:
                     btnEliminar.Enabled = false;
-                    btnCuotas.Enabled = false;
-                    btnIngresos.Enabled = false;
                     btnModificar.Enabled = false;
                     groupInformacion.Enabled = false;
                     Grid.ClearSelection();
@@ -125,16 +121,12 @@ namespace StockMyG
                 case Formulario.EstadoForm.Seleccionado:
                     groupInformacion.Enabled = false;
                     btnEliminar.Enabled = true;
-                    btnCuotas.Enabled = true;
-                    btnIngresos.Enabled = true;
                     btnModificar.Enabled = true;
                     break;
                 case Formulario.EstadoForm.Nuevo:
                     groupInformacion.Enabled = true;
                     Grid.ClearSelection();
                     btnEliminar.Enabled = false;
-                    btnCuotas.Enabled = false;
-                    btnIngresos.Enabled = false;
                     btnModificar.Enabled = false;
                     BorrarDatos();
                     break;
@@ -149,33 +141,36 @@ namespace StockMyG
 
         private void CargarDatos()
         {
-            this.txtNombre.Controls[0].Text = Grid.SelectedRows[0].Cells["Nombre"].Value.ToString();
-            this.txtCUIT.Controls[0].Text = Grid.SelectedRows[0].Cells["CUIT"].Value.ToString();
-            this.txtDireccion.Controls[0].Text = Grid.SelectedRows[0].Cells["Direccion"].Value.ToString();
-            this.txtTelefono.Controls[0].Text = Grid.SelectedRows[0].Cells["Telefono"].Value.ToString();
-            this.txtEmail.Controls[0].Text = Grid.SelectedRows[0].Cells["Email"].Value.ToString();
-            this.txtMonto.Controls[0].Text = Grid.SelectedRows[0].Cells["MontoCuota"].Value.ToString();
-            this.txtVencimiento.Controls[0].Text = Grid.SelectedRows[0].Cells["DiaVencimiento"].Value.ToString();
-            this.txtPorcentajeAumento.Controls[0].Text = Grid.SelectedRows[0].Cells["PorcentajeAumento"].Value.ToString();
-            this.cmbCondicion.SelectedIndex = this.cmbCondicion.FindStringExact(Grid.SelectedRows[0].Cells["Condicion"].Value.ToString());
+            this.txtDescripcion.Controls[0].Text = Grid.SelectedRows[0].Cells["Descripcion"].Value.ToString();
+            this.txtImporte.Controls[0].Text = Grid.SelectedRows[0].Cells["Importe"].Value.ToString();
+            this.txtNroFactura.Controls[0].Text = Grid.SelectedRows[0].Cells["NumeroFactura"].Value.ToString();
+            this.dateTimePicker1.Value =  Convert.ToDateTime(Grid.SelectedRows[0].Cells["Fecha"].Value.ToString());
+            this.cmbProveedor.SelectedIndex = this.cmbProveedor.FindStringExact(Grid.SelectedRows[0].Cells["Proveedor"].Value.ToString());
+            this.cmbFormaPago.SelectedIndex = this.cmbFormaPago.FindStringExact(Grid.SelectedRows[0].Cells["FormaPago"].Value.ToString());
+            this.cmbBanco.SelectedIndex = this.cmbBanco.FindStringExact(Grid.SelectedRows[0].Cells["Banco"].Value.ToString());
         }
 
         private void CargaCombo()
         {
-            this.cmbCondicion.DataSource = Tipos.CondicionesIVA();
+            this.cmbProveedor.DataSource = BLL.ProveedorService.ListarCombo();
+            this.cmbProveedor.DisplayMember = "nombre";
+            this.cmbProveedor.ValueMember = "id";
+            
+            this.cmbBanco.DataSource = BLL.BancoService.ListarCombo();
+            this.cmbBanco.DisplayMember = "nombre";
+            this.cmbBanco.ValueMember = "id";
+
+            this.cmbFormaPago.DataSource = Tipos.FormaPago();
+           
         }
 
         private void BorrarDatos()
         {
-            this.txtNombre.Controls[0].Text = "";
-            this.txtCUIT.Controls[0].Text = "";
-            this.txtTelefono.Controls[0].Text = "";
-            this.txtDireccion.Controls[0].Text = "";
-            this.txtEmail.Controls[0].Text = "";
-            this.txtVencimiento.Controls[0].Text = "";
-            this.txtMonto.Controls[0].Text = "";
-            this.txtPorcentajeAumento.Controls[0].Text = "";
-            this.cmbCondicion.SelectedText = "";
+            this.txtDescripcion.Controls[0].Text = "";
+            this.txtNroFactura.Controls[0].Text = "";
+            this.txtImporte.Controls[0].Text = "";
+            this.dateTimePicker1.Value = DateTime.Today;
+
         }
 
         #endregion
@@ -208,42 +203,11 @@ namespace StockMyG
                         btnGuardar_Click(null, null);
                     }
                     break;
-                case Keys.F6:
-                    if (btnCuotas.Enabled)
-                    {
-                        btnCuotas_Click(null, null);
-                    }
-                break;
-                case Keys.F7:
-                    if (btnIngresos.Enabled)
-                    {
-                        btnIngresos_Click(null, null);
-                    }
-                break;
 
                 default:
                     break;
             }
         }
 
-        private void btnCuotas_Click(object sender, EventArgs e)
-        {
-            Cuotas form = new Cuotas
-            {
-                EntMunicipalidad = MunicipalidadService.Obtener(int.Parse(Grid.SelectedRows[0].Cells["id"].Value.ToString()))
-            };
-            //form.Parent = this;
-            form.Show();
-        }
-
-        private void btnIngresos_Click(object sender, EventArgs e)
-        {
-            Ingresos form = new Ingresos
-            {
-                EntMunicipalidad = MunicipalidadService.Obtener(int.Parse(Grid.SelectedRows[0].Cells["id"].Value.ToString()))
-            };
-            //form.Parent = this;
-            form.Show();
-        }
     }
 }

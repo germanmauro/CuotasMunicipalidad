@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CuotaService.cs" />
+    <Compile Include="IngresoService.cs" />
     <Compile Include="CompraService.cs" />
     <Compile Include="InventarioFotoService.cs" />
     <Compile Include="InventarioService.cs" />
@@ -59,7 +61,6 @@
     <Compile Include="SubCategoriaService.cs" />
     <Compile Include="LoginService.cs" />
     <Compile Include="CategoriaService.cs" />
-    <Compile Include="PrecintoBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Session.cs" />
     <Compile Include="Utilidades.cs" />

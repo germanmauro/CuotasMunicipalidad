@@ -32,6 +32,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupInformacion = new System.Windows.Forms.GroupBox();
+            this.txtPorcentajeAumento = new UserControls.TextBox();
+            this.txtVencimiento = new UserControls.TextBox();
+            this.txtMonto = new UserControls.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.cmbCondicion = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTelefono = new UserControls.TextBox();
@@ -46,16 +52,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.Grid = new System.Windows.Forms.DataGridView();
-            this.btnCuotas = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.txtMonto = new UserControls.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtVencimiento = new UserControls.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtPorcentajeAumento = new UserControls.TextBox();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CUIT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +62,11 @@
             this.MontoCuota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaAumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PorcentajeAumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCuotas = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnIngresos = new System.Windows.Forms.Button();
             this.groupInformacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.SuspendLayout();
@@ -92,18 +93,84 @@
             this.groupInformacion.Controls.Add(this.label1);
             this.groupInformacion.Controls.Add(this.btnGuardar);
             this.groupInformacion.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupInformacion.Location = new System.Drawing.Point(559, 192);
+            this.groupInformacion.Location = new System.Drawing.Point(559, 214);
             this.groupInformacion.Name = "groupInformacion";
-            this.groupInformacion.Size = new System.Drawing.Size(302, 353);
+            this.groupInformacion.Size = new System.Drawing.Size(302, 331);
             this.groupInformacion.TabIndex = 27;
             this.groupInformacion.TabStop = false;
             this.groupInformacion.Text = "Información";
+            // 
+            // txtPorcentajeAumento
+            // 
+            this.txtPorcentajeAumento.Location = new System.Drawing.Point(130, 245);
+            this.txtPorcentajeAumento.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
+            this.txtPorcentajeAumento.Max = 300;
+            this.txtPorcentajeAumento.Min = 0;
+            this.txtPorcentajeAumento.Name = "txtPorcentajeAumento";
+            this.txtPorcentajeAumento.Nombre = "Porcentaje de aumento";
+            this.txtPorcentajeAumento.Obligatorio = true;
+            this.txtPorcentajeAumento.Size = new System.Drawing.Size(159, 19);
+            this.txtPorcentajeAumento.TabIndex = 8;
+            this.txtPorcentajeAumento.Tipo = UserControls.Tipo.Decimal;
+            // 
+            // txtVencimiento
+            // 
+            this.txtVencimiento.Location = new System.Drawing.Point(130, 216);
+            this.txtVencimiento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.txtVencimiento.Max = 30;
+            this.txtVencimiento.Min = 1;
+            this.txtVencimiento.Name = "txtVencimiento";
+            this.txtVencimiento.Nombre = "Día Vencimiento";
+            this.txtVencimiento.Obligatorio = true;
+            this.txtVencimiento.Size = new System.Drawing.Size(159, 19);
+            this.txtVencimiento.TabIndex = 8;
+            this.txtVencimiento.Tipo = UserControls.Tipo.Numero;
+            // 
+            // txtMonto
+            // 
+            this.txtMonto.Location = new System.Drawing.Point(130, 186);
+            this.txtMonto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtMonto.Max = 1000000;
+            this.txtMonto.Min = 1;
+            this.txtMonto.Name = "txtMonto";
+            this.txtMonto.Nombre = "Monto Cuota";
+            this.txtMonto.Obligatorio = true;
+            this.txtMonto.Size = new System.Drawing.Size(159, 19);
+            this.txtMonto.TabIndex = 8;
+            this.txtMonto.Tipo = UserControls.Tipo.Decimal;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 245);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(123, 13);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Porcentaje Aumento";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 216);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(117, 13);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Día de Vencimiento";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 186);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(79, 13);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Monto Cuota";
             // 
             // cmbCondicion
             // 
             this.cmbCondicion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCondicion.FormattingEnabled = true;
-            this.cmbCondicion.Location = new System.Drawing.Point(130, 158);
+            this.cmbCondicion.Location = new System.Drawing.Point(130, 156);
             this.cmbCondicion.Name = "cmbCondicion";
             this.cmbCondicion.Size = new System.Drawing.Size(159, 21);
             this.cmbCondicion.TabIndex = 6;
@@ -111,7 +178,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(5, 161);
+            this.label6.Location = new System.Drawing.Point(5, 159);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(88, 13);
             this.label6.TabIndex = 4;
@@ -119,7 +186,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(130, 132);
+            this.txtTelefono.Location = new System.Drawing.Point(130, 130);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtTelefono.Max = 30;
             this.txtTelefono.Min = 0;
@@ -133,7 +200,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(5, 138);
+            this.label5.Location = new System.Drawing.Point(5, 136);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 3;
@@ -141,7 +208,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(130, 107);
+            this.txtEmail.Location = new System.Drawing.Point(130, 105);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtEmail.Max = 100;
             this.txtEmail.Min = 0;
@@ -155,7 +222,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(5, 113);
+            this.label4.Location = new System.Drawing.Point(5, 111);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 3;
@@ -163,7 +230,7 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(130, 82);
+            this.txtDireccion.Location = new System.Drawing.Point(130, 80);
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtDireccion.Max = 200;
             this.txtDireccion.Min = 0;
@@ -177,7 +244,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 88);
+            this.label3.Location = new System.Drawing.Point(5, 86);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 3;
@@ -185,7 +252,7 @@
             // 
             // txtCUIT
             // 
-            this.txtCUIT.Location = new System.Drawing.Point(130, 57);
+            this.txtCUIT.Location = new System.Drawing.Point(130, 55);
             this.txtCUIT.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtCUIT.Max = 20;
             this.txtCUIT.Min = 0;
@@ -199,7 +266,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(5, 63);
+            this.label2.Location = new System.Drawing.Point(5, 61);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 3;
@@ -207,7 +274,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(130, 30);
+            this.txtNombre.Location = new System.Drawing.Point(130, 28);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtNombre.Max = 25;
             this.txtNombre.Min = 0;
@@ -221,7 +288,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 36);
+            this.label1.Location = new System.Drawing.Point(5, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 1;
@@ -231,7 +298,7 @@
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.Gainsboro;
             this.btnGuardar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(82, 310);
+            this.btnGuardar.Location = new System.Drawing.Point(82, 293);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(131, 27);
             this.btnGuardar.TabIndex = 0;
@@ -293,117 +360,6 @@
             this.Grid.Size = new System.Drawing.Size(552, 534);
             this.Grid.TabIndex = 26;
             this.Grid.SelectionChanged += new System.EventHandler(this.Grid_SelectionChanged);
-            // 
-            // btnCuotas
-            // 
-            this.btnCuotas.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnCuotas.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCuotas.Location = new System.Drawing.Point(631, 150);
-            this.btnCuotas.Name = "btnCuotas";
-            this.btnCuotas.Size = new System.Drawing.Size(146, 27);
-            this.btnCuotas.TabIndex = 32;
-            this.btnCuotas.Text = "CUOTAS [F6]";
-            this.btnCuotas.UseVisualStyleBackColor = false;
-            this.btnCuotas.Click += new System.EventHandler(this.btnCuotas_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnEliminar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(631, 103);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(146, 27);
-            this.btnEliminar.TabIndex = 29;
-            this.btnEliminar.Text = "ELIMINAR [F4]";
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnModificar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(631, 57);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(146, 27);
-            this.btnModificar.TabIndex = 30;
-            this.btnModificar.Text = "MODIFICAR [F3]";
-            this.btnModificar.UseVisualStyleBackColor = false;
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnNuevo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Location = new System.Drawing.Point(631, 11);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(146, 27);
-            this.btnNuevo.TabIndex = 31;
-            this.btnNuevo.Text = "NUEVO [F2]";
-            this.btnNuevo.UseVisualStyleBackColor = false;
-            // 
-            // txtMonto
-            // 
-            this.txtMonto.Location = new System.Drawing.Point(130, 188);
-            this.txtMonto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtMonto.Max = 1000000;
-            this.txtMonto.Min = 1;
-            this.txtMonto.Name = "txtMonto";
-            this.txtMonto.Nombre = "Monto Cuota";
-            this.txtMonto.Obligatorio = true;
-            this.txtMonto.Size = new System.Drawing.Size(159, 19);
-            this.txtMonto.TabIndex = 8;
-            this.txtMonto.Tipo = UserControls.Tipo.Decimal;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 188);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 13);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Monto Cuota";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 218);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(117, 13);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Día de Vencimiento";
-            // 
-            // txtVencimiento
-            // 
-            this.txtVencimiento.Location = new System.Drawing.Point(130, 218);
-            this.txtVencimiento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.txtVencimiento.Max = 30;
-            this.txtVencimiento.Min = 1;
-            this.txtVencimiento.Name = "txtVencimiento";
-            this.txtVencimiento.Nombre = "Día Vencimiento";
-            this.txtVencimiento.Obligatorio = true;
-            this.txtVencimiento.Size = new System.Drawing.Size(159, 19);
-            this.txtVencimiento.TabIndex = 8;
-            this.txtVencimiento.Tipo = UserControls.Tipo.Numero;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 247);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(123, 13);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "Porcentaje Aumento";
-            // 
-            // txtPorcentajeAumento
-            // 
-            this.txtPorcentajeAumento.Location = new System.Drawing.Point(130, 247);
-            this.txtPorcentajeAumento.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
-            this.txtPorcentajeAumento.Max = 300;
-            this.txtPorcentajeAumento.Min = 0;
-            this.txtPorcentajeAumento.Name = "txtPorcentajeAumento";
-            this.txtPorcentajeAumento.Nombre = "Porcentaje de aumento";
-            this.txtPorcentajeAumento.Obligatorio = true;
-            this.txtPorcentajeAumento.Size = new System.Drawing.Size(159, 19);
-            this.txtPorcentajeAumento.TabIndex = 8;
-            this.txtPorcentajeAumento.Tipo = UserControls.Tipo.Decimal;
             // 
             // id
             // 
@@ -487,6 +443,63 @@
             this.PorcentajeAumento.Name = "PorcentajeAumento";
             this.PorcentajeAumento.ReadOnly = true;
             // 
+            // btnCuotas
+            // 
+            this.btnCuotas.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnCuotas.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCuotas.Location = new System.Drawing.Point(631, 137);
+            this.btnCuotas.Name = "btnCuotas";
+            this.btnCuotas.Size = new System.Drawing.Size(146, 27);
+            this.btnCuotas.TabIndex = 32;
+            this.btnCuotas.Text = "CUOTAS [F6]";
+            this.btnCuotas.UseVisualStyleBackColor = false;
+            this.btnCuotas.Click += new System.EventHandler(this.btnCuotas_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnEliminar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(631, 94);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(146, 27);
+            this.btnEliminar.TabIndex = 29;
+            this.btnEliminar.Text = "ELIMINAR [F4]";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnModificar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Location = new System.Drawing.Point(631, 52);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(146, 27);
+            this.btnModificar.TabIndex = 30;
+            this.btnModificar.Text = "MODIFICAR [F3]";
+            this.btnModificar.UseVisualStyleBackColor = false;
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnNuevo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.Location = new System.Drawing.Point(631, 11);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(146, 27);
+            this.btnNuevo.TabIndex = 31;
+            this.btnNuevo.Text = "NUEVO [F2]";
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            // 
+            // btnIngresos
+            // 
+            this.btnIngresos.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnIngresos.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresos.Location = new System.Drawing.Point(631, 178);
+            this.btnIngresos.Name = "btnIngresos";
+            this.btnIngresos.Size = new System.Drawing.Size(146, 27);
+            this.btnIngresos.TabIndex = 33;
+            this.btnIngresos.Text = "INGRESOS [F7]";
+            this.btnIngresos.UseVisualStyleBackColor = false;
+            this.btnIngresos.Click += new System.EventHandler(this.btnIngresos_Click);
+            // 
             // Municipalidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -494,6 +507,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(864, 557);
+            this.Controls.Add(this.btnIngresos);
             this.Controls.Add(this.btnCuotas);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
@@ -553,5 +567,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MontoCuota;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaAumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn PorcentajeAumento;
+        private System.Windows.Forms.Button btnIngresos;
     }
 }

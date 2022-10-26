@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
-using System.Data.OleDb;
+using System.Data.SqlClient;
 
 namespace Datos
 {
@@ -14,8 +14,8 @@ namespace Datos
         {
             try
             {
-                Conexion.cn = new OleDbConnection(Conexion.cadena);
-                OleDbCommand cm = new OleDbCommand(comando, Conexion.cn);
+                Conexion.cn = new SqlConnection(Conexion.cadena);
+                SqlCommand cm = new SqlCommand(comando, Conexion.cn);
                 Conexion.cn.Open();
                 int cantidad = cm.ExecuteNonQuery();
                 Conexion.cn.Close();
@@ -39,8 +39,8 @@ namespace Datos
         {
             try
             {
-                Conexion.cn = new OleDbConnection(Conexion.cadena);
-                OleDbCommand cm = new OleDbCommand(comando, Conexion.cn);
+                Conexion.cn = new SqlConnection(Conexion.cadena);
+                SqlCommand cm = new SqlCommand(comando, Conexion.cn);
                 Conexion.cn.Open();
                 int cantidad = int.Parse(cm.ExecuteScalar().ToString());
                 Conexion.cn.Close();
@@ -64,10 +64,10 @@ namespace Datos
         {
             try
             {
-                Conexion.cn = new OleDbConnection(Conexion.cadena);
-                OleDbCommand cm = new OleDbCommand(comando, Conexion.cn);
+                Conexion.cn = new SqlConnection(Conexion.cadena);
+                SqlCommand cm = new SqlCommand(comando, Conexion.cn);
                 Conexion.cn.Open();
-                OleDbDataAdapter da = new OleDbDataAdapter(cm);
+                SqlDataAdapter da = new SqlDataAdapter(cm);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
                 Conexion.cn.Close();

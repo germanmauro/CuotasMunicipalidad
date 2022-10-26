@@ -97,5 +97,21 @@ namespace BLL
             }
         }
 
+        public static municipalidad Obtener(int id)
+        {
+            try
+            {
+                using (CuotasEntities db = new CuotasEntities())
+                {
+                    return db.municipalidades.Find(id);
+                }
+            }
+            catch (Exception)
+            {
+                Utilidades.MensajesAdvertencia("Error");
+                return null;
+            }
+        }
+
     }
 }

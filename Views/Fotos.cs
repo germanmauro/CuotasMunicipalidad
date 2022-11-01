@@ -72,7 +72,7 @@ namespace StockMyG
         private void ActualizarGrilla()
         {
             LimpiarImagenes();
-            var lista = BLL.InventarioFotoService.Listar();
+            var lista = BLL.InventarioFotoService.Listar(Inventario.id);
             int x = 10;
             int y = 40;
             foreach (var item in lista)

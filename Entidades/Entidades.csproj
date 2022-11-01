@@ -40,12 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityEgresosReporte.cs" />
+    <Compile Include="EntityIngresosReporte.cs" />
     <Compile Include="EntityCuotaReporte.cs" />
     <Compile Include="EntityIngreso.cs" />
     <Compile Include="EntityCuota.cs" />
     <Compile Include="EntityInventario.cs" />
     <Compile Include="EntityMunicipalidad.cs" />
     <Compile Include="EntityCompra.cs" />
+    <Compile Include="EntityUsers.cs" />
     <Compile Include="EntityProveedor.cs" />
     <Compile Include="EntityDireccion.cs" />
     <Compile Include="EntityBase.cs" />

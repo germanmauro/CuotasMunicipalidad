@@ -12,6 +12,9 @@ namespace Entidades
         public string Nombre { get; set; }
         public string Oficina { get; set; }
         public DateTime? Fecha { get; set; }
+        public DateTime? FechaBaja { get; set; }
+        public string MotivoBaja { get; set; }
+        public string Estado { get; set; }
 
         public EntityInventario()
         {

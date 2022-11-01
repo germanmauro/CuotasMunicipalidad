@@ -87,13 +87,18 @@ namespace BLL
             }
         }
 
-        public static List<banco> ListarCombo()
+        public static List<banco> ListarCombo(bool todos = false)
         {
             try
             {
                 using (CuotasEntities db = new CuotasEntities())
                 {
-                    return db.bancos.ToList();
+                    List<banco> lista_banco = db.bancos.ToList();
+                    if (todos)
+                    {
+                        lista_banco.Insert(0, new banco { id = 0, nombre = "Todos" });
+                    }
+                    return lista_banco;
                 }
             }
             catch (Exception)

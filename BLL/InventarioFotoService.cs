@@ -65,14 +65,14 @@ namespace BLL
             }
         }
 
-        public static List<EntityBase> Listar()
+        public static List<EntityBase> Listar(int inventario)
         {
             try
             {
                 using (CuotasEntities db = new CuotasEntities())
                 {
                     List<EntityBase> lista = new List<EntityBase>();
-                    foreach (var item in db.inventario_foto)
+                    foreach (var item in db.inventario_foto.Where(c=> c.inventario_id == inventario))
                     {
                         lista.Add(new EntityBase{ Id = item.id,Nombre = item.foto});
                     };

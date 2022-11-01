@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -73,36 +75,9 @@ namespace StockMyG
             cli.Show();
         }
 
-        private void registrarToolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            Productos cli = new Productos
-            {
-                MdiParent = this
-            };
-            cli.Show();
-        }
-
         private void registroToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Proveedor cli = new Proveedor
-            {
-                MdiParent = this
-            };
-            cli.Show();
-        }
-
-        private void coloresToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Color cli = new Color
-            {
-                MdiParent = this
-            };
-            cli.Show();
-        }
-
-        private void registrarToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            Venta cli = new Venta
             {
                 MdiParent = this
             };
@@ -118,57 +93,12 @@ namespace StockMyG
             cli.Show();
         }
 
-        private void reportePorClienteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ReporteProductos cli = new ReporteProductos
-            {
-                MdiParent = this
-            };
-            cli.Show();
-        }
-
-        private void registrarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Pedido_a_proveedores cli = new Pedido_a_proveedores
-            {
-                MdiParent = this
-            };
-            cli.Show();
-        }
-
-        private void actualizarProductosPorPedidoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CargaPedido cli = new CargaPedido
-            {
-                MdiParent = this
-            };
-            cli.Show();
-        }
-
         private void Inicio_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("Desea cerrar el programa", "Salir", MessageBoxButtons.YesNo) == DialogResult.No)
             {
                 e.Cancel = true;
             }
-        }
-
-        private void coloresToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            Color cli = new Color
-            {
-                MdiParent = this
-            };
-            cli.Show();
-        }
-
-        private void talllesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Talle cli = new Talle
-            {
-                MdiParent = this
-            };
-            cli.Show();
         }
 
         private void visualizarVentasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -243,15 +173,6 @@ namespace StockMyG
             cli.Show();
         }
 
-        private void inventarioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Inventario cli = new Inventario
-            {
-                MdiParent = this
-            };
-            cli.Show();
-        }
-
         private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Compras cli = new Compras
@@ -273,6 +194,58 @@ namespace StockMyG
         private void cuotasPagadasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CuotasPagadas cli = new CuotasPagadas
+            {
+                MdiParent = this
+            };
+            cli.Show();
+        }
+
+        private void reportePorClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReporteIngresos cli = new ReporteIngresos
+            {
+                MdiParent = this
+            };
+            cli.Show();
+        }
+
+        private void egresosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReporteEgresos cli = new ReporteEgresos
+            {
+                MdiParent = this
+            };
+            cli.Show();
+        }
+
+        private void ingresoDeInventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Inventario cli = new Inventario
+            {
+                MdiParent = this
+            };
+            cli.Show();
+        }
+
+        private void bajaDeInvetarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InventarioBaja cli = new InventarioBaja
+            {
+                MdiParent = this
+            };
+            cli.Show();
+        }
+
+        private void reporteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reporte form = new Reporte();
+            form.Show();
+            form.CargaInventario();
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Usuarios cli = new Usuarios
             {
                 MdiParent = this
             };

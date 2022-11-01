@@ -20,7 +20,7 @@ CREATE TABLE users (
 	CONSTRAINT FK_usersPerfil FOREIGN KEY (perfil_id) REFERENCES perfil(id)
 );
 
-insert into users values ('usuario','administrador','admin','12345', 0,1);
+insert into users values ('usuario','administrador','admin','Lf8WyFMrSek=', 0,1);
 
 CREATE TABLE proveedor (
 	id int IDENTITY(1,1) PRIMARY KEY,

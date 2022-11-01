@@ -47,12 +47,13 @@ namespace StockMyG
             ReportDataSource datasource = new ReportDataSource
             {
                 Name = "DataSet",
-                Value = BLL.CuotaService.ReporteRecibo(cuota)
+                Value = BLL.CuotaService.ReporteRecibo(cuota),
             };
-
+            
             reportViewer1.Reset();
-            reportViewer1.LocalReport.ReportEmbeddedResource = "MecanEasy.Volante.rdlc";
-            reportViewer1.LocalReport.ReportPath = "Volante.rdlc";
+            reportViewer1.LocalReport.ReportEmbeddedResource = "MecanEasy.Recibo.rdlc";
+            reportViewer1.LocalReport.ReportPath = "Recibo.rdlc";
+            reportViewer1.LocalReport.DisplayName = "Recibo" + DateTime.Now.ToString();
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(datasource);
 
@@ -61,17 +62,35 @@ namespace StockMyG
             reportViewer1.ZoomMode = ZoomMode.FullPage;
         }
 
-        public void CargaProductos(string categoria, string subcategoria, string marca, string codigo, string talle, string color, string desde, string hasta)
+        public void CargaMovimientos(int? municipalidad, DateTime? desde = null, DateTime? hasta = null)
         {
             ReportDataSource datasource = new ReportDataSource
             {
                 Name = "DataSet",
-                //Value = BLL.VentaBLL.ReporteProducto(categoria, subcategoria, marca, codigo, talle, color, desde, hasta)
+                Value = BLL.IngresoService.ReporteIngresos(municipalidad, desde, hasta)
             };
 
             reportViewer1.Reset();
-            reportViewer1.LocalReport.ReportEmbeddedResource = "MecanEasy.ReporteProducto.rdlc";
-            reportViewer1.LocalReport.ReportPath = "ReporteProducto.rdlc";
+            reportViewer1.LocalReport.ReportEmbeddedResource = "MecanEasy.Movimientos.rdlc";
+            reportViewer1.LocalReport.ReportPath = "Movimientos.rdlc";
+
+            reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.LocalReport.DataSources.Add(datasource);
+
+            reportViewer1.RefreshReport();
+            reportViewer1.ZoomMode = ZoomMode.FullPage;
+        }
+        public void CargaCompras(int proveedor,int banco, string forma_pago, DateTime desde, DateTime hasta)
+        {
+            ReportDataSource datasource = new ReportDataSource
+            {
+                Name = "DataSet",
+                Value = BLL.CompraService.ReporteEgresos(proveedor, banco, forma_pago, desde, hasta)
+            };
+
+            reportViewer1.Reset();
+            reportViewer1.LocalReport.ReportEmbeddedResource = "MecanEasy.Egresos.rdlc";
+            reportViewer1.LocalReport.ReportPath = "Egresos.rdlc";
 
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(datasource);
@@ -80,6 +99,24 @@ namespace StockMyG
             reportViewer1.ZoomMode = ZoomMode.FullPage;
         }
 
- 
+        public void CargaInventario()
+        {
+            ReportDataSource datasource = new ReportDataSource
+            {
+                Name = "DataSet",
+                Value = BLL.InventarioService.Listar()
+            };
+
+            reportViewer1.Reset();
+            reportViewer1.LocalReport.ReportEmbeddedResource = "MecanEasy.Inventario.rdlc";
+            reportViewer1.LocalReport.ReportPath = "Inventario.rdlc";
+            reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.LocalReport.DataSources.Add(datasource);
+
+            reportViewer1.Refresh();
+            reportViewer1.RefreshReport();
+            reportViewer1.ZoomMode = ZoomMode.FullPage;
+        }
+
     }
 }

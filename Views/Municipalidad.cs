@@ -117,6 +117,7 @@ namespace StockMyG
                     btnEliminar.Enabled = false;
                     btnCuotas.Enabled = false;
                     btnIngresos.Enabled = false;
+                    btnMovimientos.Enabled = false;
                     btnModificar.Enabled = false;
                     groupInformacion.Enabled = false;
                     Grid.ClearSelection();
@@ -127,6 +128,7 @@ namespace StockMyG
                     btnEliminar.Enabled = true;
                     btnCuotas.Enabled = true;
                     btnIngresos.Enabled = true;
+                    btnMovimientos.Enabled = true;
                     btnModificar.Enabled = true;
                     break;
                 case Formulario.EstadoForm.Nuevo:
@@ -135,6 +137,7 @@ namespace StockMyG
                     btnEliminar.Enabled = false;
                     btnCuotas.Enabled = false;
                     btnIngresos.Enabled = false;
+                    btnMovimientos.Enabled = false;
                     btnModificar.Enabled = false;
                     BorrarDatos();
                     break;
@@ -220,6 +223,12 @@ namespace StockMyG
                         btnIngresos_Click(null, null);
                     }
                 break;
+                case Keys.F8:
+                    if (btnMovimientos.Enabled)
+                    {
+                        btnMovimientos_Click(null, null);
+                    }
+                break;
 
                 default:
                     break;
@@ -244,6 +253,14 @@ namespace StockMyG
             };
             //form.Parent = this;
             form.Show();
+        }
+
+        private void btnMovimientos_Click(object sender, EventArgs e)
+        {
+            int cuota = int.Parse(Grid.SelectedRows[0].Cells["id"].Value.ToString());
+            Reporte form = new Reporte();
+            form.Show();
+            form.CargaMovimientos(cuota);
         }
     }
 }

@@ -18,6 +18,7 @@ namespace BLL
         {
             using (CuotasEntities db = new CuotasEntities())
             {
+                password = Utilidades.Encrypt(password);
                 var usuario = db.users.FirstOrDefault(c => c.usuario == user && c.password == password);
                 if (usuario == null)
                 {

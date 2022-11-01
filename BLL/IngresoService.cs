@@ -108,5 +108,70 @@ namespace BLL
             }
         }
 
+        public static List<EntityIngresosReporte> ReporteIngresos(int? municipalidad, DateTime? desde, DateTime? hasta)
+        {
+            try
+            {
+                List<EntityIngresosReporte> list = new List<EntityIngresosReporte>();
+                using (CuotasEntities db = new CuotasEntities())
+                {
+                    foreach(var cuota_a_pagar in db.cuotas.Where(c=> (municipalidad == null || c.municipalidad_id == municipalidad) &&
+                    (desde == null || c.fecha >= desde) && 
+                    (hasta == null || c.fecha <= hasta)
+                    )) 
+                    {
+                        EntityIngresosReporte ent_cuota = new EntityIngresosReporte
+                        {
+                            Descripcion = $"EMISIÓN {cuota_a_pagar.fecha.ToString("MMM - yyyy").ToUpper()}",
+                          
+                            Municipalidad = cuota_a_pagar.municipalidad.nombre,
+                            Importe = cuota_a_pagar.importe + (cuota_a_pagar.estado == "Pagado" ? cuota_a_pagar.intereses: CuotaService.CalcularIntereses(cuota_a_pagar)),
+                            Fecha = cuota_a_pagar.vencimiento
+                        };
+                        list.Add(ent_cuota);
+                    }
+                    foreach (var cuota_paga in db.cuotas.Where(c => (municipalidad == null || c.municipalidad_id == municipalidad) &&
+                    (desde == null || c.fecha_pago >= desde) &&
+                    (hasta == null || c.fecha_pago <= hasta) && c.estado == "Pagado"))
+                    {
+                        EntityIngresosReporte ent_cuota = new EntityIngresosReporte
+                        {
+                            Descripcion = $"PAGO {cuota_paga.fecha.ToString("MMM - yyyy").ToUpper()}",
+                            FormaPago = cuota_paga.forma_pago,
+                            Municipalidad = cuota_paga.municipalidad.nombre,
+                            Importe = cuota_paga.importe_abonado*-1,
+                            Fecha = cuota_paga.fecha_pago,
+                            Banco = cuota_paga.banco.nombre
+                        };
+                        list.Add(ent_cuota);
+                    }
+
+                    foreach (var ent_ingreso in db.ingresos.Where(c => (municipalidad == null || c.municipalidad_id == municipalidad) &&
+                    (desde == null || c.fecha >= desde) &&
+                    (hasta == null || c.fecha <= hasta)
+                    ))
+                    {
+                        EntityIngresosReporte ent_cuota = new EntityIngresosReporte
+                        {
+                            Descripcion = ent_ingreso.descripcion,
+                            FormaPago = ent_ingreso.forma_pago,
+                            Municipalidad = ent_ingreso.municipalidad.nombre,
+                            Importe = ent_ingreso.importe*-1,
+                            Fecha = ent_ingreso.fecha,
+                            Banco = ent_ingreso.banco.nombre
+                        };
+                        list.Add(ent_cuota);
+                    }
+                    return list.OrderBy(c=>c.Fecha).ToList();
+                }
+
+            }
+            catch (Exception)
+            {
+                Utilidades.MensajesAdvertencia("Error al listar");
+                return null;
+            }
+        }
+
     }
 }

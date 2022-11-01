@@ -48,6 +48,10 @@ namespace StockMyG
                             item.intereses = Decimal.Parse(Grid.SelectedRows[0].Cells["Intereses"].Value.ToString());
                             BLL.CuotaService.Pagar(item);
                             ActualizarGrilla();
+
+                            Reporte form = new Reporte();
+                            form.Show();
+                            form.CargarRecibo(item.id);
                         }
                         break;
                     default:

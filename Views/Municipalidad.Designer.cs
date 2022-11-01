@@ -67,6 +67,7 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnIngresos = new System.Windows.Forms.Button();
+            this.btnMovimientos = new System.Windows.Forms.Button();
             this.groupInformacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.SuspendLayout();
@@ -447,7 +448,7 @@
             // 
             this.btnCuotas.BackColor = System.Drawing.Color.Gainsboro;
             this.btnCuotas.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCuotas.Location = new System.Drawing.Point(631, 137);
+            this.btnCuotas.Location = new System.Drawing.Point(631, 114);
             this.btnCuotas.Name = "btnCuotas";
             this.btnCuotas.Size = new System.Drawing.Size(146, 27);
             this.btnCuotas.TabIndex = 32;
@@ -459,7 +460,7 @@
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.Gainsboro;
             this.btnEliminar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(631, 94);
+            this.btnEliminar.Location = new System.Drawing.Point(631, 79);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(146, 27);
             this.btnEliminar.TabIndex = 29;
@@ -470,7 +471,7 @@
             // 
             this.btnModificar.BackColor = System.Drawing.Color.Gainsboro;
             this.btnModificar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(631, 52);
+            this.btnModificar.Location = new System.Drawing.Point(631, 46);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(146, 27);
             this.btnModificar.TabIndex = 30;
@@ -492,13 +493,25 @@
             // 
             this.btnIngresos.BackColor = System.Drawing.Color.Gainsboro;
             this.btnIngresos.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresos.Location = new System.Drawing.Point(631, 178);
+            this.btnIngresos.Location = new System.Drawing.Point(631, 149);
             this.btnIngresos.Name = "btnIngresos";
             this.btnIngresos.Size = new System.Drawing.Size(146, 27);
             this.btnIngresos.TabIndex = 33;
             this.btnIngresos.Text = "INGRESOS [F7]";
             this.btnIngresos.UseVisualStyleBackColor = false;
             this.btnIngresos.Click += new System.EventHandler(this.btnIngresos_Click);
+            // 
+            // btnMovimientos
+            // 
+            this.btnMovimientos.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnMovimientos.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMovimientos.Location = new System.Drawing.Point(631, 184);
+            this.btnMovimientos.Name = "btnMovimientos";
+            this.btnMovimientos.Size = new System.Drawing.Size(146, 27);
+            this.btnMovimientos.TabIndex = 34;
+            this.btnMovimientos.Text = "MOVIMIENTOS [F8]";
+            this.btnMovimientos.UseVisualStyleBackColor = false;
+            this.btnMovimientos.Click += new System.EventHandler(this.btnMovimientos_Click);
             // 
             // Municipalidad
             // 
@@ -507,6 +520,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(864, 557);
+            this.Controls.Add(this.btnMovimientos);
             this.Controls.Add(this.btnIngresos);
             this.Controls.Add(this.btnCuotas);
             this.Controls.Add(this.btnEliminar);
@@ -568,5 +582,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaAumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn PorcentajeAumento;
         private System.Windows.Forms.Button btnIngresos;
+        private System.Windows.Forms.Button btnMovimientos;
     }
 }

@@ -10,23 +10,32 @@ using System.Windows.Forms;
 
 namespace StockMyG
 {
-    public partial class Productos : Form
+    public partial class Usuarios : Form
     {
-        public Productos()
+        public Usuarios()
         {
             InitializeComponent();
         }
         Formulario.EstadoForm estado;
-        private void Productos1_Load(object sender, EventArgs e)
+
+        private void Proveedor_Load(object sender, EventArgs e)
         {
-            ActualizarCombo();
+            ActualizarGrilla();
+            CargaCombo();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (Validador.VeficarForm(this))
             {
-                //Entidades.Producto item = new Entidades.Producto(txtNombre.Controls[0].Text, txtDescripcion.Controls[0].Text, ((Entidades.Subcategoria)cmbSubCat.SelectedItem).Codigo, decimal.Parse(txtPrecioCompra.Controls[0].Text), decimal.Parse(txtPrecioVenta.Controls[0].Text), ((Entidades.Marca)cmbMarca.SelectedItem).Codigo);
+                Datos.user item = new Datos.user
+                {
+                    nombre = txtNombre.Controls[0].Text,
+                    apellido = txtApellido.Controls[0].Text,
+                    usuario = txtUsuario.Controls[0].Text,
+                    password = txtPassword.Controls[0].Text,
+                    perfil_id = ((Datos.perfil)cmbPerfil.SelectedItem).id
+                };
 
                 switch (estado)
                 {
@@ -35,14 +44,14 @@ namespace StockMyG
                     case Formulario.EstadoForm.Seleccionado:
                         break;
                     case Formulario.EstadoForm.Nuevo:
-                        //BLL.ProductoBLL.Guardar(item);
+                        BLL.UsuarioService.Guardar(item);
                         ActualizarGrilla();
                         break;
                     case Formulario.EstadoForm.Modificado:
                         if (MessageBox.Show("¿Desea realizar la modificación?", "Confirmación", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
-                            //item.Id = int.Parse(Grid.SelectedRows[0].Cells["Id"].Value.ToString());
-                            //BLL.ProductoBLL.Modificar(item);
+                            item.id = int.Parse(Grid.SelectedRows[0].Cells["id"].Value.ToString());
+                            BLL.UsuarioService.Modificar(item);
                             ActualizarGrilla();
                         }
                         break;
@@ -56,8 +65,11 @@ namespace StockMyG
         {
             if (MessageBox.Show("¿Desea realizar la eliminación?", "Confirmación", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                //Entidades.Producto ent = new Entidades.Producto(int.Parse(Grid.SelectedRows[0].Cells["Id"].Value.ToString()));
-                //BLL.ProductoBLL.Eliminar(ent);
+                Datos.user ent = new Datos.user
+                {
+                    id = int.Parse(Grid.SelectedRows[0].Cells["id"].Value.ToString())
+                };
+                BLL.UsuarioService.Eliminar(ent);
 
                 ActualizarGrilla();
             }
@@ -87,7 +99,7 @@ namespace StockMyG
         #region Metodos
         private void ActualizarGrilla()
         {
-            //Grid.DataSource = BLL.ProductoBLL.Listar(((Entidades.Subcategoria)cmbSubCat.SelectedItem).Codigo.ToString());
+            Grid.DataSource = BLL.UsuarioService.Listar();
             estado = Formulario.EstadoForm.SinDatos;
             ActualizarVista();
         }
@@ -98,7 +110,6 @@ namespace StockMyG
             {
                 case Formulario.EstadoForm.SinDatos:
                     btnEliminar.Enabled = false;
-                    btnVariante.Enabled = false;
                     btnModificar.Enabled = false;
                     groupInformacion.Enabled = false;
                     Grid.ClearSelection();
@@ -107,14 +118,12 @@ namespace StockMyG
                 case Formulario.EstadoForm.Seleccionado:
                     groupInformacion.Enabled = false;
                     btnEliminar.Enabled = true;
-                    btnVariante.Enabled = true;
                     btnModificar.Enabled = true;
                     break;
                 case Formulario.EstadoForm.Nuevo:
                     groupInformacion.Enabled = true;
                     Grid.ClearSelection();
                     btnEliminar.Enabled = false;
-                    btnVariante.Enabled = false;
                     btnModificar.Enabled = false;
                     BorrarDatos();
                     break;
@@ -130,79 +139,20 @@ namespace StockMyG
         private void CargarDatos()
         {
             this.txtNombre.Controls[0].Text = Grid.SelectedRows[0].Cells["Nombre"].Value.ToString();
-            this.txtDescripcion.Controls[0].Text = Grid.SelectedRows[0].Cells["Descripcion"].Value.ToString();
-            this.txtPrecioCompra.Controls[0].Text = Grid.SelectedRows[0].Cells["PrecioCompra"].Value.ToString();
-            this.txtPrecioVenta.Controls[0].Text = Grid.SelectedRows[0].Cells["PrecioVenta"].Value.ToString();
-
-            foreach (var item in cmbMarca.Items)
-            {
-                //if (((Entidades.Marca)item).Nombre == Grid.SelectedRows[0].Cells["Marca"].Value.ToString())
-                //{
-                //    cmbMarca.SelectedItem = item;
-                //    break;
-                //}
-            }
+            this.txtApellido.Controls[0].Text = Grid.SelectedRows[0].Cells["Apellido"].Value.ToString();
+            this.txtUsuario.Controls[0].Text = Grid.SelectedRows[0].Cells["Usuario"].Value.ToString();
+            this.cmbPerfil.SelectedIndex = this.cmbPerfil.FindStringExact(Grid.SelectedRows[0].Cells["Perfil"].Value.ToString());
         }
 
         private void BorrarDatos()
         {
             this.txtNombre.Controls[0].Text = "";
-            this.txtDescripcion.Controls[0].Text = "";
-            this.txtPrecioCompra.Controls[0].Text = "";
-            this.txtPrecioVenta.Controls[0].Text = "";
+            this.txtApellido.Controls[0].Text = "";
+            this.txtPassword.Controls[0].Text = "";
+            this.txtUsuario.Controls[0].Text = "";
         }
 
-        private void ActualizarCombo()
-        {
-
-            //Combo Marca
-            //this.cmbMarca.DataSource = BLL.MarcaBLL.Listar();
-            //this.cmbMarca.DisplayMember = "Nombre";
-            //this.cmbMarca.ValueMember = "Codigo";
-
-            //this.CmbCat.DataSource = BLL.CategoriaBLL.Listar();
-            //this.CmbCat.DisplayMember = "Nombre";
-            //this.CmbCat.ValueMember = "Codigo";
-            //if (CmbCat.Items.Count > 0)
-            //{
-            //    CmbCat.SelectedIndex = 0;
-            //    this.cmbSubCat.DataSource = BLL.SubCategoriaBLL.Listar(((Entidades.Categoria)CmbCat.SelectedItem).Codigo.ToString());
-            //    this.cmbSubCat.DisplayMember = "Nombre";
-            //    this.cmbSubCat.ValueMember = "Codigo";
-            //    if (cmbSubCat.Items.Count > 0)
-            //    {
-            //        cmbSubCat.SelectedIndex = 0;
-            //        btnNuevo.Enabled = true;
-            //        ActualizarGrilla();
-            //    }
-            //    else
-            //    {
-            //        btnNuevo.Enabled = false;
-            //    }
-            //}
-        }
         #endregion
-
-        private void CmbCat_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //this.cmbSubCat.DataSource = BLL.SubCategoriaBLL.Listar(((Entidades.Categoria)CmbCat.SelectedItem).Codigo.ToString());
-            if (cmbSubCat.Items.Count > 0)
-            {
-                cmbSubCat.SelectedIndex = 0;
-                btnNuevo.Enabled = true;
-                ActualizarGrilla();
-            }
-            else
-            {
-                btnNuevo.Enabled = false;
-                ActualizarVista();
-            }
-        }
-
-        private void cmbSubCat_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ActualizarGrilla();
-        }
 
         private void Producto_KeyDown(object sender, KeyEventArgs e)
         {
@@ -232,27 +182,18 @@ namespace StockMyG
                         btnGuardar_Click(null, null);
                     }
                     break;
-                case Keys.F6:
-                    if (btnVariante.Enabled)
-                    {
-                        btnVariante_Click(null, null);
-                    }
-                    break;
+              
                 default:
                     break;
             }
         }
 
-        private void btnVariante_Click(object sender, EventArgs e)
+        private void CargaCombo()
         {
-            //Formulario de variantes de un producto
-            Variante form = new Variante();
-            //Entidades.Producto pro = new Entidades.Producto(int.Parse(Grid.SelectedRows[0].Cells["Id"].Value.ToString()))
-            {
-                //Nombre = Grid.SelectedRows[0].Cells["Nombre"].Value.ToString()
-            };
-            //form.Prod = pro;
-            form.Show();
+            this.cmbPerfil.DataSource = BLL.PerfilService.ListarCombo();
+            this.cmbPerfil.DisplayMember = "nombre";
+            this.cmbPerfil.ValueMember = "id";
         }
+
     }
 }

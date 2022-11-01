@@ -42,6 +42,7 @@ namespace BLL
                 {
                     cuota ent_update = db.cuotas.Find(ent.id);
                     ent_update.estado = "Pagado";
+                    ent_update.intereses = CalcularIntereses(ent_update);
                     ent_update.importe_abonado = ent.importe_abonado;
                     ent_update.forma_pago = ent.forma_pago;
                     ent_update.fecha_pago = ent.fecha_pago;
@@ -261,7 +262,7 @@ namespace BLL
                 && c.fecha.Month == ent.fecha.Month && c.municipalidad_id == ent.municipalidad.id).Count();
                 if(cantidad > 0)
                 {
-                    Utilidades.MensajesAdvertencia("Error al listar");
+                    Utilidades.MensajesAdvertencia("Ya existe un cuota para ese mes");
                     return true;
                 }
                 return false;
@@ -332,11 +333,13 @@ namespace BLL
                         Id = item.id,
                         EstadoCuota = item.estado,
                         FormaPago = item.forma_pago,
-                        NumeroLetras = Utilidades.NumeroTexto(item.importe_abonado);
+                        NumeroLetras = (item.importe_abonado ?? 0m).NumeroALetras(),
                         Municipalidad = item.municipalidad.nombre,
                         Importe = item.importe,
+                        ImporteAbonado = item.importe_abonado,
                         Banco = item.banco.nombre,
                         Fecha = item.fecha,
+                        FechaPago = item.fecha_pago,
                         Intereses = item.intereses,
                         Vencimiento = item.vencimiento
                     };

@@ -50,6 +50,25 @@ namespace BLL
                 Utilidades.MensajesAdvertencia("Error al modificar registro");
             }
         }
+        public static void Baja(inventario ent)
+        {
+            try
+            {
+                using (CuotasEntities db = new CuotasEntities())
+                {
+                    inventario ent_update = db.inventarios.Find(ent.id);
+                    ent_update.motivo_baja = ent.motivo_baja;
+                    ent_update.baja = true;
+                    ent_update.fecha_baja = DateTime.Now;
+                    db.SaveChanges();
+                    Utilidades.MensajesOK("Baja de invertario realizada con exito");
+                }
+            }
+            catch (Exception)
+            {
+                Utilidades.MensajesAdvertencia("Error al modificar registro");
+            }
+        }
 
         public static inventario Obtener(int id)
         {
@@ -85,6 +104,24 @@ namespace BLL
                 Utilidades.MensajesAdvertencia("Error al eliminar registro");
             }
         }
+        public static void EliminarBaja(inventario ent)
+        {
+            try
+            {
+                using (CuotasEntities db = new CuotasEntities())
+                {
+                    inventario ent_update = db.inventarios.Find(ent.id);
+                    ent_update.motivo_baja = "";
+                    ent_update.fecha_baja = null;
+                    db.SaveChanges();
+                    Utilidades.MensajesOK("Baja eliminada con exito");
+                }
+            }
+            catch (Exception)
+            {
+                Utilidades.MensajesAdvertencia("Error al eliminar registro");
+            }
+        }
 
         public static List<EntityInventario> Listar()
         {
@@ -95,7 +132,27 @@ namespace BLL
                     List<EntityInventario> lista = new List<EntityInventario>();
                     foreach (var item in db.inventarios)
                     {
-                        lista.Add(new EntityInventario { Id = item.id,Nombre = item.nombre, Oficina = item.oficina.nombre, Fecha = item.fecha});
+                        lista.Add(new EntityInventario { Id = item.id,Nombre = item.nombre, Oficina = item.oficina.nombre, Fecha = item.fecha, FechaBaja = item.fecha_baja??DateTime.MinValue, MotivoBaja = item.motivo_baja, Estado = item.baja == null ? "Activo": "Baja" });
+                    };
+                    return lista;
+                }
+            }
+            catch (Exception)
+            {
+                Utilidades.MensajesAdvertencia("Error al listar");
+                return null;
+            }
+        }
+        public static List<EntityInventario> ListarBajas()
+        {
+            try
+            {
+                using (CuotasEntities db = new CuotasEntities())
+                {
+                    List<EntityInventario> lista = new List<EntityInventario>();
+                    foreach (var item in db.inventarios)
+                    {
+                        lista.Add(new EntityInventario { Id = item.id,Nombre = item.nombre, Oficina = item.oficina.nombre, Fecha = item.fecha, FechaBaja = item.fecha_baja, MotivoBaja = item.motivo_baja});
                     };
                     return lista;
                 }
@@ -125,5 +182,7 @@ namespace BLL
             }
             
         }
+
+        
     }
 }

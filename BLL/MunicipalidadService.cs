@@ -97,6 +97,23 @@ namespace BLL
             }
         }
 
+        public static List<municipalidad> ListarCombo()
+        {
+            try
+            {
+                using (CuotasEntities db = new CuotasEntities())
+                {
+                    return db.municipalidades.ToList();
+                }
+            }
+            catch (Exception)
+            {
+                Utilidades.MensajesAdvertencia("Error al listar");
+                return null;
+            }
+
+        }
+
         public static municipalidad Obtener(int id)
         {
             try

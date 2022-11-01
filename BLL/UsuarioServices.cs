@@ -6,18 +6,20 @@ using System.Threading.Tasks;
 using System.Data;
 using Datos;
 using Entidades;
+using System.Security.Cryptography;
 
 namespace BLL
 {
     public class UsuarioService
     {
-        public static void Guardar(banco ent)
+        public static void Guardar(user ent)
         {
             try
             {
                 using (CuotasEntities db = new CuotasEntities())
                 {
-                    db.bancos.Add(ent);
+                    ent.password = Utilidades.Encrypt(ent.password);
+                    db.users.Add(ent);
                     db.SaveChanges();
                     Utilidades.MensajesOK("Registro generado con exito");
                 }
@@ -29,15 +31,18 @@ namespace BLL
 
         }
 
-        public static void Modificar(banco ent)
+        public static void Modificar(user ent)
         {
             try
             {
                 using (CuotasEntities db = new CuotasEntities())
                 {
-                    banco ent_update = db.bancos.Find(ent.id);
+                    user ent_update = db.users.Find(ent.id);
                     ent_update.nombre = ent.nombre;
-                    ent_update.direccion = ent.direccion;
+                    ent_update.apellido = ent.apellido;
+                    ent_update.usuario = ent.usuario;
+                    ent_update.password = Utilidades.Encrypt(ent.password);
+                    ent_update.perfil_id = ent.perfil_id;
                     db.SaveChanges();
                     Utilidades.MensajesOK("Registro modificado con exito");
                 }
@@ -55,7 +60,7 @@ namespace BLL
                 using (CuotasEntities db = new CuotasEntities())
                 {
                     user ent_update = db.users.Find(Session.GetInstance().usuario.id);
-                    ent_update.password = pass;
+                    ent_update.password = Utilidades.Encrypt(pass);
                     db.SaveChanges();
                     Utilidades.MensajesOK("Registro modificado con exito");
                 }
@@ -66,14 +71,14 @@ namespace BLL
             }
         }
 
-        public static void Eliminar(banco ent)
+        public static void Eliminar(user ent)
         {
             try
             {
                 using (CuotasEntities db = new CuotasEntities())
                 {
-                    banco ent_update = db.bancos.Find(ent.id);
-                    db.bancos.Remove(ent_update);
+                    user ent_update = db.users.Find(ent.id);
+                    db.users.Remove(ent_update);
                     db.SaveChanges();
                     Utilidades.MensajesOK("Registro eliminado con exito");
                 }
@@ -84,16 +89,16 @@ namespace BLL
             }
         }
 
-        public static List<EntityDireccion> Listar()
+        public static List<EntityUsers> Listar()
         {
             try
             {
                 using (CuotasEntities db = new CuotasEntities())
                 {
-                    List<EntityDireccion> lista = new List<EntityDireccion>();
-                    foreach (var item in db.bancos)
+                    List<EntityUsers> lista = new List<EntityUsers>();
+                    foreach (var item in db.users)
                     {
-                        lista.Add(new EntityDireccion { Id = item.id, Nombre = item.nombre, Direccion = item.direccion });
+                        lista.Add(new EntityUsers { Id = item.id, Nombre = item.nombre, Apellido = item.apellido, Perfil = item.perfil.nombre, Usuario = item.usuario});
                     };
                     return lista;
                 }

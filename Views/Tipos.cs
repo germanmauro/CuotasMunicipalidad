@@ -26,9 +26,13 @@ namespace StockMyG
             return lista;
         }
 
-        public static List<string> FormaPago()
+        public static List<string> FormaPago(bool todos = false)
         {
             List<string> lista = new List<string>();
+            if (todos)
+            {
+                lista.Add("Todas");
+            }
             lista.Add("Cheque");
             lista.Add("Efectivo");
             lista.Add("Transferencia");

@@ -124,6 +124,12 @@
     <Compile Include="Fotos.Designer.cs">
       <DependentUpon>Fotos.cs</DependentUpon>
     </Compile>
+    <Compile Include="InventarioBaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventarioBaja.Designer.cs">
+      <DependentUpon>InventarioBaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="MiUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,12 +172,6 @@
     <Compile Include="ListadoPedido.Designer.cs">
       <DependentUpon>ListadoPedido.cs</DependentUpon>
     </Compile>
-    <Compile Include="CargaPedido.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CargaPedido.Designer.cs">
-      <DependentUpon>CargaPedido.cs</DependentUpon>
-    </Compile>
     <Compile Include="Categoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,17 +190,17 @@
     <Compile Include="Municipalidad.Designer.cs">
       <DependentUpon>Municipalidad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Talle.cs">
+    <Compile Include="Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Talle.Designer.cs">
-      <DependentUpon>Talle.cs</DependentUpon>
+    <Compile Include="Usuarios.Designer.cs">
+      <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Color.cs">
+    <Compile Include="ReporteEgresos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Color.Designer.cs">
-      <DependentUpon>Color.cs</DependentUpon>
+    <Compile Include="ReporteEgresos.Designer.cs">
+      <DependentUpon>ReporteEgresos.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario.cs" />
     <Compile Include="Inicio.cs">
@@ -208,18 +208,6 @@
     </Compile>
     <Compile Include="Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Pedido a proveedores.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pedido a proveedores.Designer.cs">
-      <DependentUpon>Pedido a proveedores.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Productos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Productos.Designer.cs">
-      <DependentUpon>Productos.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -229,30 +217,12 @@
     <Compile Include="Proveedor.Designer.cs">
       <DependentUpon>Proveedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProveedorProducto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ProveedorProducto.Designer.cs">
-      <DependentUpon>ProveedorProducto.cs</DependentUpon>
-    </Compile>
     <Compile Include="Tipos.cs" />
-    <Compile Include="Venta.cs">
+    <Compile Include="ReporteIngresos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Venta.Designer.cs">
-      <DependentUpon>Venta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Venta2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Venta2.Designer.cs">
-      <DependentUpon>Venta2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ReporteProductos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReporteProductos.Designer.cs">
-      <DependentUpon>ReporteProductos.cs</DependentUpon>
+    <Compile Include="ReporteIngresos.Designer.cs">
+      <DependentUpon>ReporteIngresos.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Subcategoria.cs">
@@ -262,12 +232,6 @@
       <DependentUpon>Subcategoria.cs</DependentUpon>
     </Compile>
     <Compile Include="Validador.cs" />
-    <Compile Include="Variante.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Variante.Designer.cs">
-      <DependentUpon>Variante.cs</DependentUpon>
-    </Compile>
     <Compile Include="Reporte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -295,6 +259,9 @@
     <EmbeddedResource Include="Fotos.resx">
       <DependentUpon>Fotos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InventarioBaja.resx">
+      <DependentUpon>InventarioBaja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MiUsuario.resx">
       <DependentUpon>MiUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -303,6 +270,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inventario.resx">
       <DependentUpon>Inventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Egresos.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Oficina.resx">
       <DependentUpon>Oficina.cs</DependentUpon>
@@ -316,9 +291,6 @@
     <EmbeddedResource Include="ListadoPedido.resx">
       <DependentUpon>ListadoPedido.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CargaPedido.resx">
-      <DependentUpon>CargaPedido.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Categoria.resx">
       <DependentUpon>Categoria.cs</DependentUpon>
     </EmbeddedResource>
@@ -328,24 +300,14 @@
     <EmbeddedResource Include="Municipalidad.resx">
       <DependentUpon>Municipalidad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Talle.resx">
-      <DependentUpon>Talle.cs</DependentUpon>
+    <EmbeddedResource Include="Usuarios.resx">
+      <DependentUpon>Usuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Color.resx">
-      <DependentUpon>Color.cs</DependentUpon>
+    <EmbeddedResource Include="ReporteEgresos.resx">
+      <DependentUpon>ReporteEgresos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pedido a proveedores.resx">
-      <DependentUpon>Pedido a proveedores.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pedido.rdlc">
-      <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Productos.resx">
-      <DependentUpon>Productos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -360,10 +322,11 @@
     <EmbeddedResource Include="Proveedor.resx">
       <DependentUpon>Proveedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProveedorProducto.resx">
-      <DependentUpon>ProveedorProducto.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Recibo.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimientos.rdlc">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -371,27 +334,15 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Venta.resx">
-      <DependentUpon>Venta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Venta2.resx">
-      <DependentUpon>Venta2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReporteCliente.rdlc">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
     <EmbeddedResource Include="ReporteProducto.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReporteProductos.resx">
-      <DependentUpon>ReporteProductos.cs</DependentUpon>
+    <EmbeddedResource Include="ReporteIngresos.resx">
+      <DependentUpon>ReporteIngresos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Subcategoria.resx">
       <DependentUpon>Subcategoria.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Variante.resx">
-      <DependentUpon>Variante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte.resx">
       <DependentUpon>Reporte.cs</DependentUpon>

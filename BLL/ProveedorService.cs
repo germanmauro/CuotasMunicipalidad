@@ -92,13 +92,18 @@ namespace BLL
             }
         }
 
-        public static List<proveedor> ListarCombo()
+        public static List<proveedor> ListarCombo(bool todos = false)
         {
             try
             {
                 using (CuotasEntities db = new CuotasEntities())
                 {
-                    return db.proveedores.ToList();
+                    List<proveedor>  lista_proveedor = db.proveedores.ToList();
+                    if(todos)
+                    {
+                        lista_proveedor.Insert(0,new proveedor { id = 0, nombre = "Todos" });
+                    }
+                    return lista_proveedor;
                 }
             }
             catch (Exception)

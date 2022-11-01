@@ -11,13 +11,13 @@ namespace BLL
 {
     public class PerfilService
     {
-        public static void Guardar(banco ent)
+        public static void Guardar(perfil ent)
         {
             try
             {
                 using (CuotasEntities db = new CuotasEntities())
                 {
-                    db.bancos.Add(ent);
+                    db.perfiles.Add(ent);
                     db.SaveChanges();
                     Utilidades.MensajesOK("Registro generado con exito");
                 }
@@ -29,15 +29,14 @@ namespace BLL
 
         }
 
-        public static void Modificar(banco ent)
+        public static void Modificar(perfil ent)
         {
             try
             {
                 using (CuotasEntities db = new CuotasEntities())
                 {
-                    banco ent_update = db.bancos.Find(ent.id);
+                    perfil ent_update = db.perfiles.Find(ent.id);
                     ent_update.nombre = ent.nombre;
-                    ent_update.direccion = ent.direccion;
                     db.SaveChanges();
                     Utilidades.MensajesOK("Registro modificado con exito");
                 }
@@ -48,14 +47,14 @@ namespace BLL
             }
         }
 
-        public static void Eliminar(banco ent)
+        public static void Eliminar(perfil ent)
         {
             try
             {
                 using (CuotasEntities db = new CuotasEntities())
                 {
-                    banco ent_update = db.bancos.Find(ent.id);
-                    db.bancos.Remove(ent_update);
+                    perfil ent_update = db.perfiles.Find(ent.id);
+                    db.perfiles.Remove(ent_update);
                     db.SaveChanges();
                     Utilidades.MensajesOK("Registro eliminado con exito");
                 }
@@ -73,9 +72,9 @@ namespace BLL
                 using (CuotasEntities db = new CuotasEntities())
                 {
                     List<EntityDireccion> lista = new List<EntityDireccion>();
-                    foreach (var item in db.bancos)
+                    foreach (var item in db.perfiles)
                     {
-                        lista.Add(new EntityDireccion { Id = item.id, Nombre = item.nombre, Direccion = item.direccion });
+                        lista.Add(new EntityDireccion { Id = item.id, Nombre = item.nombre });
                     };
                     return lista;
                 }
@@ -85,6 +84,23 @@ namespace BLL
                 Utilidades.MensajesAdvertencia("Error al listar");
                 return null;
             }
+        }
+
+        public static List<perfil> ListarCombo()
+        {
+            try
+            {
+                using (CuotasEntities db = new CuotasEntities())
+                {
+                    return db.perfiles.ToList();
+                }
+            }
+            catch (Exception)
+            {
+                Utilidades.MensajesAdvertencia("Error al listar");
+                return null;
+            }
+
         }
 
     }

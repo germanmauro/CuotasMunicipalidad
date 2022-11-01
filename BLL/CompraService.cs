@@ -109,5 +109,40 @@ namespace BLL
             }
         }
 
+        public static List<EntityEgresosReporte> ReporteEgresos(int proveedor, int banco, string forma_pago, DateTime desde, DateTime hasta)
+        {
+            try
+            {
+                List<EntityEgresosReporte> list = new List<EntityEgresosReporte>();
+                using (CuotasEntities db = new CuotasEntities())
+                {
+                    foreach (var ent_compra in db.compras.Where(c => c.fecha >= desde && c.fecha <= hasta && 
+                    (proveedor == 0 ||  c.proveedor_id == proveedor)
+                    && (banco == 0 || c.banco_id == banco) &&
+                    (forma_pago == "Todas" || c.forma_pago == forma_pago)
+                    
+                    ))
+                    {
+                        EntityEgresosReporte ent_cuota = new EntityEgresosReporte
+                        {
+                            Descripcion = ent_compra.descripcion,
+                            FormaPago = ent_compra.forma_pago,
+                            Importe = ent_compra.importe,
+                            Fecha = ent_compra.fecha,
+                            Banco = ent_compra.banco.nombre,
+                            Proveedor = ent_compra.proveedor.nombre
+                        };
+                        list.Add(ent_cuota);
+                    }
+                    return list;
+                }
+            }
+            catch (Exception)
+            {
+                Utilidades.MensajesAdvertencia("Error al listar");
+                return null;
+            }
+        }
+
     }
 }

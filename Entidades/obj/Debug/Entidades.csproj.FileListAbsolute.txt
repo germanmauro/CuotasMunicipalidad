@@ -21,7 +21,7 @@ C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Entidades\obj\Debug\Entidade
 C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Entidades\obj\Debug\Entidades.pdb
 C:\Sistemas M&G\Software\Sistema Cuotas\Entidades\bin\Debug\Entidades.dll
 C:\Sistemas M&G\Software\Sistema Cuotas\Entidades\bin\Debug\Entidades.pdb
+C:\Sistemas M&G\Software\Sistema Cuotas\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
 C:\Sistemas M&G\Software\Sistema Cuotas\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Sistemas M&G\Software\Sistema Cuotas\Entidades\obj\Debug\Entidades.dll
 C:\Sistemas M&G\Software\Sistema Cuotas\Entidades\obj\Debug\Entidades.pdb
-C:\Sistemas M&G\Software\Sistema Cuotas\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache

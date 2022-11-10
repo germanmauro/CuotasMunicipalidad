@@ -431,8 +431,8 @@
             // DiaAumento
             // 
             this.DiaAumento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DiaAumento.DataPropertyName = "DiaAumento";
-            this.DiaAumento.HeaderText = "Día Aumento";
+            this.DiaAumento.DataPropertyName = "DiaVencimiento";
+            this.DiaAumento.HeaderText = "Día Vencimiento";
             this.DiaAumento.Name = "DiaAumento";
             this.DiaAumento.ReadOnly = true;
             // 
@@ -534,7 +534,7 @@
             this.Name = "Municipalidad";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Administración de Municipalidades";
+            this.Text = "Administración de Municipalidades / Comunas";
             this.Load += new System.EventHandler(this.Proveedor_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Producto_KeyDown);
             this.groupInformacion.ResumeLayout(false);
@@ -571,6 +571,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnIngresos;
+        private System.Windows.Forms.Button btnMovimientos;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn CUIT;
@@ -581,7 +583,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MontoCuota;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaAumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn PorcentajeAumento;
-        private System.Windows.Forms.Button btnIngresos;
-        private System.Windows.Forms.Button btnMovimientos;
     }
 }

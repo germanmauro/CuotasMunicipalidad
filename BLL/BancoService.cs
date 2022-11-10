@@ -66,16 +66,16 @@ namespace BLL
             }
         }
 
-        public static List<EntityDireccion> Listar()
+        public static List<EntityBanco> Listar()
         {
             try
             {
                 using (CuotasEntities db = new CuotasEntities())
                 {
-                    List<EntityDireccion> lista = new List<EntityDireccion>();
+                    List<EntityBanco> lista = new List<EntityBanco>();
                     foreach (var item in db.bancos)
                     {
-                        lista.Add(new EntityDireccion { Id = item.id, Nombre = item.nombre, Direccion = item.direccion });
+                        lista.Add(new EntityBanco { Id = item.id, Nombre = item.nombre, Direccion = item.direccion,  });
                     };
                     return lista;
                 }

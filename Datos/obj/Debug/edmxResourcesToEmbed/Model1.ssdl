@@ -161,7 +161,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__cuota__banco_id__14270015">
+  <Association Name="FK__cuota__banco_id__1AD3FDA4">
     <End Role="banco" Type="Self.banco" Multiplicity="0..1" />
     <End Role="cuota" Type="Self.cuota" Multiplicity="*" />
     <ReferentialConstraint>
@@ -173,7 +173,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__cuota__municipal__1332DBDC">
+  <Association Name="FK__cuota__municipal__19DFD96B">
     <End Role="municipalidad" Type="Self.municipalidad" Multiplicity="1" />
     <End Role="cuota" Type="Self.cuota" Multiplicity="*" />
     <ReferentialConstraint>
@@ -279,11 +279,11 @@
       <End Role="proveedor" EntitySet="proveedor" />
       <End Role="compra" EntitySet="compra" />
     </AssociationSet>
-    <AssociationSet Name="FK__cuota__banco_id__14270015" Association="Self.FK__cuota__banco_id__14270015">
+    <AssociationSet Name="FK__cuota__banco_id__1AD3FDA4" Association="Self.FK__cuota__banco_id__1AD3FDA4">
       <End Role="banco" EntitySet="banco" />
       <End Role="cuota" EntitySet="cuota" />
     </AssociationSet>
-    <AssociationSet Name="FK__cuota__municipal__1332DBDC" Association="Self.FK__cuota__municipal__1332DBDC">
+    <AssociationSet Name="FK__cuota__municipal__19DFD96B" Association="Self.FK__cuota__municipal__19DFD96B">
       <End Role="municipalidad" EntitySet="municipalidad" />
       <End Role="cuota" EntitySet="cuota" />
     </AssociationSet>

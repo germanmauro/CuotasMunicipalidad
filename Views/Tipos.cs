@@ -38,5 +38,17 @@ namespace StockMyG
             lista.Add("Transferencia");
             return lista;
         }
+
+        public static List<string> TipoCuenta(bool todos = false)
+        {
+            List<string> lista = new List<string>();
+            if (todos)
+            {
+                lista.Add("Todas");
+            }
+            lista.Add("Caja de ahorro");
+            lista.Add("Cuenta Corriente");
+            return lista;
+        }
     }
 }

@@ -23,9 +23,9 @@ C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\UserControls\obj\Debug\UserC
 C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\UserControls\obj\Debug\UserControls.pdb
 C:\Sistemas M&G\Software\Sistema Cuotas\UserControls\bin\Debug\UserControls.dll
 C:\Sistemas M&G\Software\Sistema Cuotas\UserControls\bin\Debug\UserControls.pdb
+C:\Sistemas M&G\Software\Sistema Cuotas\UserControls\obj\Debug\UserControls.csproj.AssemblyReference.cache
 C:\Sistemas M&G\Software\Sistema Cuotas\UserControls\obj\Debug\UserControls.TextBox.resources
 C:\Sistemas M&G\Software\Sistema Cuotas\UserControls\obj\Debug\UserControls.csproj.GenerateResource.cache
 C:\Sistemas M&G\Software\Sistema Cuotas\UserControls\obj\Debug\UserControls.csproj.CoreCompileInputs.cache
 C:\Sistemas M&G\Software\Sistema Cuotas\UserControls\obj\Debug\UserControls.dll
 C:\Sistemas M&G\Software\Sistema Cuotas\UserControls\obj\Debug\UserControls.pdb
-C:\Sistemas M&G\Software\Sistema Cuotas\UserControls\obj\Debug\UserControls.csproj.AssemblyReference.cache

@@ -6,7 +6,7 @@ CREATE TABLE perfil (
 );
 
 insert into perfil values ('admin'),
-('normal');
+('operador');
 
 CREATE TABLE users (
 	id int IDENTITY(1,1) PRIMARY KEY,

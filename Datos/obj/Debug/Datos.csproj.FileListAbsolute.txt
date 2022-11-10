@@ -47,9 +47,8 @@ C:\Sistemas M&G\Software\Sistema Cuotas\Datos\bin\Debug\EntityFramework.SqlServe
 C:\Sistemas M&G\Software\Sistema Cuotas\Datos\bin\Debug\Entidades.pdb
 C:\Sistemas M&G\Software\Sistema Cuotas\Datos\bin\Debug\EntityFramework.xml
 C:\Sistemas M&G\Software\Sistema Cuotas\Datos\bin\Debug\EntityFramework.SqlServer.xml
-C:\Sistemas M&G\Software\Sistema Cuotas\Datos\bin\Debug\MySql.Data.xml
+C:\Sistemas M&G\Software\Sistema Cuotas\Datos\obj\Debug\Datos.csproj.AssemblyReference.cache
 C:\Sistemas M&G\Software\Sistema Cuotas\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
 C:\Sistemas M&G\Software\Sistema Cuotas\Datos\obj\Debug\Datos.csproj.CopyComplete
 C:\Sistemas M&G\Software\Sistema Cuotas\Datos\obj\Debug\Datos.dll
 C:\Sistemas M&G\Software\Sistema Cuotas\Datos\obj\Debug\Datos.pdb
-C:\Sistemas M&G\Software\Sistema Cuotas\Datos\obj\Debug\Datos.csproj.AssemblyReference.cache

@@ -23,6 +23,7 @@ namespace StockMyG
         {
             ActualizarGrilla();
             CargaCombo();
+            CargarPermisos();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -102,9 +103,9 @@ namespace StockMyG
         }
 
         #region Metodos
-        private void ActualizarGrilla()
+        private void ActualizarGrilla(string filtro = "")
         {
-            Grid.DataSource = BLL.MunicipalidadService.Listar();
+            Grid.DataSource = BLL.MunicipalidadService.Listar(filtro);
             estado = Formulario.EstadoForm.SinDatos;
             ActualizarVista();
         }
@@ -115,7 +116,7 @@ namespace StockMyG
             {
                 case Formulario.EstadoForm.SinDatos:
                     btnEliminar.Enabled = false;
-                    btnCuotas.Enabled = false;
+                    //btnCuotas.Enabled = false;
                     btnIngresos.Enabled = false;
                     btnMovimientos.Enabled = false;
                     btnModificar.Enabled = false;
@@ -126,7 +127,7 @@ namespace StockMyG
                 case Formulario.EstadoForm.Seleccionado:
                     groupInformacion.Enabled = false;
                     btnEliminar.Enabled = true;
-                    btnCuotas.Enabled = true;
+                    //btnCuotas.Enabled = true;
                     btnIngresos.Enabled = true;
                     btnMovimientos.Enabled = true;
                     btnModificar.Enabled = true;
@@ -135,7 +136,7 @@ namespace StockMyG
                     groupInformacion.Enabled = true;
                     Grid.ClearSelection();
                     btnEliminar.Enabled = false;
-                    btnCuotas.Enabled = false;
+                    //btnCuotas.Enabled = false;
                     btnIngresos.Enabled = false;
                     btnMovimientos.Enabled = false;
                     btnModificar.Enabled = false;
@@ -211,12 +212,12 @@ namespace StockMyG
                         btnGuardar_Click(null, null);
                     }
                     break;
-                case Keys.F6:
-                    if (btnCuotas.Enabled)
-                    {
-                        btnCuotas_Click(null, null);
-                    }
-                break;
+                //case Keys.F6:
+                //    if (btnCuotas.Enabled)
+                //    {
+                //        btnCuotas_Click(null, null);
+                //    }
+                //break;
                 case Keys.F7:
                     if (btnIngresos.Enabled)
                     {
@@ -261,6 +262,21 @@ namespace StockMyG
             Reporte form = new Reporte();
             form.Show();
             form.CargaMovimientos(cuota);
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            ActualizarGrilla(txtFiltro.Text);
+        }
+
+        public void CargarPermisos()
+        {
+            Session session = Session.GetInstance();
+            if (session.usuario.perfil_id == 2)
+            {
+                btnModificar.Visible = false;
+                btnEliminar.Visible = false;
+            }
         }
     }
 }

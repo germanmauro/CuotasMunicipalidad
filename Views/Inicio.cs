@@ -20,6 +20,11 @@ namespace StockMyG
         {
             InitializeComponent();
             this.Text += "       " + session.usuario.Descripcion;
+            if (session.usuario.perfil_id == 2)
+            {
+                usuariosToolStripMenuItem.Visible = false;
+                bajaDeInvetarioToolStripMenuItem.Visible = false;
+            }
         }
 
 
@@ -29,15 +34,6 @@ namespace StockMyG
             //{
                 this.Close();
             //}
-        }
-
-        private void registroToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            Cliente cli = new Cliente
-            {
-                MdiParent = this
-            };
-            cli.Show();
         }
 
         private void Inicio_Load(object sender, EventArgs e)
@@ -57,36 +53,9 @@ namespace StockMyG
             //}
         }
 
-        private void categoriasToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            Categoria cli = new Categoria
-            {
-                MdiParent = this
-            };
-            cli.Show();
-        }
-
-        private void subCategoriasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SubCategorias cli = new SubCategorias
-            {
-                MdiParent = this
-            };
-            cli.Show();
-        }
-
         private void registroToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Proveedor cli = new Proveedor
-            {
-                MdiParent = this
-            };
-            cli.Show();
-        }
-
-        private void verToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            VerRecibos cli = new VerRecibos
             {
                 MdiParent = this
             };
@@ -99,33 +68,6 @@ namespace StockMyG
             {
                 e.Cancel = true;
             }
-        }
-
-        private void visualizarVentasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            VerRecibos cli = new VerRecibos
-            {
-                MdiParent = this
-            };
-            cli.Show();
-        }
-
-        private void listadoDePedidosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ListadoPedido cli = new ListadoPedido
-            {
-                MdiParent = this
-            };
-            cli.Show();
-        }
-
-        private void categoríasToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            Categoria cli = new Categoria
-            {
-                MdiParent = this
-            };
-            cli.Show();
         }
 
         private void bancosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -246,6 +188,33 @@ namespace StockMyG
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Usuarios cli = new Usuarios
+            {
+                MdiParent = this
+            };
+            cli.Show();
+        }
+
+        private void municipalidadesComunasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Municipalidad cli = new Municipalidad
+            {
+                MdiParent = this
+            };
+            cli.Show();
+        }
+
+        private void respaldoDeDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Respaldo cli = new Respaldo
+            {
+                MdiParent = this
+            };
+            cli.Show();
+        }
+
+        private void cargaDeCuotasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CargaCuotas cli = new CargaCuotas
             {
                 MdiParent = this
             };

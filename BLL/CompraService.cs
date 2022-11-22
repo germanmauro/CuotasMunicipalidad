@@ -88,14 +88,15 @@ namespace BLL
             }
         }
 
-        public static List<EntityCompra> Listar()
+        public static List<EntityCompra> Listar(string filtro = "")
         {
             try
             {
                 using (CuotasEntities db = new CuotasEntities())
                 {
                     List<EntityCompra> lista = new List<EntityCompra>();
-                    foreach (var item in db.compras)
+                    foreach (var item in db.compras.Where(c=> c.numero_factura.Contains(filtro) ||
+                    c.proveedor.nombre.Contains(filtro) || c.descripcion.Contains(filtro)))
                     {
                         lista.Add(new EntityCompra{ Id = item.id,Descripcion= item.descripcion, FormaPago = item.forma_pago,Proveedor = item.proveedor.nombre, Importe = item.importe,Fecha = item.fecha, NumeroFactura = item.numero_factura, Banco = item.banco.nombre});
                     };

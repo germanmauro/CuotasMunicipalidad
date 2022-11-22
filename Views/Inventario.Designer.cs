@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inventario));
             this.groupInformacion = new System.Windows.Forms.GroupBox();
             this.cmbOficina = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -46,6 +47,9 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnFotos = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupInformacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +62,7 @@
             this.groupInformacion.Controls.Add(this.label1);
             this.groupInformacion.Controls.Add(this.btnGuardar);
             this.groupInformacion.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupInformacion.Location = new System.Drawing.Point(546, 190);
+            this.groupInformacion.Location = new System.Drawing.Point(546, 228);
             this.groupInformacion.Name = "groupInformacion";
             this.groupInformacion.Size = new System.Drawing.Size(292, 150);
             this.groupInformacion.TabIndex = 27;
@@ -147,7 +151,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.Grid.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Grid.Location = new System.Drawing.Point(2, 11);
+            this.Grid.Location = new System.Drawing.Point(2, 49);
             this.Grid.MultiSelect = false;
             this.Grid.Name = "Grid";
             this.Grid.ReadOnly = true;
@@ -163,7 +167,6 @@
             this.Grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Grid.Size = new System.Drawing.Size(538, 329);
             this.Grid.TabIndex = 26;
-            this.Grid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellContentClick);
             this.Grid.SelectionChanged += new System.EventHandler(this.Grid_SelectionChanged);
             // 
             // id
@@ -204,7 +207,7 @@
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.Gainsboro;
             this.btnEliminar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(624, 105);
+            this.btnEliminar.Location = new System.Drawing.Point(624, 143);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(146, 27);
             this.btnEliminar.TabIndex = 23;
@@ -216,7 +219,7 @@
             // 
             this.btnModificar.BackColor = System.Drawing.Color.Gainsboro;
             this.btnModificar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(624, 59);
+            this.btnModificar.Location = new System.Drawing.Point(624, 97);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(146, 27);
             this.btnModificar.TabIndex = 24;
@@ -228,7 +231,7 @@
             // 
             this.btnNuevo.BackColor = System.Drawing.Color.Gainsboro;
             this.btnNuevo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Location = new System.Drawing.Point(624, 13);
+            this.btnNuevo.Location = new System.Drawing.Point(624, 51);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(146, 27);
             this.btnNuevo.TabIndex = 25;
@@ -240,7 +243,7 @@
             // 
             this.btnFotos.BackColor = System.Drawing.Color.Gainsboro;
             this.btnFotos.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFotos.Location = new System.Drawing.Point(624, 152);
+            this.btnFotos.Location = new System.Drawing.Point(624, 190);
             this.btnFotos.Name = "btnFotos";
             this.btnFotos.Size = new System.Drawing.Size(146, 27);
             this.btnFotos.TabIndex = 28;
@@ -248,13 +251,45 @@
             this.btnFotos.UseVisualStyleBackColor = false;
             this.btnFotos.Click += new System.EventHandler(this.btnFotos_Click);
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.White;
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.Location = new System.Drawing.Point(445, 8);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(28, 27);
+            this.btnBuscar.TabIndex = 41;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // txtFiltro
+            // 
+            this.txtFiltro.Location = new System.Drawing.Point(222, 12);
+            this.txtFiltro.MaxLength = 30;
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(208, 20);
+            this.txtFiltro.TabIndex = 40;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(30, 13);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(181, 16);
+            this.label7.TabIndex = 39;
+            this.label7.Text = "Filtrar por nombre u Oficina";
+            // 
             // Inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(850, 357);
+            this.ClientSize = new System.Drawing.Size(850, 390);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.txtFiltro);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnFotos);
             this.Controls.Add(this.groupInformacion);
             this.Controls.Add(this.Grid);
@@ -274,6 +309,7 @@
             this.groupInformacion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -294,5 +330,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Oficina;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.Button btnFotos;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox txtFiltro;
+        private System.Windows.Forms.Label label7;
     }
 }

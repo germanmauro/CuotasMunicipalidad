@@ -90,9 +90,9 @@ namespace StockMyG
         }
 
         #region Metodos
-        private void ActualizarGrilla()
+        private void ActualizarGrilla(string filtro = "")
         {
-            Grid.DataSource = BLL.CuotaService.ListarAPagar();
+            Grid.DataSource = BLL.CuotaService.ListarAPagar(filtro);
             estado = Formulario.EstadoForm.SinDatos;
             ActualizarVista();
         }
@@ -172,7 +172,7 @@ namespace StockMyG
         private void CargaCombo()
         {
             this.cmbBanco.DataSource = BLL.BancoService.ListarCombo();
-            this.cmbBanco.DisplayMember = "nombre";
+            this.cmbBanco.DisplayMember = "Descripcion";
             this.cmbBanco.ValueMember = "id";
 
             this.cmbFormaPago.DataSource = Tipos.FormaPago();
@@ -185,6 +185,11 @@ namespace StockMyG
             Reporte form = new Reporte();
             form.Show();
             form.CargarVolante(cuota);
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            ActualizarGrilla(txtFiltro.Text);
         }
     }
 }

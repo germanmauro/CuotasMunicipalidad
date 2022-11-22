@@ -70,14 +70,14 @@ namespace BLL
             }
         }
 
-        public static List<EntityProveedor> Listar()
+        public static List<EntityProveedor> Listar(string filtro = "")
         {
             try
             {
                 using (CuotasEntities db = new CuotasEntities())
                 {
                     List<EntityProveedor> lista = new List<EntityProveedor>();
-                    foreach (var item in db.proveedores)
+                    foreach (var item in db.proveedores.Where(c=> c.nombre.Contains(filtro)))
                     {
                         lista.Add(new EntityProveedor { Id = item.id, Nombre = item.nombre, Direccion = item.direccion,
                         CUIT = item.cuit, Email = item.mail, Telefono = item.telefono, Observaciones = item.observaciones});

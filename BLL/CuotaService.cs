@@ -175,14 +175,15 @@ namespace BLL
                 return null;
             }
         }
-        public static List<EntityCuota> ListarAPagar()
+        public static List<EntityCuota> ListarAPagar(string filtro = "")
         {
             try
             {
                 using (CuotasEntities db = new CuotasEntities())
                 {
                     List<EntityCuota> lista = new List<EntityCuota>();
-                    foreach (var item in db.cuotas.Where(c=> c.estado == "A pagar").OrderBy(c => c.fecha))
+                    foreach (var item in db.cuotas.Where(c=> c.estado == "A pagar")
+                        .Where(c=> c.municipalidad.nombre.Contains(filtro)).OrderBy(c => c.fecha))
                     {
                         lista.Add(new EntityCuota
                         { 
@@ -209,14 +210,15 @@ namespace BLL
             }
         }
 
-        public static List<EntityCuota> ListarPagas()
+        public static List<EntityCuota> ListarPagas(string filtro = "")
         {
             try
             {
                 using (CuotasEntities db = new CuotasEntities())
                 {
                     List<EntityCuota> lista = new List<EntityCuota>();
-                    foreach (var item in db.cuotas.Where(c => c.estado == "Pagado").OrderBy(c => c.fecha))
+                    foreach (var item in db.cuotas.Where(c => c.estado == "Pagado").
+                        Where(c => c.municipalidad.nombre.Contains(filtro)).OrderBy(c => c.fecha))
                     {
                         lista.Add(new EntityCuota
                         {

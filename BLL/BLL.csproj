@@ -59,9 +59,8 @@
     <Compile Include="ProveedorService.cs" />
     <Compile Include="BancoService.cs" />
     <Compile Include="OficinaService.cs" />
-    <Compile Include="SubCategoriaService.cs" />
     <Compile Include="LoginService.cs" />
-    <Compile Include="CategoriaService.cs" />
+    <Compile Include="RespaldoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Session.cs" />
     <Compile Include="Utilidades.cs" />

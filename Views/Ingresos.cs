@@ -26,6 +26,7 @@ namespace StockMyG
             lblTitulo.Text = $"Ingresos de: {EntMunicipalidad.nombre}";
             ActualizarGrilla();
             CargaCombo();
+            CargarPermisos();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -153,7 +154,7 @@ namespace StockMyG
         private void CargaCombo()
         {
             this.cmbBanco.DataSource = BLL.BancoService.ListarCombo();
-            this.cmbBanco.DisplayMember = "nombre";
+            this.cmbBanco.DisplayMember = "Descripcion";
             this.cmbBanco.ValueMember = "id";
 
             this.cmbFormaPago.DataSource = Tipos.FormaPago();
@@ -201,6 +202,16 @@ namespace StockMyG
 
                 default:
                     break;
+            }
+        }
+
+        public void CargarPermisos()
+        {
+            Session session = Session.GetInstance();
+            if (session.usuario.perfil_id == 2)
+            {
+                btnModificar.Visible = false;
+                btnEliminar.Visible = false;
             }
         }
 

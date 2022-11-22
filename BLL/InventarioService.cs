@@ -123,14 +123,14 @@ namespace BLL
             }
         }
 
-        public static List<EntityInventario> Listar()
+        public static List<EntityInventario> Listar(string filtro = "")
         {
             try
             {
                 using (CuotasEntities db = new CuotasEntities())
                 {
                     List<EntityInventario> lista = new List<EntityInventario>();
-                    foreach (var item in db.inventarios)
+                    foreach (var item in db.inventarios.Where(c=> c.nombre.Contains(filtro) || c.oficina.nombre.Contains(filtro)))
                     {
                         lista.Add(new EntityInventario { Id = item.id,Nombre = item.nombre, Oficina = item.oficina.nombre, Fecha = item.fecha, FechaBaja = item.fecha_baja??DateTime.MinValue, MotivoBaja = item.motivo_baja, Estado = item.baja == null ? "Activo": "Baja" });
                     };

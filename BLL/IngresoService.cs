@@ -115,7 +115,7 @@ namespace BLL
                 List<EntityIngresosReporte> list = new List<EntityIngresosReporte>();
                 using (CuotasEntities db = new CuotasEntities())
                 {
-                    foreach(var cuota_a_pagar in db.cuotas.Where(c=> (municipalidad == null || c.municipalidad_id == municipalidad) &&
+                    foreach(var cuota_a_pagar in db.cuotas.Where(c=> (municipalidad == null || municipalidad == 0 || c.municipalidad_id == municipalidad) &&
                     (desde == null || c.fecha >= desde) && 
                     (hasta == null || c.fecha <= hasta)
                     )) 

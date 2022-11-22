@@ -27,7 +27,7 @@ namespace StockMyG
         private void ActualizarCombo()
         {
             //Combo de Municipalidad.
-            this.cmbMunicipalidad.DataSource = BLL.MunicipalidadService.ListarCombo();
+            this.cmbMunicipalidad.DataSource = BLL.MunicipalidadService.ListarCombo(true);
             this.cmbMunicipalidad.DisplayMember = "nombre";
             this.cmbMunicipalidad.ValueMember = "id";
 

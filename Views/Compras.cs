@@ -23,6 +23,7 @@ namespace StockMyG
         {
             ActualizarGrilla();
             CargaCombo();
+            CargarPermisos();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -100,9 +101,9 @@ namespace StockMyG
         }
 
         #region Metodos
-        private void ActualizarGrilla()
+        private void ActualizarGrilla(string filtro = "")
         {
-            Grid.DataSource = BLL.CompraService.Listar();
+            Grid.DataSource = BLL.CompraService.Listar(filtro);
             estado = Formulario.EstadoForm.SinDatos;
             ActualizarVista();
         }
@@ -157,7 +158,7 @@ namespace StockMyG
             this.cmbProveedor.ValueMember = "id";
             
             this.cmbBanco.DataSource = BLL.BancoService.ListarCombo();
-            this.cmbBanco.DisplayMember = "nombre";
+            this.cmbBanco.DisplayMember = "Descripcion";
             this.cmbBanco.ValueMember = "id";
 
             this.cmbFormaPago.DataSource = Tipos.FormaPago();
@@ -209,5 +210,18 @@ namespace StockMyG
             }
         }
 
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            ActualizarGrilla(txtFiltro.Text);
+        }
+        public void CargarPermisos()
+        {
+            Session session = Session.GetInstance();
+            if (session.usuario.perfil_id == 2)
+            {
+                btnModificar.Visible = false;
+                btnEliminar.Visible = false;
+            }
+        }
     }
 }

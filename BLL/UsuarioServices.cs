@@ -89,14 +89,14 @@ namespace BLL
             }
         }
 
-        public static List<EntityUsers> Listar()
+        public static List<EntityUsers> Listar(string filtro = "")
         {
             try
             {
                 using (CuotasEntities db = new CuotasEntities())
                 {
                     List<EntityUsers> lista = new List<EntityUsers>();
-                    foreach (var item in db.users)
+                    foreach (var item in db.users.Where(c=> c.nombre.Contains(filtro)||c.apellido.Contains(filtro)|| c.usuario.Contains(filtro)))
                     {
                         lista.Add(new EntityUsers { Id = item.id, Nombre = item.nombre, Apellido = item.apellido, Perfil = item.perfil.nombre, Usuario = item.usuario});
                     };

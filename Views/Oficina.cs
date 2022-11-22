@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
 using Datos;
 
 namespace StockMyG
@@ -21,6 +22,7 @@ namespace StockMyG
         private void form_Load(object sender, EventArgs e)
         {
             ActualizarGrilla();
+            CargarPermisos();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -137,5 +139,49 @@ namespace StockMyG
             this.txtNombre.Controls[0].Text = "";
         }
         #endregion
+
+        private void Oficina_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.F2:
+                    if (btnNuevo.Enabled)
+                    {
+                        btnNuevo_Click(null, null);
+                    }
+                    break;
+                case Keys.F3:
+                    if (btnModificar.Enabled)
+                    {
+                        btnModificar_Click(null, null);
+                    }
+                    break;
+                case Keys.F4:
+                    if (btnEliminar.Enabled)
+                    {
+                        btnEliminar_Click(null, null);
+                    }
+                    break;
+                case Keys.F5:
+                    if (btnGuardar.Enabled)
+                    {
+                        btnGuardar_Click(null, null);
+                    }
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        public void CargarPermisos()
+        {
+            Session session = Session.GetInstance();
+            if (session.usuario.perfil_id == 2)
+            {
+                btnModificar.Visible = false;
+                btnEliminar.Visible = false;
+            }
+        }
     }
 }

@@ -148,6 +148,18 @@
     <Compile Include="Inventario.Designer.cs">
       <DependentUpon>Inventario.cs</DependentUpon>
     </Compile>
+    <Compile Include="CargaCuotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CargaCuotas.Designer.cs">
+      <DependentUpon>CargaCuotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Respaldo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Respaldo.Designer.cs">
+      <DependentUpon>Respaldo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Oficina.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,24 +177,6 @@
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ListadoPedido.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ListadoPedido.Designer.cs">
-      <DependentUpon>ListadoPedido.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Categoria.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Categoria.Designer.cs">
-      <DependentUpon>Categoria.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Cliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Cliente.Designer.cs">
-      <DependentUpon>Cliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Municipalidad.cs">
       <SubType>Form</SubType>
@@ -225,24 +219,12 @@
       <DependentUpon>ReporteIngresos.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="Subcategoria.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Subcategoria.Designer.cs">
-      <DependentUpon>Subcategoria.cs</DependentUpon>
-    </Compile>
     <Compile Include="Validador.cs" />
     <Compile Include="Reporte.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reporte.Designer.cs">
       <DependentUpon>Reporte.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VerRecibos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VerRecibos.Designer.cs">
-      <DependentUpon>VerRecibos.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CuotasPagadas.resx">
       <DependentUpon>CuotasPagadas.cs</DependentUpon>
@@ -279,6 +261,12 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="CargaCuotas.resx">
+      <DependentUpon>CargaCuotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Respaldo.resx">
+      <DependentUpon>Respaldo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Oficina.resx">
       <DependentUpon>Oficina.cs</DependentUpon>
     </EmbeddedResource>
@@ -287,15 +275,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ListadoPedido.resx">
-      <DependentUpon>ListadoPedido.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Categoria.resx">
-      <DependentUpon>Categoria.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Cliente.resx">
-      <DependentUpon>Cliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Municipalidad.resx">
       <DependentUpon>Municipalidad.cs</DependentUpon>
@@ -334,21 +313,11 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReporteProducto.rdlc">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="ReporteIngresos.resx">
       <DependentUpon>ReporteIngresos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Subcategoria.resx">
-      <DependentUpon>Subcategoria.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reporte.resx">
       <DependentUpon>Reporte.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VerRecibos.resx">
-      <DependentUpon>VerRecibos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest">
       <SubType>Designer</SubType>

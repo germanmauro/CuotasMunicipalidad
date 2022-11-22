@@ -31,3 +31,16 @@ C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Datos\obj\Release\Datos.cspr
 C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Datos\obj\Release\Datos.csproj.CopyComplete
 C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Datos\obj\Release\Datos.dll
 C:\Users\M&G\Desktop\Sistemas M&G\Sistema Precintos\Datos\obj\Release\Datos.pdb
+C:\Sistemas M&G\Software\Sistema Cuotas\Datos\bin\Release\Datos.dll.config
+C:\Sistemas M&G\Software\Sistema Cuotas\Datos\bin\Release\Datos.dll
+C:\Sistemas M&G\Software\Sistema Cuotas\Datos\bin\Release\Datos.pdb
+C:\Sistemas M&G\Software\Sistema Cuotas\Datos\bin\Release\EntityFramework.dll
+C:\Sistemas M&G\Software\Sistema Cuotas\Datos\bin\Release\EntityFramework.SqlServer.dll
+C:\Sistemas M&G\Software\Sistema Cuotas\Datos\bin\Release\EntityFramework.xml
+C:\Sistemas M&G\Software\Sistema Cuotas\Datos\bin\Release\EntityFramework.SqlServer.xml
+C:\Sistemas M&G\Software\Sistema Cuotas\Datos\bin\Release\MySql.Data.xml
+C:\Sistemas M&G\Software\Sistema Cuotas\Datos\obj\Release\Datos.csprojAssemblyReference.cache
+C:\Sistemas M&G\Software\Sistema Cuotas\Datos\obj\Release\Datos.csproj.CoreCompileInputs.cache
+C:\Sistemas M&G\Software\Sistema Cuotas\Datos\obj\Release\Datos.csproj.CopyComplete
+C:\Sistemas M&G\Software\Sistema Cuotas\Datos\obj\Release\Datos.dll
+C:\Sistemas M&G\Software\Sistema Cuotas\Datos\obj\Release\Datos.pdb

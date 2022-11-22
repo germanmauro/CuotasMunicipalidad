@@ -7,6 +7,9 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nombre" Type="varchar" MaxLength="50" />
     <Property Name="direccion" Type="varchar" MaxLength="100" />
+    <Property Name="telefono" Type="varchar" MaxLength="50" />
+    <Property Name="numero_cuenta" Type="varchar" MaxLength="40" />
+    <Property Name="tipo_cuenta" Type="varchar" MaxLength="30" />
   </EntityType>
   <EntityType Name="categoria">
     <Key>

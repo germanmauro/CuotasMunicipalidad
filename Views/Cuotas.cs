@@ -26,6 +26,7 @@ namespace StockMyG
             lblTitulo.Text = $"Cuotas de: {EntMunicipalidad.nombre}";
             ActualizarGrilla();
             dateTimePicker1.CustomFormat = "MMM yyyy";
+            CargarPermisos();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -50,6 +51,9 @@ namespace StockMyG
                         {
                             BLL.CuotaService.Guardar(item);
                             ActualizarGrilla();
+                            Reporte form = new Reporte();
+                            form.Show();
+                            form.CargarVolante(item.id);
                         }
                         break;
                     case Formulario.EstadoForm.Modificado:
@@ -197,6 +201,15 @@ namespace StockMyG
             Reporte form = new Reporte();
             form.Show();
             form.CargarVolante(cuota);
+        }
+        public void CargarPermisos()
+        {
+            Session session = Session.GetInstance();
+            if (session.usuario.perfil_id == 2)
+            {
+                btnModificar.Visible = false;
+                btnEliminar.Visible = false;
+            }
         }
     }
 }

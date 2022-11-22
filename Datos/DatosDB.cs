@@ -10,7 +10,7 @@ namespace Datos
 {
     public class DatosDB
     {
-        public static int ExecuteNonQuery(string comando)
+        public static bool ExecuteNonQuery(string comando)
         {
             try
             {
@@ -20,12 +20,11 @@ namespace Datos
                 int cantidad = cm.ExecuteNonQuery();
                 Conexion.cn.Close();
                 Conexion.cn.Dispose();
-                return cantidad;
+                return true;
             }
             catch (Exception ex)
             {
-                string cadena = ex.Message;
-                return -1;
+                return false;
                             
             }
             finally
@@ -122,14 +121,8 @@ namespace Datos
                     }
                 }
             }
-            if(ExecuteNonQuery(cadena.ToString()) > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return ExecuteNonQuery(cadena.ToString());
+           
         }
 
 
@@ -167,14 +160,8 @@ namespace Datos
                     }
                 }
             }
-            if(ExecuteNonQuery(cadena.ToString())>0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return ExecuteNonQuery(cadena.ToString());
+            
         }
 
         public static bool Borrar(string tabla, Dictionary<string, string> parametros)
@@ -196,14 +183,7 @@ namespace Datos
                     }
                 }            
             }
-            if(ExecuteNonQuery(cadena.ToString()) > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return ExecuteNonQuery(cadena.ToString());
         }
 
         public static bool BajaLogica(string tabla, Dictionary<string, string> parametros)
@@ -225,14 +205,7 @@ namespace Datos
                     }
                 }
             }
-            if(ExecuteNonQuery(cadena.ToString()) > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return ExecuteNonQuery(cadena.ToString());
         }
 
         public static bool VerificarExistente(string tabla, Dictionary<string, string> parametros, Dictionary<string, string> diferenciales = null)

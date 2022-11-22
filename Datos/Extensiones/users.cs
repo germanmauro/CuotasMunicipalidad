@@ -8,6 +8,6 @@ namespace Datos
 {
     public partial class user
     {
-        public string Descripcion => this.nombre + " " + this.apellido + "(" + this.usuario + ")";
+        public string Descripcion => this.nombre + " " + this.apellido + " (" + this.usuario + ")";
     }
 }

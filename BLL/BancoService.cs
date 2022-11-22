@@ -38,6 +38,9 @@ namespace BLL
                     banco ent_update = db.bancos.Find(ent.id);
                     ent_update.nombre = ent.nombre;
                     ent_update.direccion = ent.direccion;
+                    ent_update.tipo_cuenta = ent.tipo_cuenta;
+                    ent_update.telefono = ent.telefono;
+                    ent_update.numero_cuenta = ent.numero_cuenta;
                     db.SaveChanges();
                     Utilidades.MensajesOK("Registro modificado con exito");
                 }
@@ -66,16 +69,16 @@ namespace BLL
             }
         }
 
-        public static List<EntityBanco> Listar()
+        public static List<EntityBanco> Listar(string filtro = "")
         {
             try
             {
                 using (CuotasEntities db = new CuotasEntities())
                 {
                     List<EntityBanco> lista = new List<EntityBanco>();
-                    foreach (var item in db.bancos)
+                    foreach (var item in db.bancos.Where(c=> c.nombre.Contains(filtro)))
                     {
-                        lista.Add(new EntityBanco { Id = item.id, Nombre = item.nombre, Direccion = item.direccion,  });
+                        lista.Add(new EntityBanco { Id = item.id, Nombre = item.nombre, Direccion = item.direccion, NumeroCuenta = item.numero_cuenta??"", Telefono = item.telefono??"", TipoCuenta = item.tipo_cuenta??""  });
                     };
                     return lista;
                 }

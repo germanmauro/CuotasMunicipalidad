@@ -97,9 +97,9 @@ namespace StockMyG
         }
 
         #region Metodos
-        private void ActualizarGrilla()
+        private void ActualizarGrilla(string filtro = "")
         {
-            Grid.DataSource = BLL.UsuarioService.Listar();
+            Grid.DataSource = BLL.UsuarioService.Listar(filtro);
             estado = Formulario.EstadoForm.SinDatos;
             ActualizarVista();
         }
@@ -195,5 +195,9 @@ namespace StockMyG
             this.cmbPerfil.ValueMember = "id";
         }
 
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            ActualizarGrilla(txtFiltro.Text);
+        }
     }
 }

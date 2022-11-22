@@ -74,14 +74,14 @@ namespace BLL
             }
         }
 
-        public static List<EntityMunicipalidad> Listar()
+        public static List<EntityMunicipalidad> Listar(string filtro = "")
         {
             try
             {
                 using (CuotasEntities db = new CuotasEntities())
                 {
                     List<EntityMunicipalidad> lista = new List<EntityMunicipalidad>();
-                    foreach (var item in db.municipalidades)
+                    foreach (var item in db.municipalidades.Where(c=> c.nombre.Contains(filtro)))
                     {
                         lista.Add(new EntityMunicipalidad { Id = item.id, Nombre = item.nombre, Direccion = item.direccion,
                         CUIT = item.cuit, Email = item.mail, Telefono = item.telefono, Condicion = item.condicion_iva,
@@ -97,13 +97,18 @@ namespace BLL
             }
         }
 
-        public static List<municipalidad> ListarCombo()
+        public static List<municipalidad> ListarCombo(bool todos = false)
         {
             try
             {
                 using (CuotasEntities db = new CuotasEntities())
                 {
-                    return db.municipalidades.ToList();
+                    List<municipalidad> lista_municipalidad = db.municipalidades.ToList();
+                    if (todos)
+                    {
+                        lista_municipalidad.Insert(0, new municipalidad { id = 0, nombre = "Todos" });
+                    }
+                    return lista_municipalidad;
                 }
             }
             catch (Exception)

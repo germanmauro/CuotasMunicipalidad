@@ -51,7 +51,7 @@ C:\Sistemas M&G\Software\Sistema Cuotas\BLL\bin\Debug\Datos.dll.config
 C:\Sistemas M&G\Software\Sistema Cuotas\BLL\bin\Debug\Entidades.pdb
 C:\Sistemas M&G\Software\Sistema Cuotas\BLL\bin\Debug\EntityFramework.xml
 C:\Sistemas M&G\Software\Sistema Cuotas\BLL\bin\Debug\EntityFramework.SqlServer.xml
-C:\Sistemas M&G\Software\Sistema Cuotas\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Sistemas M&G\Software\Sistema Cuotas\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
 C:\Sistemas M&G\Software\Sistema Cuotas\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
 C:\Sistemas M&G\Software\Sistema Cuotas\BLL\obj\Debug\BLL.csproj.CopyComplete
 C:\Sistemas M&G\Software\Sistema Cuotas\BLL\obj\Debug\BLL.dll

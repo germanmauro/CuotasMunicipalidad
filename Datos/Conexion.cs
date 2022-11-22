@@ -13,7 +13,7 @@ namespace Datos
     public class Conexion
     {
         public static SqlConnection cn;
-        //public static string cadena = ConfigurationManager.ConnectionStrings["conexion"].ToString();
-        public static string cadena = "Data Source=.;Initial Catalog=Cuotas;User ID=german Password=12345678;";
+        public static string cadena = ConfigurationManager.ConnectionStrings["conexion"].ToString();
+        //public static string cadena = "Data Source=.;Initial Catalog=Cuotas;User ID=german Password=12345678;";
     }
 }

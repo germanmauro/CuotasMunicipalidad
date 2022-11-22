@@ -23,6 +23,7 @@ namespace StockMyG
         {
             ActualizarGrilla();
             CargaCombo();
+            CargarPermisos();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -105,9 +106,9 @@ namespace StockMyG
         }
 
         #region Metodos
-        private void ActualizarGrilla()
+        private void ActualizarGrilla(string filtro = "")
         {
-            Grid.DataSource = BLL.InventarioService.Listar();
+            Grid.DataSource = BLL.InventarioService.Listar(filtro);
             estado = Formulario.EstadoForm.SinDatos;
             ActualizarVista();
         }
@@ -209,9 +210,19 @@ namespace StockMyG
             }
         }
 
-        private void Grid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
+            ActualizarGrilla(txtFiltro.Text);
+        }
 
+        public void CargarPermisos()
+        {
+            Session session = Session.GetInstance();
+            if (session.usuario.perfil_id == 2)
+            {
+                btnModificar.Visible = false;
+                btnEliminar.Visible = false;
+            }
         }
     }
 }

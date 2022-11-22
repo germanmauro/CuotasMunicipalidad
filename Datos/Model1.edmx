@@ -12,6 +12,9 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="50" />
           <Property Name="direccion" Type="varchar" MaxLength="100" />
+          <Property Name="telefono" Type="varchar" MaxLength="50" />
+          <Property Name="numero_cuenta" Type="varchar" MaxLength="40" />
+          <Property Name="tipo_cuenta" Type="varchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="categoria">
           <Key>
@@ -331,6 +334,9 @@
           <NavigationProperty Name="compras" Relationship="CuotasModel.FK__compra__banco_id__6E01572D" FromRole="banco" ToRole="compra" />
           <NavigationProperty Name="cuotas" Relationship="CuotasModel.FK__cuota__banco_id__6754599E" FromRole="banco" ToRole="cuota" />
           <NavigationProperty Name="ingresoes" Relationship="CuotasModel.FK__ingreso__banco_i__6383C8BA" FromRole="banco" ToRole="ingreso" />
+          <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="numero_cuenta" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="tipo_cuenta" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="categoria">
           <Key>
@@ -662,6 +668,9 @@
           <EntitySetMapping Name="bancoes">
             <EntityTypeMapping TypeName="CuotasModel.banco">
               <MappingFragment StoreEntitySet="banco">
+                <ScalarProperty Name="tipo_cuenta" ColumnName="tipo_cuenta" />
+                <ScalarProperty Name="numero_cuenta" ColumnName="numero_cuenta" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="direccion" ColumnName="direccion" />

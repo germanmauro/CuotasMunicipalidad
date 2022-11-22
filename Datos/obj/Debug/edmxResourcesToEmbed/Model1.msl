@@ -4,6 +4,9 @@
     <EntitySetMapping Name="bancoes">
       <EntityTypeMapping TypeName="CuotasModel.banco">
         <MappingFragment StoreEntitySet="banco">
+          <ScalarProperty Name="tipo_cuenta" ColumnName="tipo_cuenta" />
+          <ScalarProperty Name="numero_cuenta" ColumnName="numero_cuenta" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="direccion" ColumnName="direccion" />

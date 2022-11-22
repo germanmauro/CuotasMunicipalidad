@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,7 @@ namespace StockMyG
         private void Proveedor_Load(object sender, EventArgs e)
         {
             ActualizarGrilla();
+            CargarPermisos();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -97,9 +99,9 @@ namespace StockMyG
         }
 
         #region Metodos
-        private void ActualizarGrilla()
+        private void ActualizarGrilla(string filtro = "")
         {
-            Grid.DataSource = BLL.ProveedorService.Listar();
+            Grid.DataSource = BLL.ProveedorService.Listar(filtro);
             estado = Formulario.EstadoForm.SinDatos;
             ActualizarVista();
         }
@@ -192,5 +194,19 @@ namespace StockMyG
             }
         }
 
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            ActualizarGrilla(txtFiltro.Text);
+        }
+
+        public void CargarPermisos()
+        {
+            Session session = Session.GetInstance();
+            if (session.usuario.perfil_id == 2)
+            {
+                btnModificar.Visible = false;
+                btnEliminar.Visible = false;
+            }
+        }
     }
 }

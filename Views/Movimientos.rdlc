@@ -9,7 +9,10 @@
               <Width>2.36834cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.74736cm</Width>
+              <Width>2.53966cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>4.23269cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>3.24021cm</Width>
@@ -18,12 +21,12 @@
               <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.55738cm</Width>
+              <Width>2.39321cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>1.06688cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -44,6 +47,39 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox3</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Silver</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox5">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Municipalidad/Comuna</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox5</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -227,6 +263,36 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="Textbox9">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox9</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="Descripcion">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -358,6 +424,7 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -371,8 +438,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet</DataSetName>
-        <Height>1.2cm</Height>
-        <Width>16.41328cm</Width>
+        <Height>1.66688cm</Height>
+        <Width>17.27411cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -389,7 +456,7 @@
       <BackgroundColor>White</BackgroundColor>
     </Style>
   </Body>
-  <Width>6.46192in</Width>
+  <Width>6.93054in</Width>
   <Page>
     <PageHeader>
       <Height>7.10848cm</Height>
@@ -453,7 +520,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
           <Top>1.21391cm</Top>
-          <Left>10.68598cm</Left>
+          <Left>11.29452cm</Left>
           <Height>4.43645cm</Height>
           <Width>4.98709cm</Width>
           <Style>
@@ -545,7 +612,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox8</rd:DefaultName>
           <Top>2.88078cm</Top>
-          <Left>0.65986cm</Left>
+          <Left>1.2684cm</Left>
           <Height>2.76958cm</Height>
           <Width>9.40562cm</Width>
           <ZIndex>1</ZIndex>
@@ -564,7 +631,7 @@
           <Value>logo_sistema</Value>
           <Sizing>FitProportional</Sizing>
           <Top>0.57891cm</Top>
-          <Left>0.65986cm</Left>
+          <Left>1.2684cm</Left>
           <Height>2.05562cm</Height>
           <Width>9.40562cm</Width>
           <ZIndex>2</ZIndex>
@@ -574,46 +641,6 @@
             </Border>
           </Style>
         </Image>
-        <Textbox Name="Textbox5">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>MUNICIPALIDAD / COMUNA: </Value>
-                  <Style>
-                    <FontSize>12pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-                <TextRun>
-                  <Value>=First(Fields!Municipalidad.Value, "DataSet")</Value>
-                  <Style>
-                    <FontSize>12pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox5</rd:DefaultName>
-          <Top>6.13516cm</Top>
-          <Left>0.65986cm</Left>
-          <Height>0.6cm</Height>
-          <Width>15.01321cm</Width>
-          <ZIndex>3</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
       </ReportItems>
       <Style>
         <Border>
@@ -656,7 +683,7 @@
           <Top>0.49953cm</Top>
           <Left>0.32786cm</Left>
           <Height>0.99688cm</Height>
-          <Width>15.06771cm</Width>
+          <Width>16.94625cm</Width>
           <Style>
             <Border>
               <Style>None</Style>

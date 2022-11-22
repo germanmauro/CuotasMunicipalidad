@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
 using Datos;
 
 namespace StockMyG
@@ -21,6 +22,8 @@ namespace StockMyG
         private void banco_Load(object sender, EventArgs e)
         {
             ActualizarGrilla();
+            CargaCombo();
+            CargarPermisos();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -30,7 +33,10 @@ namespace StockMyG
                 banco ent = new banco
                 {
                     nombre = txtNombre.Controls[0].Text,
-                    direccion = direccion_txt.Controls[0].Text
+                    direccion = direccion_txt.Controls[0].Text,
+                    telefono = txtTelefono.Controls[0].Text,
+                    tipo_cuenta = cmbTipoCuenta.SelectedItem.ToString(),
+                    numero_cuenta = txtNroCuenta.Controls[0].Text
                 };
 
                 switch (estado)
@@ -89,13 +95,17 @@ namespace StockMyG
         }
 
         #region Metodos
-        private void ActualizarGrilla()
+        private void ActualizarGrilla(string filtro = "")
         {
-            Grid.DataSource = BLL.BancoService.Listar();
+            Grid.DataSource = BLL.BancoService.Listar(filtro);
             estado = Formulario.EstadoForm.SinDatos;
             ActualizarVista();
         }
 
+        private void CargaCombo()
+        {
+            this.cmbTipoCuenta.DataSource = Tipos.TipoCuenta();
+        }
         private void ActualizarVista()
         {
             switch (estado)
@@ -132,13 +142,67 @@ namespace StockMyG
         {
             this.txtNombre.Controls[0].Text = Grid.SelectedRows[0].Cells["nombre"].Value.ToString();
             this.direccion_txt.Controls[0].Text = Grid.SelectedRows[0].Cells["direccion"].Value.ToString();
+            this.txtTelefono.Controls[0].Text = Grid.SelectedRows[0].Cells["telefono"].Value.ToString();
+            this.txtNroCuenta.Controls[0].Text = Grid.SelectedRows[0].Cells["numero_cuenta"].Value.ToString();
+            this.cmbTipoCuenta.SelectedIndex = this.cmbTipoCuenta.FindStringExact(Grid.SelectedRows[0].Cells["tipo_cuenta"].Value.ToString());
         }
 
         private void BorrarDatos()
         {
             this.txtNombre.Controls[0].Text = "";
             this.direccion_txt.Controls[0].Text = "";
+            this.txtTelefono.Controls[0].Text = "";
+            this.txtNroCuenta.Controls[0].Text = "";
         }
         #endregion
+
+        private void Banco_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.F2:
+                    if (btnNuevo.Enabled)
+                    {
+                        btnNuevo_Click(null, null);
+                    }
+                    break;
+                case Keys.F3:
+                    if (btnModificar.Enabled)
+                    {
+                        btnModificar_Click(null, null);
+                    }
+                    break;
+                case Keys.F4:
+                    if (btnEliminar.Enabled)
+                    {
+                        btnEliminar_Click(null, null);
+                    }
+                    break;
+                case Keys.F5:
+                    if (btnGuardar.Enabled)
+                    {
+                        btnGuardar_Click(null, null);
+                    }
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            ActualizarGrilla(txtFiltro.Text);
+        }
+
+        public void CargarPermisos()
+        {
+            Session session = Session.GetInstance();
+            if (session.usuario.perfil_id == 2)
+            {
+                btnModificar.Visible = false;
+                btnEliminar.Visible = false;
+            }
+        }
     }
 }

@@ -613,7 +613,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>MONTO TOTAL A ABONONAR $ </Value>
+                  <Value>MONTO TOTAL A ABONAR $ </Value>
                   <Style>
                     <FontSize>12pt</FontSize>
                     <FontWeight>Bold</FontWeight>
